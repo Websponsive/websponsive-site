@@ -72,7 +72,7 @@ body{
             height: 1rem;
             
             .navbar-link{
-                color: var(--f-color-light);
+                // color: var(--f-color-light);
                 text-decoration: none;
                 font-family: var(--f-family-josefin);
                 font-size: var(--f-size-paragraph);
@@ -175,7 +175,7 @@ body{
             }
         }
     }
-    .link{
+    @at-root .link{
         text-decoration: none;
         font-family: var(--f-family-josefin);
         font-size: var(--f-size-paragraph);
@@ -193,13 +193,14 @@ body{
             transform-origin: right;
             transform: scaleX(0);
             transition: transform var(--transition-speed-slow) ease-in-out;
+            z-index: 1;
         }
         &:hover::before{
             transform: scaleX(1);
             transform-origin: left;
         }
     }
-    .light-bg-link{
+    @at-root .light-bg-link{
         &:hover{
             color: var(--f-color-dark);
         }
@@ -207,11 +208,11 @@ body{
             background-color: var(--f-color-dark);
         }
     }
-    .dark-bg-link{
+    @at-root .dark-bg-link{
         &:hover{
             color: var(--f-color-light);
         }
-        > svg{
+        svg{
             stroke: var(--f-color-light);
         }
         &::before{
@@ -276,7 +277,7 @@ body{
         height: 125%;
         /* transform: translateY(-5px); */
         bottom: -3px;
-        left: 98%;
+        left: 96%;
     }
     &:hover > svg > .stroke{
         animation: svg-animate 1s ease forwards;

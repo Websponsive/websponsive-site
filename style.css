@@ -68,7 +68,6 @@ body {
   height: 1rem;
 }
 .navbar .navbar-list .navbar-list-item .navbar-link {
-  color: var(--f-color-light);
   text-decoration: none;
   font-family: var(--f-family-josefin);
   font-size: var(--f-size-paragraph);
@@ -156,7 +155,7 @@ body {
     height: 100px;
   }
 }
-#content .link {
+.link {
   text-decoration: none;
   font-family: var(--f-family-josefin);
   font-size: var(--f-size-paragraph);
@@ -166,7 +165,7 @@ body {
   width: -moz-max-content;
   width: max-content;
 }
-#content .link::before {
+.link::before {
   content: "";
   width: 100%;
   height: 2px;
@@ -176,26 +175,30 @@ body {
   transform-origin: right;
   transform: scaleX(0);
   transition: transform var(--transition-speed-slow) ease-in-out;
+  z-index: 1;
 }
-#content .link:hover::before {
+.link:hover::before {
   transform: scaleX(1);
   transform-origin: left;
 }
-#content .light-bg-link:hover {
+
+.light-bg-link:hover {
   color: var(--f-color-dark);
 }
-#content .light-bg-link::before {
+.light-bg-link::before {
   background-color: var(--f-color-dark);
 }
-#content .dark-bg-link:hover {
+
+.dark-bg-link:hover {
   color: var(--f-color-light);
 }
-#content .dark-bg-link > svg {
+.dark-bg-link svg {
   stroke: var(--f-color-light);
 }
-#content .dark-bg-link::before {
+.dark-bg-link::before {
   background-color: var(--f-color-light);
 }
+
 @media screen and (max-width: 760px) {
   #content .intro {
     height: calc(100vh + 0px);
@@ -239,7 +242,7 @@ body {
   height: 125%;
   /* transform: translateY(-5px); */
   bottom: -3px;
-  left: 98%;
+  left: 96%;
 }
 .link:hover > svg > .stroke {
   -webkit-animation: svg-animate 1s ease forwards;
