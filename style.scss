@@ -32,7 +32,7 @@
     --f-size-header: calc(1.75rem + 1vw);
     --f-size-title: calc(1rem + 0.5vw);
     --f-size-paragraph: calc(0.75rem + 0.5vw);
-    --f-size-small: ;
+    --f-size-small: calc(0.5rem + 0.5vw);
 
     --transition-speed-fast: 250ms;
     --transition-speed-slow: 500ms;
@@ -139,7 +139,8 @@ body{
 
 /* Content styles */
 #content{
-    #code{
+    #code,
+    #security{
         background-color: var(--bg-color-dark-blue);
     }
 
@@ -163,15 +164,25 @@ body{
         &-code .shape-fill{
             fill: var(--f-color-light);
         }
-        &-design .shape-fill{
+        &-design .shape-fill,
+        &-accessibility .shape-fill{
             fill: var(--bg-color-dark-blue);
         }
+
     }
     @media (max-width: 760px) {
         .wave{
             svg{
                 width: calc(110% + 1.3px);
                 height: 100px;
+            }
+        }
+    }
+    @media screen and (min-width: 1300px){
+        .wave{
+            svg{
+                width: calc(100% + 1.3px);
+                height: 225px;
             }
         }
     }
@@ -245,7 +256,7 @@ body{
     }
     @media screen and (min-width: 1300px) {
         .content-section{
-            padding: 14rem 4rem 20rem 4rem;
+            padding: 10rem 4rem 22rem 4rem;
         }
     }
 }
@@ -304,6 +315,7 @@ a, p{
 h1, h2, h3, h4, h5, h6{
     font-family: var(--f-family-ubuntu);
 }
+
 .xxl{
     font-size: var(--f-size-xxl);
 }
@@ -319,6 +331,7 @@ h1, h2, h3, h4, h5, h6{
 .small-text{
     font-size: var(--f-size-small);
 }
+
 .dark{
     color: var(--f-color-dark);
 }
@@ -331,6 +344,7 @@ h1, h2, h3, h4, h5, h6{
 .less-light{
     color: var(--f-color-less-light);
 }
+
 .grid{
     display: grid;
 }
@@ -344,7 +358,7 @@ h1, h2, h3, h4, h5, h6{
         gap: 1rem;
     }
 }
-@media screen and (min-width: 701px) {
+@media screen and (min-width: 700px) {
     .grid{
         grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
