@@ -31,6 +31,8 @@
   --f-size-small: calc(0.5rem + 0.5vw);
   --transition-speed-fast: 250ms;
   --transition-speed-slow: 500ms;
+  --phone-break-point: 760px;
+  --computer-break-point: 1300px;
 }
 
 html, body {
@@ -144,20 +146,37 @@ body {
   height: 150px;
   width: calc(100% + 1.3px);
 }
-#content .wave-intro .shape-fill, #content .wave-code .shape-fill {
+#content .wave-intro .shape-fill, #content .wave-code .shape-fill, #content .wave-security .shape-fill {
   fill: var(--f-color-light);
 }
 #content .wave-design .shape-fill, #content .wave-accessibility .shape-fill {
   fill: var(--bg-color-dark-blue);
 }
+#content .opaque-wave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+#content .opaque-wave svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 200px;
+}
+#content .opaque-wave .shape-fill {
+  fill: var(--f-color-light);
+}
 @media (max-width: 760px) {
-  #content .wave svg {
+  #content .wave svg, #content .opaque-wave svg {
     width: calc(110% + 1.3px);
     height: 100px;
   }
 }
 @media screen and (min-width: 1300px) {
-  #content .wave svg {
+  #content .wave svg, #content .opaque-wave svg {
     width: calc(100% + 1.3px);
     height: 225px;
   }
@@ -217,7 +236,7 @@ body {
     width: 100%;
   }
 }
-@media screen and (min-width: 761px) {
+@media screen and (min-width: 760px) {
   #content .intro {
     height: calc(100vh + 0px);
   }
@@ -329,13 +348,13 @@ h1, h2, h3, h4, h5, h6 {
   gap: 0.5rem;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 760px) {
   .grid {
     grid-template-columns: repeat(1, 1fr);
     gap: 1rem;
   }
 }
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 760px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;

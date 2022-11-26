@@ -36,6 +36,9 @@
 
     --transition-speed-fast: 250ms;
     --transition-speed-slow: 500ms;
+
+    --phone-break-point: 760px;
+    --computer-break-point: 1300px;
 }
 html, body {
     margin: 0;
@@ -161,7 +164,8 @@ body{
         }
 
         &-intro .shape-fill,
-        &-code .shape-fill{
+        &-code .shape-fill,
+        &-security .shape-fill{
             fill: var(--f-color-light);
         }
         &-design .shape-fill,
@@ -170,8 +174,25 @@ body{
         }
 
     }
+    .opaque-wave {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+        svg{
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 200px;
+        }
+        .shape-fill{
+            fill: var(--f-color-light);
+        }
+    }
     @media (max-width: 760px) {
-        .wave{
+        .wave, .opaque-wave{
             svg{
                 width: calc(110% + 1.3px);
                 height: 100px;
@@ -179,13 +200,14 @@ body{
         }
     }
     @media screen and (min-width: 1300px){
-        .wave{
+        .wave, .opaque-wave{
             svg{
                 width: calc(100% + 1.3px);
                 height: 225px;
             }
         }
     }
+    
     @at-root .link{
         text-decoration: none;
         font-family: var(--f-family-josefin);
@@ -242,7 +264,7 @@ body{
             width: 100%;
         }
     }
-    @media screen and (min-width: 761px){
+    @media screen and (min-width: 760px){
         
         .intro{
             height: calc(100vh + 0px);
@@ -352,13 +374,13 @@ h1, h2, h3, h4, h5, h6{
     display: grid;
     gap: 0.5rem;
 }
-@media screen and (max-width: 700px){
+@media screen and (max-width: 760px){
     .grid{
         grid-template-columns: repeat(1, 1fr);
         gap: 1rem;
     }
 }
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 760px) {
     .grid{
         grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
