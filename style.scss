@@ -11,12 +11,17 @@
     --bg-color-green: hsl(155, 82%, 59%);
     --bg-color-darker-blue: hsl(225, 62%, 12%);
     --bg-color-dark-blue: hsl(226, 61%, 15%);
+    --bg-color-darkish-blue: hsl(226, 61%, 25%);
     --bg-color-lighter-blue: hsl(226, 74%, 30%);
     --bg-color-light-blue: hsl(209, 56%, 50%);
     --bg-color-purple: hsl(282, 68%, 38%);
     --bg-color-violet: hsl(262, 52%, 47%);
     --bg-color-pink: hsl(340, 82%, 76%);
-    --bg-gradient-blue: radial-gradient(circle at 10% 90%, var(--bg-color-lighter-blue),var(--bg-color-dark-blue), var(--bg-color-darker-blue));
+    --bg-gradient-blue: radial-gradient(
+        circle at 20% 100%, 
+        var(--bg-color-lighter-blue) 15%,
+        var(--bg-color-dark-blue) 60%, 
+        var(--bg-color-darker-blue));
     
     --f-color-light: hsl(0, 0%, 95%);
     --f-color-less-light: hsl(0, 0%, 75%);
@@ -143,8 +148,92 @@ body{
 /* Content styles */
 #content{
     #code,
-    #security{
+    #security,
+    #benefits{
         background-color: var(--bg-color-dark-blue);
+    }
+
+    #benefits{
+        .cards{
+            display: grid;
+            .benefit{
+                background-color: var(--bg-color-darkish-blue);
+                opacity: 0.4;
+                border: 2px solid rgba(255, 255, 255, 0.2);
+                width: 100%;
+                aspect-ratio: 3/2;
+                border-radius: 1rem;
+                position: relative;
+                cursor: pointer;
+                // --mouse-x: 0px;
+                // --mouse-y: 0px;
+
+                &:hover::before{
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 760px){
+        #benefits{
+            padding: 10rem 2.5rem 12rem 2.5rem;
+            .cards{
+                grid-template-columns: repeat(1, 1fr);
+                gap: 2rem;
+            }
+        }
+    }
+    @media screen and (min-width: 760px){
+        #benefits{
+            padding-top: 20rem;
+            .cards{
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1rem;
+                .benefit::before{
+                    content: '';
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    background-image: radial-gradient(
+                        45vw circle at var(--mouse-x) var(--mouse-y), 
+                        hsla(255, 100, 100%, 0.2),
+                        transparent 40%
+                    );
+                    z-index: 2;
+                    transition: opacity var(--transition-speed-slow) ease;
+                    opacity: 0;
+                    border-radius: inherit;
+                }
+            }
+        }
+    }
+    @media screen and (min-width: 1300px) {
+        #benefits{
+            padding-top: 35rem;
+            .cards{
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2rem;
+                .benefit::before{
+                    content: '';
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    background-image: radial-gradient(
+                        45vw circle at var(--mouse-x) var(--mouse-y), 
+                        hsla(255, 100, 100%, 0.2),
+                        transparent 40%
+                    );
+                    z-index: 2;
+                    transition: opacity var(--transition-speed-slow) ease;
+                    opacity: 0;
+                    border-radius: inherit;
+                }
+            }
+        }
     }
 
     .wave {
@@ -255,7 +344,8 @@ body{
 
     @media screen and (max-width: 760px){
         .intro{
-            height: calc(100vh + 0px);
+            height: calc(100vh + 100px);
+            padding-bottom: 100px;
         }
         .content-section{
             padding: 6rem 1rem 12rem 1rem;
@@ -267,7 +357,8 @@ body{
     @media screen and (min-width: 760px){
         
         .intro{
-            height: calc(100vh + 0px);
+            height: calc(100vh + 150px);
+            padding-bottom: 150px;
         }
         .content-section{
             padding: 8rem 2rem 18rem 2rem;
@@ -277,6 +368,10 @@ body{
         }
     }
     @media screen and (min-width: 1300px) {
+        .intro{
+            height: calc(100vh + 200px);
+            padding-bottom: 200px;
+        }
         .content-section{
             padding: 10rem 4rem 22rem 4rem;
         }
@@ -399,7 +494,7 @@ h1, h2, h3, h4, h5, h6{
     /* text-shadow: 0 0 0px var(--f-color-gray); */
     animation: text-gradient 3s infinite linear;
 }
-.violet-gradient-text{
+.violet-gradient-text{ 
     background: var(--f-color-gradient-violet);
     text-shadow: none;
     background-clip: text;
