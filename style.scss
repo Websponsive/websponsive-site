@@ -158,7 +158,7 @@ body{
             display: grid;
             .benefit{
                 background-color: var(--bg-color-darkish-blue);
-                opacity: 0.4;
+                opacity: 0.8;
                 border: 2px solid rgba(255, 255, 255, 0.2);
                 width: 100%;
                 aspect-ratio: 3/2;
@@ -167,9 +167,18 @@ body{
                 cursor: pointer;
                 // --mouse-x: 0px;
                 // --mouse-y: 0px;
-
+                display: grid;
+                place-items: center;
+                align-items: center;
+                .icon{
+                    stroke: var(--f-color-less-light);
+                    aspect-ratio: 1/1;
+                }
                 &:hover::before{
                     opacity: 1;
+                }
+                .paragraph{
+                    text-align: center;
                 }
             }
         }
@@ -180,6 +189,11 @@ body{
             .cards{
                 grid-template-columns: repeat(1, 1fr);
                 gap: 2rem;
+                .benefit{
+                    .icon{
+                        width: 4rem;
+                    }
+                }
             }
         }
     }
@@ -187,24 +201,30 @@ body{
         #benefits{
             padding-top: 20rem;
             .cards{
-                grid-template-columns: repeat(3, 1fr);
+                grid-template-columns: repeat(2, 1fr);
                 gap: 1rem;
-                .benefit::before{
-                    content: '';
-                    width: 100%;
-                    height: 100%;
-                    position: absolute;
-                    left: 0;
-                    top: 0;
-                    background-image: radial-gradient(
-                        45vw circle at var(--mouse-x) var(--mouse-y), 
-                        hsla(255, 100, 100%, 0.2),
-                        transparent 40%
-                    );
-                    z-index: 2;
-                    transition: opacity var(--transition-speed-slow) ease;
-                    opacity: 0;
-                    border-radius: inherit;
+                .benefit{
+                    padding: 1rem;
+                    .icon{
+                        width: 3rem;
+                    }
+                    &::before{
+                        content: '';
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        background-image: radial-gradient(
+                            45vw circle at var(--mouse-x) var(--mouse-y), 
+                            hsla(172, 100%, 50%, 0.20),
+                            transparent 40%
+                        );
+                        // z-index: 1;
+                        transition: opacity var(--transition-speed-slow) ease;
+                        opacity: 0;
+                        border-radius: inherit;
+                    }
                 }
             }
         }
@@ -215,22 +235,27 @@ body{
             .cards{
                 grid-template-columns: repeat(3, 1fr);
                 gap: 2rem;
-                .benefit::before{
-                    content: '';
-                    width: 100%;
-                    height: 100%;
-                    position: absolute;
-                    left: 0;
-                    top: 0;
-                    background-image: radial-gradient(
-                        45vw circle at var(--mouse-x) var(--mouse-y), 
-                        hsla(255, 100, 100%, 0.2),
-                        transparent 40%
-                    );
-                    z-index: 2;
-                    transition: opacity var(--transition-speed-slow) ease;
-                    opacity: 0;
-                    border-radius: inherit;
+                .benefit{
+                    .icon{
+                        width: 3rem;
+                    }
+                    &::before{
+                        content: '';
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        background-image: radial-gradient(
+                            65vw circle at var(--mouse-x) var(--mouse-y), 
+                            hsla(255, 100, 100%, 0.2),
+                            transparent 40%
+                        );
+                        z-index: 2;
+                        transition: opacity var(--transition-speed-slow) ease;
+                        opacity: 0;
+                        border-radius: inherit;
+                    }
                 }
             }
         }
@@ -405,7 +430,7 @@ body{
         height: 125%;
         /* transform: translateY(-5px); */
         bottom: -3px;
-        left: 96%;
+        left: 98%;
     }
     &:hover > svg > .stroke{
         animation: svg-animate 1s ease forwards;

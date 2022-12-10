@@ -142,16 +142,26 @@ body {
 }
 #content #benefits .cards .benefit {
   background-color: var(--bg-color-darkish-blue);
-  opacity: 0.4;
+  opacity: 0.8;
   border: 2px solid rgba(255, 255, 255, 0.2);
   width: 100%;
   aspect-ratio: 3/2;
   border-radius: 1rem;
   position: relative;
   cursor: pointer;
+  display: grid;
+  place-items: center;
+  align-items: center;
+}
+#content #benefits .cards .benefit .icon {
+  stroke: var(--f-color-less-light);
+  aspect-ratio: 1/1;
 }
 #content #benefits .cards .benefit:hover::before {
   opacity: 1;
+}
+#content #benefits .cards .benefit .paragraph {
+  text-align: center;
 }
 @media screen and (max-width: 760px) {
   #content #benefits {
@@ -161,14 +171,23 @@ body {
     grid-template-columns: repeat(1, 1fr);
     gap: 2rem;
   }
+  #content #benefits .cards .benefit .icon {
+    width: 4rem;
+  }
 }
 @media screen and (min-width: 760px) {
   #content #benefits {
     padding-top: 20rem;
   }
   #content #benefits .cards {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
+  }
+  #content #benefits .cards .benefit {
+    padding: 1rem;
+  }
+  #content #benefits .cards .benefit .icon {
+    width: 3rem;
   }
   #content #benefits .cards .benefit::before {
     content: "";
@@ -177,8 +196,7 @@ body {
     position: absolute;
     left: 0;
     top: 0;
-    background-image: radial-gradient(45vw circle at var(--mouse-x) var(--mouse-y), hsla(255deg, 100%, 100%, 0.2), transparent 40%);
-    z-index: 2;
+    background-image: radial-gradient(45vw circle at var(--mouse-x) var(--mouse-y), hsla(172deg, 100%, 50%, 0.2), transparent 40%);
     transition: opacity var(--transition-speed-slow) ease;
     opacity: 0;
     border-radius: inherit;
@@ -192,6 +210,9 @@ body {
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
   }
+  #content #benefits .cards .benefit .icon {
+    width: 3rem;
+  }
   #content #benefits .cards .benefit::before {
     content: "";
     width: 100%;
@@ -199,7 +220,7 @@ body {
     position: absolute;
     left: 0;
     top: 0;
-    background-image: radial-gradient(45vw circle at var(--mouse-x) var(--mouse-y), hsla(255deg, 100%, 100%, 0.2), transparent 40%);
+    background-image: radial-gradient(65vw circle at var(--mouse-x) var(--mouse-y), hsla(255deg, 100%, 100%, 0.2), transparent 40%);
     z-index: 2;
     transition: opacity var(--transition-speed-slow) ease;
     opacity: 0;
@@ -349,7 +370,7 @@ body {
   height: 125%;
   /* transform: translateY(-5px); */
   bottom: -3px;
-  left: 96%;
+  left: 98%;
 }
 .link:hover > svg > .stroke {
   -webkit-animation: svg-animate 1s ease forwards;
