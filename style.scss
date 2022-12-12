@@ -27,8 +27,21 @@
     --f-color-less-light: hsl(0, 0%, 75%);
     --f-color-dark: hsl(0, 0%, 20%);
     --f-color-gray: hsl(246, 9%, 54%);
-    --f-color-gradient-blue: linear-gradient(90deg, var(--bg-color-green), var(--bg-color-light-blue), var(--bg-color-green));
-    --f-color-gradient-violet: linear-gradient(90deg, var(--bg-color-purple), var(--bg-color-violet), var(--bg-color-pink), var(--bg-color-purple));
+    --f-color-gradient-blue: linear-gradient(
+        90deg, 
+        var(--bg-color-green), 
+        var(--bg-color-light-blue), 
+        var(--bg-color-green));
+    --f-color-gradient-violet: linear-gradient(
+        90deg, 
+        var(--bg-color-purple), 
+        var(--bg-color-violet), 
+        var(--bg-color-pink), 
+        var(--bg-color-purple));
+
+    --f-color-gradient-gray: linear-gradient(
+        var(--f-color-less-light),
+        var(--f-color-gray));
 
     --f-family-josefin:'Josefin Sans', sans-serif;
     --f-family-ubuntu: 'Ubuntu', sans-serif;
@@ -63,8 +76,9 @@ body{
     height: 5rem;
     align-items: center;
     position: absolute;
-    /* top: 0; */
+    // top: 0; 
     z-index: 1;
+    // background-color: var(--bg-color-darker-blue);
 
     .navbar-logo{
         transform: translateY(4px);
@@ -135,6 +149,36 @@ body{
         font-size: var(--f-size-header);
         text-align: center;
         line-height: 3rem;
+
+        .animated-text{
+            display: inline-block;
+            position: relative;
+            transform: rotateX(-90deg) translateY(60px);
+            animation-name: text-rotate;
+            animation-duration: 0.5s;
+            animation-iteration-count: initial;
+            animation-fill-mode: forwards;
+
+            &[data-index="1"]{
+                animation-delay: 0s;
+            }
+            &[data-index="2"]{
+                animation-delay: 0.25s;
+            }
+            &[data-index="3"]{
+                animation-delay: 0.5s;
+            }
+            &[data-index="4"]{
+                animation-delay: 0.75s;
+            }
+            &[data-index="5"]{
+                animation-delay: 1s;
+            }
+            &[data-index="6"]{
+                animation-delay: 1.25s;
+            }
+        }
+        
     }
     #intro-header-together{
         font-family: var(--f-family-ubuntu);
@@ -142,6 +186,10 @@ body{
         font-size: var(--f-size-xxl);
         /* line-height: 5rem; */
     }
+}
+@keyframes text-rotate {
+    from{transform: rotateX(-90deg) translateY(60px);}
+    to{transform: rotateX(0deg) translateY(0px);}
 }
 
 
@@ -154,6 +202,11 @@ body{
     }
 
     #benefits{
+        display: grid;
+        .benefits-header{
+            justify-self: center;
+            margin-bottom: 3rem;
+        }
         .cards{
             display: grid;
             .benefit{
@@ -528,6 +581,16 @@ h1, h2, h3, h4, h5, h6{
     -webkit-text-fill-color: transparent;
     /* text-shadow: 0 0 0px var(--f-color-gray); */
     animation: text-gradient 3s infinite linear;
+}
+.gray-gradient-text{ 
+    background: var(--f-color-gradient-gray);
+    text-shadow: none;
+    background-clip: text;
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* text-shadow: 0 0 0px var(--f-color-gray); */
+    // animation: text-gradient 3s infinite linear;
 }
 @keyframes text-gradient{
     from{background-position: 0% center;}
