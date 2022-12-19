@@ -22,6 +22,16 @@
         var(--bg-color-lighter-blue) 15%,
         var(--bg-color-dark-blue) 60%, 
         var(--bg-color-darker-blue));
+
+    --bg-gradient-button: linear-gradient(
+        135deg,
+        var(--bg-color-purple), 
+        var(--bg-color-violet), 
+        var(--bg-color-pink),
+        var(--bg-color-green), 
+        var(--bg-color-light-blue),
+        var(--bg-color-lighter-blue)
+    );
     
     --f-color-light: hsl(0, 0%, 95%);
     --f-color-less-light: hsl(0, 0%, 75%);
@@ -143,48 +153,86 @@ body{
     display: grid;
     place-items: center;
 
-    #intro-header{
-        font-family: var(--f-family-ubuntu);
-        color: var(--f-color-light);
-        font-size: var(--f-size-header);
-        text-align: center;
-        line-height: 3rem;
+    .container{
+        display: grid;
+        justify-items: center;
+        grid-template-rows: 1fr 1fr;
+        gap: 2rem;
 
-        .animated-text{
-            display: inline-block;
-            position: relative;
-            transform: rotateX(-90deg) translateY(60px);
-            animation-name: text-rotate;
-            animation-duration: 0.5s;
-            animation-iteration-count: initial;
-            animation-fill-mode: forwards;
-
-            &[data-index="1"]{
-                animation-delay: 0s;
+        .intro-header{
+            font-family: var(--f-family-ubuntu);
+            color: var(--f-color-light);
+            font-size: var(--f-size-header);
+            text-align: center;
+            line-height: 3rem;
+            width: 80%;
+    
+            @at-root .animated-element{
+                display: inline-block;
+                position: relative;
+                transform: rotateX(-90deg) translateY(60px);
+                animation-name: text-rotate;
+                animation-duration: 0.5s;
+                // animation-iteration-count: initial;
+                animation-fill-mode: forwards;
+    
+                &[data-index="1"]{
+                    animation-delay: 0s;
+                    animation-iteration-count: initial;
+                }
+                &[data-index="2"]{
+                    animation-delay: 0.25s;
+                    animation-iteration-count: initial;
+                }
+                &[data-index="3"]{
+                    animation-delay: 0.5s;
+                    animation-iteration-count: initial;
+                }
+                &[data-index="4"]{
+                    animation-delay: 0.75s;
+                    animation-iteration-count: initial;
+                }
+                &[data-index="5"]{
+                    animation-delay: 1s;
+                    animation-iteration-count: initial;
+                }
+                &[data-index="6"]{
+                    animation-delay: 1.75s;
+                    animation-name: text-rotate, text-gradient;
+                    animation-duration: 0.5s, 3s;
+                    animation-iteration-count: initial, infinite;
+                    animation-timing-function: linear;
+                    background: var(--f-color-gradient-blue);
+                    text-shadow: none;
+                    background-clip: text;
+                    background-size: 200%;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    // animation: text-gradient 3s infinite linear;
+                }
+                &[data-index="7"]{
+                    animation-delay: 2.5s;
+                    animation-iteration-count: initial;
+                }
             }
-            &[data-index="2"]{
-                animation-delay: 0.25s;
-            }
-            &[data-index="3"]{
-                animation-delay: 0.5s;
-            }
-            &[data-index="4"]{
-                animation-delay: 0.75s;
-            }
-            &[data-index="5"]{
-                animation-delay: 1s;
-            }
-            &[data-index="6"]{
-                animation-delay: 1.25s;
+            
+        }
+        .intro-button{
+            width: 70%;
+            height: 3rem;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            background-image: var(--bg-gradient-button);
+            background-size: 250%;
+            background-position: 100% 100%;
+            border: none;
+            cursor: pointer;
+            // text-transform: uppercase;
+            transition: background-position var(--transition-speed-slow)  cubic-bezier(.77,0,.18,1);
+            &:hover{
+                background-position: 0% 0%;
             }
         }
-        
-    }
-    #intro-header-together{
-        font-family: var(--f-family-ubuntu);
-        color: var(--f-color-light);
-        font-size: var(--f-size-xxl);
-        /* line-height: 5rem; */
     }
 }
 @keyframes text-rotate {
@@ -244,7 +292,7 @@ body{
                 gap: 2rem;
                 .benefit{
                     .icon{
-                        width: 4rem;
+                        width: 2.5rem;
                     }
                 }
             }
@@ -420,6 +468,10 @@ body{
         }
     }
 
+    .section-image{
+        border-radius: 1rem;
+    }
+
     @media screen and (max-width: 760px){
         .intro{
             height: calc(100vh + 100px);
@@ -429,7 +481,8 @@ body{
             padding: 6rem 1rem 12rem 1rem;
         }
         .section-image{
-            width: 100%;
+            width: 90%;
+            justify-self: center;
         }
     }
     @media screen and (min-width: 760px){
@@ -442,7 +495,9 @@ body{
             padding: 8rem 2rem 18rem 2rem;
         }
         .section-image{
-            width: clamp(40vw, 100%, 50vw);
+            width: clamp(30vw, 90%, 45vw);
+            max-width: 500px;
+            justify-self: center;
         }
     }
     @media screen and (min-width: 1300px) {
@@ -507,7 +562,7 @@ ul{
 a, p{
     font-family: var(--f-family-josefin);
 }
-h1, h2, h3, h4, h5, h6{
+h1, h2, h3, h4, h5, h6, button{
     font-family: var(--f-family-ubuntu);
 }
 
@@ -569,8 +624,8 @@ h1, h2, h3, h4, h5, h6{
     background-size: 200%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    /* text-shadow: 0 0 0px var(--f-color-gray); */
     animation: text-gradient 3s infinite linear;
+    /* text-shadow: 0 0 0px var(--f-color-gray); */
 }
 .violet-gradient-text{ 
     background: var(--f-color-gradient-violet);
@@ -593,6 +648,6 @@ h1, h2, h3, h4, h5, h6{
     // animation: text-gradient 3s infinite linear;
 }
 @keyframes text-gradient{
-    from{background-position: 0% center;}
-    to{background-position: -200% center;}
+    0%{background-position: 0% center;}
+    100%{background-position: -200% center;}
 }
