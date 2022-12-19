@@ -289,19 +289,19 @@ body {
 #content #benefits .cards .benefit .paragraph {
   text-align: center;
 }
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 560px) {
   #content #benefits {
-    padding: 10rem 2.5rem 12rem 2.5rem;
+    padding: 10rem 1.5rem 12rem 1.5rem;
   }
   #content #benefits .cards {
     grid-template-columns: repeat(1, 1fr);
-    gap: 2rem;
+    gap: 1rem;
   }
   #content #benefits .cards .benefit .icon {
     width: 2.5rem;
   }
 }
-@media screen and (min-width: 760px) {
+@media screen and (min-width: 560px) {
   #content #benefits {
     padding-top: 20rem;
   }
@@ -346,7 +346,7 @@ body {
     position: absolute;
     left: 0;
     top: 0;
-    background-image: radial-gradient(65vw circle at var(--mouse-x) var(--mouse-y), hsla(255deg, 100%, 100%, 0.2), transparent 40%);
+    background-image: radial-gradient(30vw circle at var(--mouse-x) var(--mouse-y), hsla(255deg, 100%, 100%, 0.2), transparent 40%);
     z-index: 2;
     transition: opacity var(--transition-speed-slow) ease;
     opacity: 0;
@@ -586,6 +586,9 @@ h1, h2, h3, h4, h5, h6, button {
   .grid {
     grid-template-columns: repeat(1, 1fr);
     gap: 1rem;
+  }
+  .grid .image-section {
+    grid-row: 2/3;
   }
 }
 @media screen and (min-width: 760px) {
