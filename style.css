@@ -23,8 +23,8 @@
       var(--bg-color-darker-blue));
   --bg-gradient-button: linear-gradient(
       135deg,
-      var(--bg-color-purple),
       var(--bg-color-violet),
+      var(--bg-color-purple),
       var(--bg-color-pink),
       var(--bg-color-green),
       var(--bg-color-light-blue),
@@ -322,7 +322,7 @@ body {
     position: absolute;
     left: 0;
     top: 0;
-    background-image: radial-gradient(45vw circle at var(--mouse-x) var(--mouse-y), hsla(172deg, 100%, 50%, 0.2), transparent 40%);
+    background-image: radial-gradient(45vw circle at var(--mouse-x) var(--mouse-y), hsla(172deg, 100%, 70%, 0.2), transparent 40%);
     transition: opacity var(--transition-speed-slow) ease;
     opacity: 0;
     border-radius: inherit;
@@ -346,7 +346,7 @@ body {
     position: absolute;
     left: 0;
     top: 0;
-    background-image: radial-gradient(30vw circle at var(--mouse-x) var(--mouse-y), hsla(255deg, 100%, 100%, 0.2), transparent 40%);
+    background-image: radial-gradient(30vw circle at var(--mouse-x) var(--mouse-y), hsla(172deg, 100%, 70%, 0.2), transparent 40%);
     z-index: 2;
     transition: opacity var(--transition-speed-slow) ease;
     opacity: 0;
@@ -522,6 +522,34 @@ body {
   }
 }
 
+@media screen and (max-width: 760px) {
+  .faded-in-left,
+.faded-in-right {
+    transform: translateY(2rem);
+    opacity: 0;
+    transition: all var(--transition-speed-slow) var(--transition-speed-fast);
+  }
+  .faded-out {
+    opacity: 1;
+    transform: translateX(0rem);
+  }
+}
+@media screen and (min-width: 760px) {
+  .faded-in-left {
+    transform: translateX(-2rem);
+    opacity: 0;
+    transition: all var(--transition-speed-slow) var(--transition-speed-fast);
+  }
+  .faded-in-right {
+    transform: translateX(2rem);
+    opacity: 0;
+    transition: all var(--transition-speed-slow) var(--transition-speed-fast);
+  }
+  .faded-out {
+    opacity: 1;
+    transform: translateX(0rem);
+  }
+}
 /* Utility classes */
 ul {
   list-style: none;
