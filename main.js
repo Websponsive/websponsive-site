@@ -1,4 +1,31 @@
-const observer = new IntersectionObserver((elements) => {
+const navOptions = {
+    rootMargin: "-300px 0px 0px 0px"
+}
+const contentOptions = {
+    rootMargin: "-150px 0px -150px 0px"
+}
+
+//Navbar animations
+
+const navbar = document.querySelector('.navbar');
+const introSection = document.querySelector('.intro');
+
+const navObserver = new IntersectionObserver((elements) => {
+    elements.forEach((element) => {
+        if(!element.isIntersecting){
+            navbar.classList.add('nav-scrolled');
+            navbar.style.animationDelay = "0s";
+        } else {
+            navbar.classList.remove('nav-scrolled');
+        }
+    });
+}, navOptions);
+
+navObserver.observe(introSection);
+
+//Fade in animations for content
+
+const contentObserver = new IntersectionObserver((elements) => {
     elements.forEach((element) => {
         if(element.isIntersecting){
             element.target.classList.add('faded-out');
@@ -6,18 +33,20 @@ const observer = new IntersectionObserver((elements) => {
             element.target.classList.remove('faded-out');
         }
     });
-});
+}, contentOptions);
 
 const hiddenToLeftElements = document.querySelectorAll('.faded-in-left');
 const hiddenToRightElements = document.querySelectorAll('.faded-in-right');
 
 hiddenToLeftElements.forEach((element) => {
-    observer.observe(element);
+    contentObserver.observe(element);
 });
 hiddenToRightElements.forEach((element) => {
-    observer.observe(element);
+    contentObserver.observe(element);
 });
 
+
+//Card background glow effect
 
 for(const benefit of document.querySelectorAll(".benefit")) {
     benefit.onmousemove = w => handleMouseMovement(w);
