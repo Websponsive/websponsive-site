@@ -146,7 +146,7 @@ body{
         width: 100%;
     }
     .navbar-logo{
-        height: 60%;
+        height: 50%;
     }
 }
 @media screen and (min-width: 760px){
@@ -272,7 +272,7 @@ body{
                 aspect-ratio: 3/2;
                 border-radius: 1rem;
                 position: relative;
-                cursor: pointer;
+                // cursor: pointer;
                 // --mouse-x: 0px;
                 // --mouse-y: 0px;
                 display: grid;
