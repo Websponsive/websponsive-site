@@ -146,7 +146,7 @@ body{
         width: 100%;
     }
     .navbar-logo{
-        height: 50%;
+        width: 5rem;
     }
 }
 @media screen and (min-width: 760px){
@@ -154,7 +154,7 @@ body{
         width: 60%;
     }
     .navbar-logo{
-        height: 80%;
+        width: 8rem;
     }
 }
 
@@ -250,7 +250,7 @@ body{
 
 /* Content styles */
 #content{
-    #code,
+    #seo,
     #security,
     #benefits{
         background-color: var(--bg-color-dark-blue);
@@ -261,6 +261,7 @@ body{
         .benefits-header{
             justify-self: center;
             margin-bottom: 3rem;
+            text-align: center;
         }
         .cards{
             display: grid;
@@ -276,7 +277,7 @@ body{
                 // --mouse-x: 0px;
                 // --mouse-y: 0px;
                 display: grid;
-                place-items: center;
+                justify-items: center;
                 align-items: center;
                 .icon{
                     stroke: var(--f-color-less-light);
@@ -286,7 +287,7 @@ body{
                 &:hover::before{
                     opacity: 1;
                 }
-                .paragraph{
+                .title{
                     text-align: center;
                 }
             }
@@ -294,13 +295,15 @@ body{
     }
     @media screen and (max-width: 560px){
         #benefits{
-            padding: 10rem 1.5rem 12rem 1.5rem;
+            padding: 10rem 1.5rem 6rem 1.5rem;
             .cards{
                 grid-template-columns: repeat(1, 1fr);
                 gap: 1rem;
                 .benefit{
+                    grid-template-rows: 1fr 1fr;
+                    padding: 0.5rem;
                     .icon{
-                        width: 2.5rem;
+                        width: 3.5rem;
                     }
                 }
             }
@@ -349,8 +352,9 @@ body{
             padding-top: 35rem;
             .cards{
                 grid-template-columns: repeat(3, 1fr);
-                gap: 2rem;
+                gap: 1.5rem;
                 .benefit{
+                    aspect-ratio: 1/1;
                     .icon{
                         width: 3rem;
                     }
@@ -379,27 +383,126 @@ body{
     // Footer styles
     footer{
         background-color: var(--bg-color-darker-blue);
+        display: grid;
+
         // min-height: 300px;
 
         .footer-section{
             display: grid;
             justify-items: center;
+            // align-items: center;
+            place-content: center;
             gap: 1rem;
             .footer-button{
                 padding: 0.5rem;
+                height: 3rem;
                 width: 10rem;
+                // justify-self: center;
+            }
+            .footer-image{
+                aspect-ratio: 1/1;
+                object-fit: cover;
+                border-radius: 50%;
+                box-shadow: 0 0 0 1rem hsla(226, 74%, 30%, 0.5),
+                0 0 0 2rem hsla(209, 56%, 50%, 0.25);
+            }
+            
+            &.contacts{
+                .footer-social-list{
+                    display: flex;
+                    gap: 1rem;
+                    .footer-social-link{
+                        .footer-social-icon{
+                            stroke: var(--f-color-less-light);
+                            border: 3px solid var(--f-color-gray);
+                            border-radius: 50%;
+                            padding: 0.25rem;
+                            // height: 3rem;
+                            // aspect-ratio: 1/1
+                            transition: all var(--transition-speed-fast) ease-in-out;
+                        }
+                        &:hover{
+                            .footer-social-icon{
+                                background-color: var(--f-color-less-light);
+                                stroke: var(--f-color-dark);
+                                border: 3px solid var(--f-color-less-light);
+                            }
+                        }
+                    }
+                }
             }
         }
     }
 
     @media screen and (max-width: 760px){
-        
+        footer{
+            padding: 6rem 1rem 1rem 1rem;
+            gap: 5rem;
+            .footer-section{
+                .footer-image{
+                    width: 80%;
+                }
+                .footer-logo{
+                    width: 5rem;
+                }
+
+                &.contacts{
+                    grid-template-columns: 2fr 3fr;
+                    .footer-logo{
+                        justify-self: center;
+                    }
+                    .footer-social-list{
+                        grid-column: 2/3;
+                        grid-row: 1/2;
+                        justify-self: center;
+                    }
+                    .small-text{
+                        grid-column: span 2;
+                        justify-self: center;
+                        align-self: end;
+                        border-top: var(--f-color-gray) 1px solid;
+                        padding-top: 1rem;
+                        width: 85%;
+                        text-align: center;
+                    }
+                }
+            }
+        }
     }
     @media screen and (min-width: 760px){
-        
+        footer{
+            gap: 5rem;
+            padding: 8rem 2rem 2rem 2rem;
+            .footer-section{
+                .footer-image{
+                    width: 50%;
+                }
+                .footer-logo{
+                    width: 8rem;
+                }
+
+                &.contacts{
+                    grid-template-columns: 1fr 3fr 1fr;
+                    align-items: center;
+                    .small-text{
+                        justify-self: center;
+                    }
+                }
+            }
+        }
     }
     @media screen and (min-width: 1300px){
-        
+        footer{
+            grid-template-columns: 1fr 1fr;
+            .footer-section{
+                .footer-image{
+                    width: 65%;
+                }
+                &.contacts{
+                    grid-column: span 2;
+                }
+            }
+        }
     }
     // Separator svg styles
     .wave {
@@ -419,7 +522,7 @@ body{
         }
 
         &-intro .shape-fill,
-        &-code .shape-fill,
+        &-seo .shape-fill,
         &-security .shape-fill{
             fill: var(--f-color-light);
         }
