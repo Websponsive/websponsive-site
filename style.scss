@@ -316,6 +316,7 @@ body{
                 grid-template-columns: repeat(2, 1fr);
                 gap: 1rem;
                 .benefit{
+                    aspect-ratio: 1/1;
                     padding: 1rem;
                     .icon{
                         width: 3rem;
@@ -355,8 +356,9 @@ body{
                 gap: 1.5rem;
                 .benefit{
                     aspect-ratio: 1/1;
+                    grid-template-rows: 2fr 3fr;
                     .icon{
-                        width: 3rem;
+                        width: 5rem;
                     }
                     &::before{
                         content: '';

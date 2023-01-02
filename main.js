@@ -5,7 +5,7 @@ const contentOptions = {
     rootMargin: "-150px 0px -150px 0px"
 }
 
-//Navbar animations
+//Navbar fade-in animations
 
 const navbar = document.querySelector('.navbar');
 const introSection = document.querySelector('.intro');
@@ -23,7 +23,7 @@ const navObserver = new IntersectionObserver((elements) => {
 
 navObserver.observe(introSection);
 
-//Fade in animations for content
+//Fade-in animations for content
 
 const contentObserver = new IntersectionObserver((elements) => {
     elements.forEach((element) => {

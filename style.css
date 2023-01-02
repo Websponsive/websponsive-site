@@ -340,6 +340,7 @@ body {
     gap: 1rem;
   }
   #content #benefits .cards .benefit {
+    aspect-ratio: 1/1;
     padding: 1rem;
   }
   #content #benefits .cards .benefit .icon {
@@ -371,9 +372,10 @@ body {
   }
   #content #benefits .cards .benefit {
     aspect-ratio: 1/1;
+    grid-template-rows: 2fr 3fr;
   }
   #content #benefits .cards .benefit .icon {
-    width: 3rem;
+    width: 5rem;
   }
   #content #benefits .cards .benefit::before {
     content: "";
