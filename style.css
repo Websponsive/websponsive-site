@@ -7,20 +7,18 @@
 
 :root {
   font-size: 20px;
+  --f-family-josefin:"Josefin Sans", sans-serif;
+  --f-family-ubuntu: "Ubuntu", sans-serif;
   --bg-color-green: hsl(155, 82%, 59%);
-  --bg-color-darker-blue: hsl(226, 61%, 12%);
+  --bg-color-darker-blue: hsl(226, 61%, 14%);
   --bg-color-dark-blue: hsl(226, 61%, 17%);
+  --bg-color-less-dark-blue: hsl(226, 61%, 20%);
   --bg-color-darkish-blue: hsl(226, 61%, 25%);
   --bg-color-lighter-blue: hsl(226, 74%, 30%);
   --bg-color-light-blue: hsl(209, 56%, 50%);
   --bg-color-purple: hsl(282, 68%, 38%);
   --bg-color-violet: hsl(262, 52%, 47%);
   --bg-color-pink: hsl(340, 82%, 76%);
-  --bg-gradient-blue: radial-gradient(
-      circle at 20% 100%,
-      var(--bg-color-lighter-blue) 15%,
-      var(--bg-color-dark-blue) 60%,
-      var(--bg-color-darker-blue));
   --bg-gradient-button: linear-gradient(
       135deg,
       var(--bg-color-violet),
@@ -48,8 +46,6 @@
   --f-color-gradient-gray: linear-gradient(
       var(--f-color-less-light),
       var(--f-color-gray));
-  --f-family-josefin:"Josefin Sans", sans-serif;
-  --f-family-ubuntu: "Ubuntu", sans-serif;
   --f-size-xxl: calc(2rem + 1.5vw);
   --f-size-header: calc(1.75rem + 1vw);
   --f-size-small-header: calc(1.25rem + 1vw);
@@ -168,7 +164,7 @@ body {
 }
 /* Intro Page Styles */
 .intro {
-  background-image: var(--bg-gradient-blue);
+  background: radial-gradient(circle at 10% 100%, var(--bg-color-lighter-blue) 5%, var(--bg-color-darkish-blue) 20%, var(--bg-color-less-dark-blue) 40%, transparent 70%), radial-gradient(circle at 0% 0%, var(--bg-color-lighter-blue) 5%, var(--bg-color-darkish-blue) 20%, var(--bg-color-less-dark-blue) 40%, transparent 70%), radial-gradient(circle at 100% 40%, var(--bg-color-lighter-blue) 0%, var(--bg-color-darkish-blue) 25%, var(--bg-color-less-dark-blue) 45%, transparent 75%);
   display: grid;
   place-items: center;
 }
@@ -314,6 +310,7 @@ body {
 }
 #content #benefits .cards .benefit .title {
   text-align: center;
+  align-self: center;
 }
 @media screen and (max-width: 560px) {
   #content #benefits {
@@ -326,6 +323,7 @@ body {
   #content #benefits .cards .benefit {
     grid-template-rows: 1fr 1fr;
     padding: 0.5rem;
+    aspect-ratio: 1/1;
   }
   #content #benefits .cards .benefit .icon {
     width: 3.5rem;
@@ -344,7 +342,7 @@ body {
     padding: 1rem;
   }
   #content #benefits .cards .benefit .icon {
-    width: 3rem;
+    width: 10vw;
   }
   #content #benefits .cards .benefit::before {
     content: "";
@@ -375,7 +373,7 @@ body {
     grid-template-rows: 2fr 3fr;
   }
   #content #benefits .cards .benefit .icon {
-    width: 5rem;
+    width: 4rem;
   }
   #content #benefits .cards .benefit::before {
     content: "";
@@ -690,29 +688,29 @@ body {
 @media screen and (max-width: 760px) {
   .faded-in-left,
 .faded-in-right {
-    transform: translateY(2rem);
+    transform: translateY(2rem) scale(0.9);
     opacity: 0;
     transition: all var(--transition-speed-slow);
   }
   .faded-out {
     opacity: 1;
-    transform: translateX(0rem);
+    transform: translateX(0rem) scale(1);
   }
 }
 @media screen and (min-width: 760px) {
   .faded-in-left {
-    transform: translateX(-2rem);
+    transform: translateX(-2rem) scale(0.9);
     opacity: 0;
     transition: all var(--transition-speed-slow);
   }
   .faded-in-right {
-    transform: translateX(2rem);
+    transform: translateX(2rem) scale(0.9);
     opacity: 0;
     transition: all var(--transition-speed-slow);
   }
   .faded-out {
     opacity: 1;
-    transform: translateX(0rem);
+    transform: translateX(0rem) scale(1);
   }
 }
 /* Utility classes */
@@ -720,14 +718,6 @@ ul {
   list-style: none;
   padding: 0;
   margin: 0;
-}
-
-a, p {
-  font-family: var(--f-family-josefin);
-}
-
-h1, h2, h3, h4, h5, h6, button {
-  font-family: var(--f-family-ubuntu);
 }
 
 .xxl {
@@ -782,7 +772,7 @@ h1, h2, h3, h4, h5, h6, button {
 @media screen and (max-width: 760px) {
   .grid {
     grid-template-columns: repeat(1, 1fr);
-    gap: 1rem;
+    gap: 2rem;
   }
   .grid .image-section {
     grid-row: 2/3;
