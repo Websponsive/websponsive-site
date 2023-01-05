@@ -5,11 +5,22 @@
   margin: 0;
 }
 
+::-moz-selection {
+  background-color: var(--bg-color-pine-green);
+  color: var(--f-color-light);
+}
+
+::selection {
+  background-color: var(--bg-color-pine-green);
+  color: var(--f-color-light);
+}
+
 :root {
   font-size: 20px;
   --f-family-josefin:"Josefin Sans", sans-serif;
   --f-family-ubuntu: "Ubuntu", sans-serif;
   --bg-color-green: hsl(155, 82%, 59%);
+  --bg-color-pine-green: hsl(175, 98%, 30%);
   --bg-color-darker-blue: hsl(226, 61%, 14%);
   --bg-color-dark-blue: hsl(226, 61%, 17%);
   --bg-color-less-dark-blue: hsl(226, 61%, 20%);
@@ -54,7 +65,7 @@
   --f-size-small: calc(0.5rem + 0.5vw);
   --transition-speed-fast: 250ms;
   --transition-speed-slow: 500ms;
-  --phone-break-point: 760px;
+  --phone-break-point: 560px;
   --computer-break-point: 1300px;
 }
 
@@ -130,7 +141,7 @@ body {
   --background: hsla(226, 61%, 17%, 0.85);
 }
 
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 560px) {
   .navbar-list {
     width: 100%;
   }
@@ -138,7 +149,7 @@ body {
     width: 5rem;
   }
 }
-@media screen and (min-width: 760px) {
+@media screen and (min-width: 560px) {
   .navbar-list {
     width: 60%;
   }
@@ -164,7 +175,7 @@ body {
 }
 /* Intro Page Styles */
 .intro {
-  background: radial-gradient(circle at 10% 100%, var(--bg-color-lighter-blue) 5%, var(--bg-color-darkish-blue) 20%, var(--bg-color-less-dark-blue) 40%, transparent 70%), radial-gradient(circle at 0% 0%, var(--bg-color-lighter-blue) 5%, var(--bg-color-darkish-blue) 20%, var(--bg-color-less-dark-blue) 40%, transparent 70%), radial-gradient(circle at 100% 40%, var(--bg-color-lighter-blue) 0%, var(--bg-color-darkish-blue) 25%, var(--bg-color-less-dark-blue) 45%, transparent 75%);
+  background: radial-gradient(circle at 10% 100%, var(--bg-color-lighter-blue) 5%, var(--bg-color-darkish-blue) 20%, var(--bg-color-less-dark-blue) 40%, transparent 70%), radial-gradient(circle at 0% 0%, var(--bg-color-lighter-blue) 5%, var(--bg-color-darkish-blue) 20%, var(--bg-color-less-dark-blue) 40%, transparent 70%), radial-gradient(circle at 100% 40%, var(--bg-color-lighter-blue) 0%, var(--bg-color-darkish-blue) 25%, var(--bg-color-less-dark-blue) 50%, transparent 75%);
   display: grid;
   place-items: center;
 }
@@ -314,7 +325,7 @@ body {
 }
 @media screen and (max-width: 560px) {
   #content #benefits {
-    padding: 10rem 1.5rem 6rem 1.5rem;
+    padding: 10rem 1.5rem 1.5rem 1.5rem;
   }
   #content #benefits .cards {
     grid-template-columns: repeat(1, 1fr);
@@ -328,10 +339,14 @@ body {
   #content #benefits .cards .benefit .icon {
     width: 3.5rem;
   }
+  #content #benefits .cards .footnote {
+    margin-top: 3rem;
+  }
 }
 @media screen and (min-width: 560px) {
   #content #benefits {
     padding-top: 20rem;
+    padding-bottom: 2rem;
   }
   #content #benefits .cards {
     grid-template-columns: repeat(2, 1fr);
@@ -359,10 +374,15 @@ body {
   #content #benefits .cards .benefit:hover .icon {
     transform: scale(1.2);
   }
+  #content #benefits .cards .footnote {
+    margin-top: 5rem;
+    grid-column: span 2;
+  }
 }
 @media screen and (min-width: 1300px) {
   #content #benefits {
     padding-top: 35rem;
+    padding-bottom: 4rem;
   }
   #content #benefits .cards {
     grid-template-columns: repeat(3, 1fr);
@@ -387,6 +407,10 @@ body {
     transition: opacity var(--transition-speed-slow) ease;
     opacity: 0;
     border-radius: inherit;
+  }
+  #content #benefits .cards .footnote {
+    margin-top: 7rem;
+    grid-column: span 3;
   }
 }
 #content footer {
@@ -427,7 +451,7 @@ body {
   stroke: var(--f-color-dark);
   border: 3px solid var(--f-color-less-light);
 }
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 560px) {
   #content footer {
     padding: 6rem 1rem 1rem 1rem;
     gap: 5rem;
@@ -459,7 +483,7 @@ body {
     text-align: center;
   }
 }
-@media screen and (min-width: 760px) {
+@media screen and (min-width: 560px) {
   #content footer {
     gap: 5rem;
     padding: 8rem 2rem 2rem 2rem;
@@ -545,7 +569,7 @@ body {
 #content .curve .shape-fill {
   fill: #111D46;
 }
-@media (max-width: 760px) {
+@media (max-width: 560px) {
   #content .wave svg, #content .opaque-wave svg {
     width: calc(110% + 1.3px);
     height: 100px;
@@ -613,20 +637,20 @@ body {
 #content .content-section {
   position: relative;
 }
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 560px) {
   #content .intro {
     height: calc(100vh + 100px);
     padding-bottom: 100px;
   }
   #content .content-section {
-    padding: 6rem 1rem 12rem 1rem;
+    padding: 8rem 1rem 13rem 1rem;
   }
   #content .section-image {
     width: 90%;
     justify-self: center;
   }
 }
-@media screen and (min-width: 760px) {
+@media screen and (min-width: 560px) {
   #content .intro {
     height: calc(100vh + 150px);
     padding-bottom: 150px;
@@ -685,7 +709,7 @@ body {
   }
 }
 
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 560px) {
   .faded-in-left,
 .faded-in-right {
     transform: translateY(2rem) scale(0.9);
@@ -697,7 +721,7 @@ body {
     transform: translateX(0rem) scale(1);
   }
 }
-@media screen and (min-width: 760px) {
+@media screen and (min-width: 560px) {
   .faded-in-left {
     transform: translateX(-2rem) scale(0.9);
     opacity: 0;
@@ -769,16 +793,17 @@ ul {
   gap: 0.5rem;
 }
 
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 560px) {
   .grid {
     grid-template-columns: repeat(1, 1fr);
     gap: 2rem;
   }
   .grid .image-section {
     grid-row: 2/3;
+    display: none;
   }
 }
-@media screen and (min-width: 760px) {
+@media screen and (min-width: 560px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;

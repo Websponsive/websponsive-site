@@ -5,6 +5,10 @@
     position: relative;
     padding: 0; margin: 0;
 }
+::selection{
+    background-color: var(--bg-color-pine-green);
+    color: var(--f-color-light);
+}
 :root{
     font-size: 20px;
 
@@ -12,6 +16,7 @@
     --f-family-ubuntu: 'Ubuntu', sans-serif;
     
     --bg-color-green: hsl(155, 82%, 59%);
+    --bg-color-pine-green: hsl(175, 98%, 30%);
     --bg-color-darker-blue: hsl(226, 61%, 14%);
     --bg-color-dark-blue: hsl(226, 61%, 17%);
     --bg-color-less-dark-blue: hsl(226, 61%, 20%);
@@ -63,7 +68,7 @@
     --transition-speed-fast: 250ms;
     --transition-speed-slow: 500ms;
 
-    --phone-break-point: 760px;
+    --phone-break-point: 560px;
     --computer-break-point: 1300px;
 }
 html, body {
@@ -138,7 +143,7 @@ body{
 .nav-scrolled{
     --background: hsla(226, 61%, 17%, 0.85);
 }
-@media screen and (max-width: 760px){
+@media screen and (max-width: 560px){
     .navbar-list{
         width: 100%;
     }
@@ -146,7 +151,7 @@ body{
         width: 5rem;
     }
 }
-@media screen and (min-width: 760px){
+@media screen and (min-width: 560px){
     .navbar-list{
         width: 60%;
     }
@@ -179,7 +184,7 @@ body{
         circle at 100% 40%, 
         var(--bg-color-lighter-blue) 0%,
         var(--bg-color-darkish-blue) 25%,
-        var(--bg-color-less-dark-blue) 45%, 
+        var(--bg-color-less-dark-blue) 50%, 
         transparent 75%
     );
     display: grid;
@@ -311,7 +316,7 @@ body{
     }
     @media screen and (max-width: 560px){
         #benefits{
-            padding: 10rem 1.5rem 6rem 1.5rem;
+            padding: 10rem 1.5rem 1.5rem 1.5rem;
             .cards{
                 grid-template-columns: repeat(1, 1fr);
                 gap: 1rem;
@@ -323,12 +328,17 @@ body{
                         width: 3.5rem;
                     }
                 }
+                .footnote{
+                    margin-top: 3rem;
+                    // grid-column: span 2;
+                }
             }
         }
     }
     @media screen and (min-width: 560px){
         #benefits{
             padding-top: 20rem;
+            padding-bottom: 2rem;
             .cards{
                 grid-template-columns: repeat(2, 1fr);
                 gap: 1rem;
@@ -363,12 +373,17 @@ body{
                         }
                     }
                 }
+                .footnote{
+                    margin-top: 5rem;
+                    grid-column: span 2;
+                }
             }
         }
     }
     @media screen and (min-width: 1300px) {
         #benefits{
             padding-top: 35rem;
+            padding-bottom: 4rem;
             .cards{
                 grid-template-columns: repeat(3, 1fr);
                 gap: 1.5rem;
@@ -395,6 +410,10 @@ body{
                         opacity: 0;
                         border-radius: inherit;
                     }
+                }
+                .footnote{
+                    margin-top: 7rem;
+                    grid-column: span 3;
                 }
             }
         }
@@ -454,7 +473,7 @@ body{
         }
     }
 
-    @media screen and (max-width: 760px){
+    @media screen and (max-width: 560px){
         footer{
             padding: 6rem 1rem 1rem 1rem;
             gap: 5rem;
@@ -489,7 +508,7 @@ body{
             }
         }
     }
-    @media screen and (min-width: 760px){
+    @media screen and (min-width: 560px){
         footer{
             gap: 5rem;
             padding: 8rem 2rem 2rem 2rem;
@@ -590,7 +609,7 @@ body{
     
     
 
-    @media (max-width: 760px) {
+    @media (max-width: 560px) {
         .wave, .opaque-wave{
             svg{
                 width: calc(110% + 1.3px);
@@ -668,20 +687,20 @@ body{
     .content-section{
         position: relative;
     }
-    @media screen and (max-width: 760px){
+    @media screen and (max-width: 560px){
         .intro{
             height: calc(100vh + 100px);
             padding-bottom: 100px;
         }
         .content-section{
-            padding: 6rem 1rem 12rem 1rem;
+            padding: 8rem 1rem 13rem 1rem;
         }
         .section-image{
             width: 90%;
             justify-self: center;
         }
     }
-    @media screen and (min-width: 760px){
+    @media screen and (min-width: 560px){
         
         .intro{
             height: calc(100vh + 150px);
@@ -748,7 +767,7 @@ body{
 }
 
 // On-scroll animations styles
-@media screen and (max-width: 760px){
+@media screen and (max-width: 560px){
     .faded-in-left,
     .faded-in-right{
         transform: translateY(2rem) scale(0.9);
@@ -760,7 +779,7 @@ body{
         transform: translateX(0rem) scale(1);
     }
 }
-@media screen and (min-width: 760px){
+@media screen and (min-width: 560px){
     .faded-in-left{
         transform: translateX(-2rem) scale(0.9);
         opacity: 0;
@@ -824,16 +843,17 @@ ul{
     display: grid;
     gap: 0.5rem;
 }
-@media screen and (max-width: 760px){
+@media screen and (max-width: 560px){
     .grid{
         grid-template-columns: repeat(1, 1fr);
         gap: 2rem;
         .image-section{
             grid-row: 2/3;
+            display: none;
         }
     }
 }
-@media screen and (min-width: 760px) {
+@media screen and (min-width: 560px) {
     .grid{
         grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
