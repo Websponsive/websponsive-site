@@ -159,7 +159,7 @@ body {
   }
   .navbar .navbar-logo {
     height: 2.5rem;
-    margin: 1.25rem 0 1.25rem 0.5rem;
+    margin: 0.75rem 0 0.75rem 0.5rem;
     justify-self: start;
   }
   .navbar .nav-menu-button {
@@ -201,7 +201,7 @@ body {
     transition: opacity var(--transition-speed-slow) ease-in-out var(--transition-speed-fast), max-height var(--transition-speed-slow) ease-in-out;
   }
 }
-@media screen and (min-width: 560px) {
+@media screen and (min-width: 561px) {
   .navbar {
     display: flex;
     height: 5rem;
@@ -403,7 +403,7 @@ body {
     margin-top: 3rem;
   }
 }
-@media screen and (min-width: 560px) {
+@media screen and (min-width: 561px) {
   #content #benefits {
     padding-top: 20rem;
     padding-bottom: 2rem;
@@ -543,7 +543,7 @@ body {
     text-align: center;
   }
 }
-@media screen and (min-width: 560px) {
+@media screen and (min-width: 561px) {
   #content footer {
     gap: 5rem;
     padding: 8rem 2rem 2rem 2rem;
@@ -710,7 +710,7 @@ body {
     justify-self: center;
   }
 }
-@media screen and (min-width: 560px) {
+@media screen and (min-width: 561px) {
   #content .intro {
     height: calc(100vh + 150px);
     padding-bottom: 150px;
@@ -781,7 +781,7 @@ body {
     transform: translateX(0rem) scale(1);
   }
 }
-@media screen and (min-width: 560px) {
+@media screen and (min-width: 561px) {
   .faded-in-left {
     transform: translateX(-2rem) scale(0.9);
     opacity: 0;
@@ -863,7 +863,7 @@ ul {
     display: none;
   }
 }
-@media screen and (min-width: 560px) {
+@media screen and (min-width: 561px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
