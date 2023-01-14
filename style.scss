@@ -334,6 +334,52 @@ body{
 
 /* Content styles */
 #content{
+
+    .section-image{
+        border-radius: 1rem;
+    }
+    .content-section{
+        position: relative;
+    }
+    @media screen and (max-width: 560px){
+        .intro{
+            height: calc(100vh + 100px);
+            padding-bottom: 100px;
+        }
+        .content-section{
+            padding: 8rem 1rem 13rem 1rem;
+        }
+        .section-image{
+            width: 90%;
+            justify-self: center;
+        }
+    }
+    @media screen and (min-width: 561px){
+        
+        .intro{
+            height: calc(100vh + 150px);
+            padding-bottom: 150px;
+        }
+        .content-section{
+            padding: 8rem 2rem 18rem 2rem;
+        }
+        .section-image{
+            width: clamp(30vw, 90%, 45vw);
+            max-width: 500px;
+            justify-self: center;
+        }
+    }
+    @media screen and (min-width: 1300px) {
+        .intro{
+            height: calc(100vh + 200px);
+            padding-bottom: 200px;
+        }
+        .content-section{
+            padding: 10rem 4rem 22rem 4rem;
+        }
+    }
+
+    
     #seo,
     #security,
     #benefits{
@@ -742,50 +788,6 @@ body{
         }
         &::before{
             background-color: var(--f-color-light);
-        }
-    }
-
-    .section-image{
-        border-radius: 1rem;
-    }
-    .content-section{
-        position: relative;
-    }
-    @media screen and (max-width: 560px){
-        .intro{
-            height: calc(100vh + 100px);
-            padding-bottom: 100px;
-        }
-        .content-section{
-            padding: 8rem 1rem 13rem 1rem;
-        }
-        .section-image{
-            width: 90%;
-            justify-self: center;
-        }
-    }
-    @media screen and (min-width: 561px){
-        
-        .intro{
-            height: calc(100vh + 150px);
-            padding-bottom: 150px;
-        }
-        .content-section{
-            padding: 8rem 2rem 18rem 2rem;
-        }
-        .section-image{
-            width: clamp(30vw, 90%, 45vw);
-            max-width: 500px;
-            justify-self: center;
-        }
-    }
-    @media screen and (min-width: 1300px) {
-        .intro{
-            height: calc(100vh + 200px);
-            padding-bottom: 200px;
-        }
-        .content-section{
-            padding: 10rem 4rem 22rem 4rem;
         }
     }
 }

@@ -226,6 +226,24 @@ body {
     transform: translateY(0);
   }
 }
+#content .content-section {
+  position: relative;
+}
+@media screen and (max-width: 560px) {
+  #content .content-section {
+    padding: 8rem 1rem 13rem 1rem;
+  }
+}
+@media screen and (min-width: 561px) {
+  #content .content-section {
+    padding: 8rem 4rem 18rem 4rem;
+  }
+}
+@media screen and (min-width: 1300px) {
+  #content .content-section {
+    padding: 10rem 10rem 22rem 10rem;
+  }
+}
 .link {
   text-decoration: none;
   font-family: var(--f-family-josefin);
