@@ -13,7 +13,7 @@
     <title>Pricing</title>
 
     <style>
-        a, p{
+        a, p, li{
         font-family: var(--f-family-josefin);
         }
         h1, h2, h3, h4, h5, h6, button{
@@ -25,7 +25,7 @@
 <body>
     <nav class="navbar">
         <img src="https://res.cloudinary.com/dvrziwgxp/image/upload/v1665761117/Logo-removebg-short_mwxc1r.png" alt="the websponsive logo" draggable="false" class="navbar-logo">
-        <button class="nav-menu-button" aria-expanded="false">
+        <button class="menu-button" aria-expanded="false">
             <svg xmlns="http://www.w3.org/2000/svg" class="nav-icon pressed" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                 <line x1="4" y1="6" x2="20" y2="6" class="line1"/>
@@ -46,9 +46,134 @@
 
     <main id="content">
         <section class="content-section" id="description">
+            <div>
             <h2 class="small-header dark description-header">Building a site for your business</h2>
             <p class="paragraph gray description-paragraph">We at Websponsive specialize in crafting visually stunning and highly responsive websites. Our expert developers work closely with our clients to understand their specific needs and create the best solution that drives business success. Whether you're looking to revamp your existing website or build a new one, Websponsive has the skills and experience to deliver a website that will exceed expectations. Sign up today !</p>
+            </div>
         </section>
+        <section id="subscription-plans" class="content-section">
+
+            <!-- Essential plan -->
+            <article class="plan essential">
+                <h2 class="plan-title dark small-header">Essential</h2>
+                <h2 class="plan-price header dark">$150
+                    <span class="plan-month paragraph">/mo</span>
+                </h2>
+                <p class="gray plan-description paragraph">Only essential features included, ideal for small businesses with tight-budgets</p>
+                <ul class="plan-benefit-list">
+                    <li class="enabled-benefit gray paragraph">Unlimited revisions</li>
+                    <li class="enabled-benefit gray paragraph">Website hosting</li>
+                    <li class="enabled-benefit gray paragraph">Custom domain name</li>
+                    <li class="enabled-benefit gray paragraph">Blazing performance</li>
+                    <li class="enabled-benefit gray paragraph">Basic security, yearly patches</li>
+                    <li class="enabled-benefit gray paragraph">Basic theme</li>
+                    <li class="enabled-benefit gray paragraph">Basic on-page SEO</li>
+                    <li class="enabled-benefit gray paragraph">1-3 web pages</li>
+                    <li class="disabled-benefit gray paragraph">Typography</li>
+                    <li class="disabled-benefit gray paragraph">Back-end functionalities</li>
+                </ul>
+                <button class="plan-button button light paragraph">Choose plan</button>
+            </article>
+
+            <!-- Value plan -->
+            <article class="plan value">
+                <h2 class="plan-title dark small-header">Value</h2>
+                <h2 class="plan-price header dark">$250
+                    <span class="plan-month paragraph">/mo</span>
+                </h2>
+                <p class="gray plan-description paragraph">Best bang for the buck, ideal for those who want to elevate their online presence to the next level</p>
+                <ul class="plan-benefit-list">
+                    <li class="enabled-benefit gray paragraph">Unlimited revisions</li>
+                    <li class="enabled-benefit gray paragraph">Website hosting</li>
+                    <li class="enabled-benefit gray paragraph">Custom domain name</li>
+                    <li class="enabled-benefit gray paragraph">Blazing performance</li>
+                    <li class="enabled-benefit gray paragraph">Advanced security, bi-yearly patches</li>
+                    <li class="enabled-benefit gray paragraph">Premium theme</li>
+                    <li class="enabled-benefit gray paragraph">Advanced on-page and off-page SEO</li>
+                    <li class="enabled-benefit gray paragraph">1-6 web pages</li>
+                    <li class="enabled-benefit gray paragraph">Typography</li>
+                    <li class="enabled-benefit gray paragraph">Basic back-end functionalities</li>
+                </ul>
+                <button class="plan-button button light paragraph">Choose plan</button>
+            </article>
+
+            <!-- Premium plan -->
+            <article class="plan premium">
+                <h2 class="plan-title dark small-header">Premium</h2>
+                <h2 class="plan-price header dark">$350
+                    <span class="plan-month paragraph">/mo</span>
+                </h2>
+                <p class="gray plan-description paragraph">The best of what we can offer, ideal for enterprise-level businesses</p>
+                <ul class="plan-benefit-list">
+                    <li class="enabled-benefit gray paragraph">Unlimited revisions</li>
+                    <li class="enabled-benefit gray paragraph">Website hosting</li>
+                    <li class="enabled-benefit gray paragraph">Custom domain name</li>
+                    <li class="enabled-benefit gray paragraph">Blazing performance</li>
+                    <li class="enabled-benefit gray paragraph">Bulletproof security, quarterly patches</li>
+                    <li class="enabled-benefit gray paragraph">Premium theme</li>
+                    <li class="enabled-benefit gray paragraph">Advanced on-page, off-page and local SEO</li>
+                    <li class="enabled-benefit gray paragraph">As many web pages as needed</li>
+                    <li class="enabled-benefit gray paragraph">Typography</li>
+                    <li class="enabled-benefit gray paragraph">Advanced back-end functionalities</li>
+                </ul>
+                <button class="plan-button button light paragraph">Choose plan</button>
+            </article>
+        </section>
+
+
+        
+        <footer >
+            <div class="curve">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z" class="shape-fill"></path>
+                </svg>
+            </div>
+            <article class="footer-section">
+                <h2 class="small-header light">Ready to get started ?</h2>
+                <a href="#subscription-plans">
+                    <button class="footer-button button paragraph light">Sign Me Up</button>
+                </a>
+            </article>
+            <article class="footer-section">
+                <img class="footer-image" src="https://res.cloudinary.com/dvrziwgxp/image/upload/v1671964814/desk_wfpdpu.jpg" alt="">
+            </article>
+            <article class="footer-section contacts">
+                <img src="https://res.cloudinary.com/dvrziwgxp/image/upload/v1665761117/Logo-removebg-short_mwxc1r.png" alt="the websponsive logo" class="footer-logo" draggable="false">
+                <p class="gray small-text">2023 Websponsive. All Rights Reserved</p>
+                <ul class="footer-social-list">
+                    <li class="footer-social-link">
+                        <a href="" class="footer-social-link-anchor" aria-label="websponsive profile on instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="footer-social-icon" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <rect x="4" y="4" width="16" height="16" rx="4" />
+                                <circle cx="12" cy="12" r="3" />
+                                <line x1="16.5" y1="7.5" x2="16.5" y2="7.501" />
+                              </svg>
+                        </a>
+                    </li>
+                    <li class="footer-social-link">
+                        <a href="" class="footer-social-link-anchor" aria-label="websponsive profile on linkedin">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="footer-social-icon" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <rect x="4" y="4" width="16" height="16" rx="2" />
+                                <line x1="8" y1="11" x2="8" y2="16" />
+                                <line x1="8" y1="8" x2="8" y2="8.01" />
+                                <line x1="12" y1="16" x2="12" y2="11" />
+                                <path d="M16 16v-3a2 2 0 0 0 -4 0" />
+                              </svg>
+                        </a>
+                    </li>
+                    <li class="footer-social-link">
+                        <a href="" class="footer-social-link-anchor" aria-label="websponsive profile on twitter">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="footer-social-icon" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+                              </svg>
+                        </a>
+                    </li>
+                </ul>
+            </article>
+        </footer>
     </main>
 </body>
 </html>
