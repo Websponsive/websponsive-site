@@ -235,10 +235,19 @@ body {
   #content .content-section {
     padding: 8rem 1rem 4rem 1rem;
   }
+  #content .section-image {
+    width: 90%;
+    justify-self: center;
+  }
 }
 @media screen and (min-width: 561px) {
   #content .content-section {
-    padding: 8rem 4rem 4rem 4rem;
+    padding: 8rem 3rem 4rem 3rem;
+  }
+  #content .section-image {
+    width: clamp(30vw, 90%, 45vw);
+    max-width: 500px;
+    justify-self: center;
   }
 }
 @media screen and (min-width: 1300px) {
@@ -248,9 +257,6 @@ body {
 }
 #content #description {
   min-height: 100vh;
-  display: grid;
-  flex-direction: column;
-  place-content: center;
 }
 #content #description .description-header {
   text-align: left;
@@ -258,6 +264,10 @@ body {
 }
 #content #subscription-plans {
   display: grid;
+}
+#content #subscription-plans .plans-header {
+  text-align: center;
+  margin-bottom: 2rem;
 }
 #content #subscription-plans .plan {
   width: 100%;
@@ -293,7 +303,6 @@ body {
 }
 #content #subscription-plans .plan .plan-benefit-list li.enabled-benefit::marker {
   content: "✔";
-  margin-right: 4rem;
   color: green;
 }
 #content #subscription-plans .plan .plan-benefit-list li.disabled-benefit::marker {
@@ -355,6 +364,55 @@ body {
     background-position: -200% center;
   }
 }
+#content #add-ons {
+  display: grid;
+}
+#content #add-ons .add-ons-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+#content #add-ons .add-on {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  position: relative;
+  border-radius: 1rem;
+  background-color: var(--f-color-light);
+}
+#content #add-ons .add-on .add-on-title {
+  text-align: center;
+}
+#content #add-ons .add-on .add-on-price {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#content #add-ons .add-on .add-on-description {
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+#content #add-ons .add-on .add-on-button {
+  height: 3rem;
+  width: 75%;
+  margin-top: auto;
+  margin-inline: auto;
+}
+#content #add-ons .add-on::before {
+  content: "";
+  position: absolute;
+  width: calc(100% + 15px);
+  height: calc(100% + 15px);
+  border-radius: 1rem;
+  top: -7.5px;
+  left: -7.5px;
+  z-index: -1;
+  background-color: var(--bg-color-light-blue);
+}
 @media screen and (max-width: 760px) {
   #content #subscription-plans {
     grid-template-columns: repeat(1, 1fr);
@@ -363,19 +421,37 @@ body {
   #content #subscription-plans .plan-description {
     height: 75px;
   }
+  #content #add-ons {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+  }
 }
 @media screen and (min-width: 761px) {
   #content #subscription-plans {
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
   }
+  #content #subscription-plans .plans-header {
+    grid-column: span 3;
+  }
   #content #subscription-plans .plan-description {
     height: 150px;
+  }
+  #content #add-ons {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  #content #add-ons .add-ons-header {
+    grid-column: span 2;
   }
 }
 @media screen and (min-width: 1300px) {
   #content #subscription-plans {
     grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  #content #add-ons {
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
   }
 }
@@ -667,4 +743,30 @@ button {
 }
 .button:hover {
   background-position: 0% 0%;
+}
+
+.grid {
+  display: grid;
+}
+
+.half-section {
+  display: grid;
+  gap: 0.5rem;
+}
+
+@media screen and (max-width: 560px) {
+  .grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+  }
+  .grid .image-section {
+    grid-row: 2/3;
+  }
+}
+@media screen and (min-width: 561px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    align-items: center;
+  }
 }/*# sourceMappingURL=pricing.css.map */

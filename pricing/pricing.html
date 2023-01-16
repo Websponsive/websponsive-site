@@ -27,7 +27,7 @@
         <img src="https://res.cloudinary.com/dvrziwgxp/image/upload/v1665761117/Logo-removebg-short_mwxc1r.png" alt="the websponsive logo" draggable="false" class="navbar-logo">
         <button class="menu-button" aria-expanded="false">
             <svg xmlns="http://www.w3.org/2000/svg" class="nav-icon pressed" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path stroke="none" d="M0 0h34v24H0z" fill="none"/>
                 <line x1="4" y1="6" x2="20" y2="6" class="line1"/>
                 <line x1="4" y1="12" x2="20" y2="12" class="line2"/>
                 <line x1="4" y1="18" x2="20" y2="18" class="line3"/>
@@ -45,20 +45,24 @@
     </nav> 
 
     <main id="content">
-        <section class="content-section" id="description">
-            <div>
-            <h2 class="small-header dark description-header">Building a site for your business</h2>
-            <p class="paragraph gray description-paragraph">We at Websponsive specialize in crafting visually stunning and highly responsive websites. Our expert developers work closely with our clients to understand their specific needs and create the best solution that drives business success. Whether you're looking to revamp your existing website or build a new one, Websponsive has the skills and experience to deliver a website that will exceed expectations. Sign up today !</p>
+        <section class="content-section grid" id="description">
+            <div class="half-section">
+                <h2 class="small-header dark description-header">Building a site for your business</h2>
+                <p class="paragraph gray description-paragraph">We at Websponsive specialize in crafting visually stunning and highly responsive websites. Our expert developers work closely with our clients to understand their specific needs and create the best solution that drives business success. Whether you're looking to revamp your existing website or build a new one, Websponsive has the skills and experience to deliver a website that will exceed expectations. Sign up today ! <br><br>
+                Browse our available subscription plans below</p>
+            </div>
+            <div class="half-section image-section">
+                <img class="section-image" src="https://res.cloudinary.com/dvrziwgxp/image/upload/v1673808663/web-design_cgrvnz.webp" alt="">
             </div>
         </section>
         <section id="subscription-plans" class="content-section">
-
+            <h2 class="plans-header header dark">Plans:</h2>
             <!-- Essential plan -->
             <article class="plan essential">
-                <h2 class="plan-title dark small-header">Essential</h2>
-                <h2 class="plan-price header dark">$150
+                <h3 class="plan-title dark small-header">Essential</h3>
+                <h3 class="plan-price header dark">$129
                     <span class="plan-month paragraph">/mo</span>
-                </h2>
+                </h3>
                 <p class="gray plan-description paragraph">Only essential features included, ideal for small businesses with tight-budgets</p>
                 <ul class="plan-benefit-list">
                     <li class="enabled-benefit gray paragraph">Unlimited revisions</li>
@@ -77,10 +81,10 @@
 
             <!-- Value plan -->
             <article class="plan value">
-                <h2 class="plan-title dark small-header">Value</h2>
-                <h2 class="plan-price header dark">$250
+                <h3 class="plan-title dark small-header">Value</h3>
+                <h3 class="plan-price header dark">$249
                     <span class="plan-month paragraph">/mo</span>
-                </h2>
+                </h3>
                 <p class="gray plan-description paragraph">Best bang for the buck, ideal for those who want to elevate their online presence to the next level</p>
                 <ul class="plan-benefit-list">
                     <li class="enabled-benefit gray paragraph">Unlimited revisions</li>
@@ -99,10 +103,10 @@
 
             <!-- Premium plan -->
             <article class="plan premium">
-                <h2 class="plan-title dark small-header">Premium</h2>
-                <h2 class="plan-price header dark">$350
+                <h3 class="plan-title dark small-header">Premium</h3>
+                <h3 class="plan-price header dark">$499
                     <span class="plan-month paragraph">/mo</span>
-                </h2>
+                </h3>
                 <p class="gray plan-description paragraph">The best of what we can offer, ideal for enterprise-level businesses</p>
                 <ul class="plan-benefit-list">
                     <li class="enabled-benefit gray paragraph">Unlimited revisions</li>
@@ -120,7 +124,35 @@
             </article>
         </section>
 
+        <section id="add-ons" class="content-section">
+            <h2 class="add-ons-header dark header">Add-ons:</h2>
+            <article class="add-on">
+                <h3 class="add-on-title dark title">Add 3 web pages</h3>
+                <h3 class="add-on-price dark header">+$49
+                    <span class="add-on-month paragraph">/mo</span>
+                </h3>
+                <p class="add-on-description paragraph gray">Add 3 extra web pages on top of the allocated amount. The pages remain consistent with the overall design and will be fully maintained by us</p>
+                <button class="add-on-button button light paragraph">Add to cart</button>
+            </article>
 
+            <article class="add-on">
+                <h3 class="add-on-title dark title">Monthly analytics report</h3>
+                <h3 class="add-on-price dark header">+$29
+                    <span class="add-on-month paragraph">/mo</span>
+                </h3>
+                <p class="add-on-description paragraph gray">Receive a detailed report on your website's traffic and user behavior in your inbox every month</p>
+                <button class="add-on-button button light paragraph">Add to cart</button>
+            </article>
+            
+            <!-- <article class="add-on">
+                <h3 class="add-on-title dark title">Run Google Ads</h3>
+                <h3 class="add-on-price dark header">+$100
+                    <span class="add-on-month paragraph">/mo</span>
+                </h3>
+                <p class="add-on-description paragraph gray">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta accusamus, accusantium rem aperiam totam nam, nihil ducimus, eligendi eveniet praesentium incidunt cum nesciunt asperiores non.</p>
+                <button class="add-on-button button light paragraph">Choose plan</button>
+            </article> -->
+        </section>
         
         <footer >
             <div class="curve">
@@ -129,7 +161,7 @@
                 </svg>
             </div>
             <article class="footer-section">
-                <h2 class="small-header light">Ready to get started ?</h2>
+                <h3 class="small-header light">Ready to get started ?</h3>
                 <a href="#subscription-plans">
                     <button class="footer-button button paragraph light">Sign Me Up</button>
                 </a>
@@ -144,7 +176,7 @@
                     <li class="footer-social-link">
                         <a href="" class="footer-social-link-anchor" aria-label="websponsive profile on instagram">
                             <svg xmlns="http://www.w3.org/2000/svg" class="footer-social-icon" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path stroke="none" d="M0 0h34v24H0z" fill="none"/>
                                 <rect x="4" y="4" width="16" height="16" rx="4" />
                                 <circle cx="12" cy="12" r="3" />
                                 <line x1="16.5" y1="7.5" x2="16.5" y2="7.501" />
@@ -154,7 +186,7 @@
                     <li class="footer-social-link">
                         <a href="" class="footer-social-link-anchor" aria-label="websponsive profile on linkedin">
                             <svg xmlns="http://www.w3.org/2000/svg" class="footer-social-icon" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path stroke="none" d="M0 0h34v24H0z" fill="none"/>
                                 <rect x="4" y="4" width="16" height="16" rx="2" />
                                 <line x1="8" y1="11" x2="8" y2="16" />
                                 <line x1="8" y1="8" x2="8" y2="8.01" />
@@ -166,7 +198,7 @@
                     <li class="footer-social-link">
                         <a href="" class="footer-social-link-anchor" aria-label="websponsive profile on twitter">
                             <svg xmlns="http://www.w3.org/2000/svg" class="footer-social-icon" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path stroke="none" d="M0 0h34v24H0z" fill="none"/>
                                 <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
                               </svg>
                         </a>
