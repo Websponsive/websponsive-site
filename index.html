@@ -29,7 +29,16 @@
 <body>
     <nav class="navbar">
         <img src="https://res.cloudinary.com/dvrziwgxp/image/upload/v1665761117/Logo-removebg-short_mwxc1r.png" alt="the websponsive logo" draggable="false" class="navbar-logo">
-        <button class="nav-menu-button" aria-expanded="false">
+        <button id="cart-button" class="nav-button" aria-expanded="false">
+            <svg xmlns="http://www.w3.org/2000/svg" class="nav-icon" viewBox="0 0 24 24" stroke-width="1.25" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <circle cx="6" cy="19" r="2" />
+                <circle cx="17" cy="19" r="2" />
+                <path d="M17 17h-11v-14h-2" />
+                <path d="M6 5l14 1l-1 7h-13" />
+              </svg>
+        </button>
+        <button id="menu-button" class="nav-button" aria-expanded="false">
             <svg xmlns="http://www.w3.org/2000/svg" class="nav-icon pressed" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                 <line x1="4" y1="6" x2="20" y2="6" class="line1"/>
@@ -46,6 +55,9 @@
             <li class="navbar-list-item"><a href="" class="navbar-link dark-bg-link light">Contacts</a></li>
             <li class="navbar-list-item"><a href="" class="navbar-link dark-bg-link light">FAQ</a></li>
         </ul>
+        <div class="cart">
+            
+        </div>
     </nav> 
 
     <main id="content">

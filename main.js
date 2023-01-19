@@ -26,7 +26,7 @@ navObserver.observe(introSection);
 
 
 //Navbar collapse functionality
-const menuButton = document.querySelector('.nav-menu-button');
+const menuButton = document.querySelector('#menu-button');
 const navbarList = document.querySelector('.navbar-list'); 
 menuButton.addEventListener('click', () => {
     navbarList.classList.toggle('hidden');

@@ -25,7 +25,16 @@
 <body>
     <nav class="navbar">
         <img src="https://res.cloudinary.com/dvrziwgxp/image/upload/v1665761117/Logo-removebg-short_mwxc1r.png" alt="the websponsive logo" draggable="false" class="navbar-logo">
-        <button class="menu-button" aria-expanded="false">
+        <button id="cart-button" class="nav-button" aria-expanded="false">
+            <svg xmlns="http://www.w3.org/2000/svg" class="nav-icon" viewBox="0 0 24 24" stroke-width="1.25" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <circle cx="6" cy="19" r="2" />
+                <circle cx="17" cy="19" r="2" />
+                <path d="M17 17h-11v-14h-2" />
+                <path d="M6 5l14 1l-1 7h-13" />
+              </svg>
+        </button>
+        <button id="menu-button" class="nav-button" aria-expanded="false">
             <svg xmlns="http://www.w3.org/2000/svg" class="nav-icon pressed" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h34v24H0z" fill="none"/>
                 <line x1="4" y1="6" x2="20" y2="6" class="line1"/>
@@ -51,9 +60,9 @@
                 <p class="paragraph gray description-paragraph">We at Websponsive specialize in crafting visually stunning and highly responsive websites. Our expert developers work closely with our clients to understand their specific needs and create the best solution that drives business success. Whether you're looking to revamp your existing website or build a new one, Websponsive has the skills and experience to deliver a website that will exceed expectations. Sign up today ! <br><br>
                 Browse our available subscription plans below</p>
             </div>
-            <div class="half-section image-section">
+            <figure class="half-section image-section">
                 <img class="section-image" src="https://res.cloudinary.com/dvrziwgxp/image/upload/v1673808663/web-design_cgrvnz.webp" alt="">
-            </div>
+            </figure>
         </section>
         <section id="subscription-plans" class="content-section">
             <h2 class="plans-header header dark">Plans:</h2>
