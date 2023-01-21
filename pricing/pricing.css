@@ -63,7 +63,7 @@
   --f-size-small-header: calc(1.25rem + 1vw);
   --f-size-title: calc(1rem + 0.5vw);
   --f-size-paragraph: calc(0.75rem + 0.5vw);
-  --f-size-small: calc(0.5rem + 0.5vw);
+  --f-size-small: calc(0.6rem + 0.5vw);
   --transition-speed-fast: 250ms;
   --transition-speed-slow: 500ms;
   --phone-break-point: 560px;
@@ -157,6 +157,64 @@ body {
   transition: var(--transition-speed-slow);
   transform-origin: center;
 }
+.navbar .cart {
+  position: absolute;
+  margin: 0.5rem;
+  background-color: hsla(246deg, 9%, 85%, 0.85);
+  border-radius: 1rem;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+}
+.navbar .cart .cart-item {
+  width: 98%;
+  display: grid;
+  grid-template-columns: 3fr 2fr 2fr 2fr;
+  align-items: center;
+  background-color: var(--f-color-light);
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border-radius: 1rem;
+}
+.navbar .cart .cart-item .cart-plan-input,
+.navbar .cart .cart-item .cart-quantity-input {
+  width: 4.5rem;
+  aspect-ratio: 7/3;
+  text-align: center;
+  border-radius: 0.5rem;
+  border: 2px solid var(--bg-color-lighter-blue);
+  transition: all var(--transition-speed-fast) ease-in-out;
+}
+.navbar .cart .cart-item .cart-plan-input:hover, .navbar .cart .cart-item .cart-plan-input:focus,
+.navbar .cart .cart-item .cart-quantity-input:hover,
+.navbar .cart .cart-item .cart-quantity-input:focus {
+  border: 2px solid var(--bg-color-pine-green);
+  outline: none;
+}
+.navbar .cart .cart-item .cart-remove-button {
+  width: 4.5rem;
+  aspect-ratio: 7/3;
+  border-radius: 0.5rem;
+  background-color: red;
+  display: grid;
+  place-content: center;
+  transition: all var(--transition-speed-fast) ease-in-out;
+}
+.navbar .cart .cart-item .cart-remove-button:hover {
+  transform: translateY(-2px);
+}
+.navbar .cart-hidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-speed-fast) ease-in-out, max-height var(--transition-speed-slow) ease-in-out, visibility var(--transition-speed-slow);
+}
+.navbar .cart-visible {
+  opacity: 1;
+  transition: opacity var(--transition-speed-slow) ease-in-out, max-height var(--transition-speed-slow) ease-in-out;
+}
 
 @media screen and (max-width: 560px) {
   .navbar {
@@ -177,6 +235,17 @@ body {
   .navbar .navbar-list .navbar-list-item {
     margin: 0.5rem 1rem 1.5rem 1.5rem;
   }
+  .navbar .nav-hidden {
+    max-height: 0rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-speed-fast) ease-in-out, max-height var(--transition-speed-slow) ease-in-out, visibility var(--transition-speed-slow);
+  }
+  .navbar .nav-visible {
+    max-height: 320px;
+    opacity: 1;
+    transition: opacity var(--transition-speed-slow) ease-in-out var(--transition-speed-fast), max-height var(--transition-speed-slow) ease-in-out;
+  }
   .navbar .navbar-logo {
     height: 2.5rem;
     margin: 0.75rem 0 0.75rem 0.5rem;
@@ -190,16 +259,11 @@ body {
   .navbar .nav-button #menu-button {
     grid-column: 3/4;
   }
-  .navbar .hidden {
-    max-height: 0rem;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity var(--transition-speed-fast) ease-in-out, max-height var(--transition-speed-slow) ease-in-out, visibility var(--transition-speed-slow);
-  }
-  .navbar .visible {
-    max-height: 320px;
-    opacity: 1;
-    transition: opacity var(--transition-speed-slow) ease-in-out var(--transition-speed-fast), max-height var(--transition-speed-slow) ease-in-out;
+  .navbar .cart {
+    top: 4rem;
+    width: 95%;
+    justify-self: center;
+    padding: 0.75rem;
   }
 }
 @media screen and (min-width: 561px) {
@@ -221,6 +285,20 @@ body {
     margin-right: 1rem;
     order: 3;
     margin-left: auto;
+  }
+  .navbar .cart {
+    top: 5rem;
+    right: 0;
+    width: 75%;
+    padding: 1rem;
+  }
+}
+@media screen and (min-width: 1300px) {
+  .navbar .cart {
+    top: 5rem;
+    right: 0;
+    width: 50%;
+    padding: 1rem;
   }
 }
 @-webkit-keyframes navbar-pop {
