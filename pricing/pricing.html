@@ -48,40 +48,41 @@
             </li> -->
             <li class="navbar-list-item"><a href="../index.html" class="navbar-link dark-bg-link light">About</a></li>
             <li class="navbar-list-item"><a href="#" class="navbar-link dark-bg-link light">Pricing</a></li>
-            <li class="navbar-list-item"><a href="" class="navbar-link dark-bg-link light">Contacts</a></li>
+            <li class="navbar-list-item"><a href="../contacts/contacts.html" class="navbar-link dark-bg-link light">Contacts</a></li>
             <li class="navbar-list-item"><a href="" class="navbar-link dark-bg-link light">FAQ</a></li>
         </ul>
-
+ 
         <!-- Cart -->
         <div class="cart cart-hidden">
 
             <div class="cart-plan">
                 <h3 class="paragraph dark">Your selected plan:</h3>
-                <div class="cart-item">
-                    <p class="cart-plan-title small-text dark">Essential</p>
-                    <p class="cart-plan-price small-text dark">$129/mo</p>
+                <div class="cart-item plan-element">
+                    <p class="cart-plan-title paragraph dark">No plan selected</p>
+                    <p class="paragraph dark" style="white-space: nowrap;">$<span class="cart-plan-price">0</span>/mo
+                    </p>
                     <select name="plan" class="cart-plan-input">
-                        <option value="essential" selected>Essential</option>
+                        <option value="none" selected>None</option>
+                        <option value="essential">Essential</option>
                         <option value="value" >Value</option>
                         <option value="premium">Premium</option>
                     </select>
-                    <button class="cart-remove-button light small-text">Remove</button>
                 </div>
             </div>
 
             <div class="cart-add-ons">
                 <h3 class="paragraph dark">Your selected add-ons:</h3>
-                <div class="cart-item">
-                    <p class="cart-item-title small-text dark">3 extra pages</p>
-                    <p class="cart-item-price small-text dark">$39/mo</p>
-                    <input type="number" class="cart-quantity-input">
-                    <button class="cart-remove-button light small-text">Remove</button>
+                <div class="cart-item add-on-element">
+                    <p class="cart-item-title paragraph dark">3 extra pages</p>
+                    <p class="paragraph dark">$<span class="cart-item-price">39</span>/mo</p>
+                    <input type="number" class="cart-quantity-input" value="1">
+                    <button class="cart-remove-button light paragraph">Remove</button>
                 </div>
             </div>
 
             <div class="cart-end">
-                <h3 class="paragraph dark">Your total: &nbsp &nbsp 
-                    <span class="cart-total">$129/mo</span>
+                <h3 class="paragraph dark">Your total:&nbsp&nbsp 
+                    $<span class="cart-total">168</span>/mo
                 </h3>
             </div>
         </div>
@@ -119,7 +120,7 @@
                     <li class="disabled-benefit gray paragraph">Typography</li>
                     <li class="disabled-benefit gray paragraph">Back-end functionalities</li>
                 </ul>
-                <button class="plan-button button light paragraph">Choose plan</button>
+                <button class="plan-button essential-button button light paragraph">Choose plan</button>
             </article>
 
             <!-- Value plan -->
@@ -141,7 +142,7 @@
                     <li class="enabled-benefit gray paragraph">Typography</li>
                     <li class="enabled-benefit gray paragraph">Basic back-end functionalities</li>
                 </ul>
-                <button class="plan-button button light paragraph">Choose plan</button>
+                <button class="plan-button value-button button light paragraph">Choose plan</button>
             </article>
 
             <!-- Premium plan -->
@@ -163,7 +164,7 @@
                     <li class="enabled-benefit gray paragraph">Typography</li>
                     <li class="enabled-benefit gray paragraph">Advanced back-end functionalities</li>
                 </ul>
-                <button class="plan-button button light paragraph">Choose plan</button>
+                <button class="plan-button premium-button button light paragraph">Choose plan</button>
             </article>
         </section>
 

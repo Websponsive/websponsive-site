@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacts</title>
+    <link rel="stylesheet" href="contacts.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+
+    <script src="contacts.js" defer></script>
+    <style>
+        a, p{
+        font-family: var(--f-family-josefin);
+        }
+        h1, h2, h3, h4, h5, h6, button{
+            font-family: var(--f-family-ubuntu);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <img src="https://res.cloudinary.com/dvrziwgxp/image/upload/v1665761117/Logo-removebg-short_mwxc1r.png" alt="the websponsive logo" draggable="false" class="navbar-logo">
+        <button id="cart-button" class="nav-button" aria-expanded="false">
+            <svg xmlns="http://www.w3.org/2000/svg" class="nav-icon" viewBox="0 0 24 24" stroke-width="1.25" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <circle cx="6" cy="19" r="2" />
+                <circle cx="17" cy="19" r="2" />
+                <path d="M17 17h-11v-14h-2" />
+                <path d="M6 5l14 1l-1 7h-13" />
+              </svg>
+        </button>
+        <button id="menu-button" class="nav-button" aria-expanded="false">
+            <svg xmlns="http://www.w3.org/2000/svg" class="nav-icon pressed" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <line x1="4" y1="6" x2="20" y2="6" class="line1"/>
+                <line x1="4" y1="12" x2="20" y2="12" class="line2"/>
+                <line x1="4" y1="18" x2="20" y2="18" class="line3"/>
+            </svg>
+        </button>
+        <ul class="navbar-list hidden">
+            <!-- <li class="navbar-item">
+                <img id="navbar-logo" src="https://res.cloudinary.com/dvrziwgxp/image/upload/v1665761117/Logo-removebg-short_mwxc1r.png" alt="">
+            </li> -->
+            <li class="navbar-list-item"><a href="../index.html" class="navbar-link dark-bg-link light">About</a></li>
+            <li class="navbar-list-item"><a href="../pricing/pricing.html" class="navbar-link dark-bg-link light">Pricing</a></li>
+            <li class="navbar-list-item"><a href="#" class="navbar-link dark-bg-link light">Contacts</a></li>
+            <li class="navbar-list-item"><a href="" class="navbar-link dark-bg-link light">FAQ</a></li>
+        </ul>
+        <div class="cart">
+            
+        </div>
+    </nav>
+
+
+    <!-- Content -->
+    <main id="content">
+        
+    </main>
+    <footer >
+        <div class="curve">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z" class="shape-fill"></path>
+            </svg>
+        </div>
+        <article class="footer-section">
+            <h2 class="small-header light">Ready to get started ?</h2>
+            <button class="footer-button button paragraph light">Sign Me Up</button>
+        </article>
+        <article class="footer-section">
+            <img class="footer-image" src="https://res.cloudinary.com/dvrziwgxp/image/upload/v1671964814/desk_wfpdpu.jpg" alt="">
+        </article>
+        <article class="footer-section contacts">
+            <img src="https://res.cloudinary.com/dvrziwgxp/image/upload/v1665761117/Logo-removebg-short_mwxc1r.png" alt="the websponsive logo" class="footer-logo" draggable="false">
+            <p class="gray small-text">2023 Websponsive. All Rights Reserved</p>
+            <ul class="footer-social-list">
+                <li class="footer-social-link">
+                    <a href="" class="footer-social-link-anchor" aria-label="websponsive profile on instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="footer-social-icon" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <rect x="4" y="4" width="16" height="16" rx="4" />
+                            <circle cx="12" cy="12" r="3" />
+                            <line x1="16.5" y1="7.5" x2="16.5" y2="7.501" />
+                          </svg>
+                    </a>
+                </li>
+                <li class="footer-social-link">
+                    <a href="" class="footer-social-link-anchor" aria-label="websponsive profile on linkedin">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="footer-social-icon" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <rect x="4" y="4" width="16" height="16" rx="2" />
+                            <line x1="8" y1="11" x2="8" y2="16" />
+                            <line x1="8" y1="8" x2="8" y2="8.01" />
+                            <line x1="12" y1="16" x2="12" y2="11" />
+                            <path d="M16 16v-3a2 2 0 0 0 -4 0" />
+                          </svg>
+                    </a>
+                </li>
+                <li class="footer-social-link">
+                    <a href="" class="footer-social-link-anchor" aria-label="websponsive profile on twitter">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="footer-social-icon" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+                          </svg>
+                    </a>
+                </li>
+            </ul>
+        </article>
+    </footer>
+</body>
+</html>

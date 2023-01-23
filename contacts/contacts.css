@@ -1,4 +1,3 @@
-@charset "UTF-8";
 *, *::before, *::after {
   box-sizing: border-box;
   position: relative;
@@ -63,10 +62,9 @@
   --f-size-small-header: calc(1.25rem + 1vw);
   --f-size-title: calc(1rem + 0.5vw);
   --f-size-paragraph: calc(0.75rem + 0.5vw);
-  --f-size-small: calc(0.6rem + 0.5vw);
+  --f-size-small: calc(0.5rem + 0.5vw);
   --transition-speed-fast: 250ms;
   --transition-speed-slow: 500ms;
-  --transition-speed-slowest: 750ms;
   --phone-break-point: 560px;
   --computer-break-point: 1300px;
 }
@@ -75,13 +73,13 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
-  scroll-behavior: smooth;
 }
 
 body {
   background-color: var(--f-color-light);
 }
 
+/* Navbar Styles */
 .navbar {
   --background: hsla(226, 61%, 17%, 0.85);
   align-items: center;
@@ -166,13 +164,15 @@ body {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-items: center;
 }
 .navbar .cart .cart-item {
   width: 100%;
   display: grid;
+  grid-template-columns: 3fr 2fr 2fr 2fr;
+  align-items: center;
   background-color: var(--f-color-light);
   padding: 0.75rem;
   margin: 0.5rem 0;
@@ -191,9 +191,6 @@ body {
 .navbar .cart .cart-item .cart-quantity-input:focus {
   border: 2px solid var(--bg-color-pine-green);
   outline: none;
-}
-.navbar .cart .cart-item .cart-plan-input {
-  grid-column: span 2;
 }
 .navbar .cart .cart-item .cart-remove-button {
   border-radius: 0.5rem;
@@ -217,7 +214,7 @@ body {
   transform: translateX(0);
 }
 
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 560px) {
   .navbar {
     display: grid;
     grid-template-columns: 5fr 1fr 1fr;
@@ -266,23 +263,17 @@ body {
     justify-self: center;
     padding: 0.5rem;
   }
-  .navbar .cart .cart-item {
-    grid-template-columns: 1fr 1fr;
-    gap: 0.5rem;
-    align-items: center;
-    justify-items: left;
-  }
-  .navbar .cart .cart-item .cart-plan-input,
-.navbar .cart .cart-item .cart-quantity-input {
-    width: 4.5rem;
+  .navbar .cart .cart-plan-input,
+.navbar .cart .cart-quantity-input {
+    width: 4rem;
     aspect-ratio: 7/3;
   }
-  .navbar .cart .cart-item .cart-remove-button {
-    width: 4.5rem;
-    aspect-ratio: 7/3;
+  .navbar .cart .cart-remove-button {
+    aspect-ratio: 3/2;
+    width: 3rem;
   }
 }
-@media screen and (min-width: 761px) {
+@media screen and (min-width: 561px) {
   .navbar {
     display: flex;
     height: 5rem;
@@ -308,13 +299,9 @@ body {
     width: 75%;
     padding: 1rem;
   }
-  .navbar .cart .cart-item {
-    grid-template-columns: 3fr 2fr 2fr 2fr;
-    align-items: center;
-  }
-  .navbar .cart .cart-item .cart-plan-input,
-.navbar .cart .cart-item .cart-quantity-input,
-.navbar .cart .cart-item .cart-remove-button {
+  .navbar .cart .cart-plan-input,
+.navbar .cart .cart-quantity-input,
+.navbar .cart .cart-remove-button {
     width: 4.5rem;
     aspect-ratio: 7/3;
   }
@@ -370,209 +357,6 @@ body {
     padding: 10rem 12rem 6rem 12rem;
   }
 }
-#content #description {
-  min-height: 100vh;
-}
-#content #description .description-header {
-  text-align: left;
-  margin-bottom: 1rem;
-}
-#content #subscription-plans {
-  display: grid;
-}
-#content #subscription-plans .plans-header {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-#content #subscription-plans .plan {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  padding: 1rem;
-  position: relative;
-  border-radius: 1rem;
-  background-color: var(--f-color-light);
-}
-#content #subscription-plans .plan .plan-title {
-  text-align: center;
-}
-#content #subscription-plans .plan .plan-price {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-#content #subscription-plans .plan .plan-description {
-  text-align: center;
-  display: flex;
-  align-items: center;
-}
-#content #subscription-plans .plan .plan-benefit-list {
-  margin-bottom: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-items: center;
-}
-#content #subscription-plans .plan .plan-benefit-list li {
-  text-align: center;
-  padding-left: 0.25rem;
-}
-#content #subscription-plans .plan .plan-benefit-list li.enabled-benefit::marker {
-  content: "✔";
-  color: green;
-}
-#content #subscription-plans .plan .plan-benefit-list li.disabled-benefit::marker {
-  content: "✖";
-  color: red;
-}
-#content #subscription-plans .plan .plan-benefit-list li:not(:last-child) {
-  border-bottom: 2px solid var(--f-color-dark);
-  padding-block: 0.5rem;
-}
-#content #subscription-plans .plan .plan-benefit-list li:last-child {
-  padding-top: 0.5rem;
-}
-#content #subscription-plans .plan .plan-button {
-  height: 3rem;
-  margin-top: auto;
-}
-#content #subscription-plans .plan.essential::before {
-  background-color: var(--bg-color-light-blue);
-}
-#content #subscription-plans .plan.value::before {
-  background-image: linear-gradient(90deg, var(--bg-color-green), var(--bg-color-pine-green), var(--bg-color-light-blue), var(--bg-color-pine-green), var(--bg-color-green));
-  background-size: 200%;
-  -webkit-animation-name: border-gradient;
-          animation-name: border-gradient;
-  -webkit-animation-duration: 5s;
-          animation-duration: 5s;
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-}
-#content #subscription-plans .plan.premium::before {
-  background-color: var(--bg-color-light-blue);
-}
-#content #subscription-plans .plan::before {
-  content: "";
-  position: absolute;
-  width: calc(100% + 15px);
-  height: calc(100% + 15px);
-  border-radius: 1rem;
-  top: -7.5px;
-  left: -7.5px;
-  z-index: -1;
-}
-@-webkit-keyframes border-gradient {
-  0% {
-    background-position: 0% center;
-  }
-  100% {
-    background-position: -200% center;
-  }
-}
-@keyframes border-gradient {
-  0% {
-    background-position: 0% center;
-  }
-  100% {
-    background-position: -200% center;
-  }
-}
-#content #add-ons {
-  display: grid;
-}
-#content #add-ons .add-ons-header {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-#content #add-ons .add-on {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  padding: 1rem;
-  position: relative;
-  border-radius: 1rem;
-  background-color: var(--f-color-light);
-}
-#content #add-ons .add-on .add-on-title {
-  text-align: center;
-}
-#content #add-ons .add-on .add-on-price {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-#content #add-ons .add-on .add-on-description {
-  text-align: center;
-  display: flex;
-  align-items: center;
-}
-#content #add-ons .add-on .add-on-button {
-  height: 3rem;
-  width: 75%;
-  margin-top: auto;
-  margin-inline: auto;
-}
-#content #add-ons .add-on::before {
-  content: "";
-  position: absolute;
-  width: calc(100% + 15px);
-  height: calc(100% + 15px);
-  border-radius: 1rem;
-  top: -7.5px;
-  left: -7.5px;
-  z-index: -1;
-  background-color: var(--bg-color-light-blue);
-}
-@media screen and (max-width: 760px) {
-  #content #subscription-plans {
-    grid-template-columns: repeat(1, 1fr);
-    gap: 2rem;
-  }
-  #content #subscription-plans .plan-description {
-    height: 75px;
-  }
-  #content #add-ons {
-    grid-template-columns: repeat(1, 1fr);
-    gap: 2rem;
-  }
-}
-@media screen and (min-width: 761px) {
-  #content #subscription-plans {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-  }
-  #content #subscription-plans .plans-header {
-    grid-column: span 3;
-  }
-  #content #subscription-plans .plan-description {
-    height: 150px;
-  }
-  #content #add-ons {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-  }
-  #content #add-ons .add-ons-header {
-    grid-column: span 2;
-  }
-}
-@media screen and (min-width: 1300px) {
-  #content #subscription-plans {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-  }
-  #content #add-ons {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-  }
-}
 .link {
   text-decoration: none;
   font-family: var(--f-family-josefin);
@@ -617,35 +401,6 @@ body {
   background-color: var(--f-color-light);
 }
 
-#content .curve {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-  transform: rotate(180deg);
-}
-#content .curve svg {
-  position: relative;
-  display: block;
-  width: calc(100% + 1.3px);
-  height: 100px;
-}
-#content .curve .shape-fill {
-  fill: var(--f-color-light);
-}
-@media (max-width: 560px) {
-  #content .curve svg {
-    height: 70px;
-  }
-}
-@media screen and (min-width: 1300px) {
-  #content .curve svg {
-    height: 130px;
-  }
-}
-
 footer {
   background-color: var(--bg-color-darker-blue);
   display: grid;
@@ -683,6 +438,34 @@ footer .footer-section.contacts .footer-social-list .footer-social-link:hover .f
   background-color: var(--f-color-less-light);
   stroke: var(--f-color-dark);
   border: 3px solid var(--f-color-less-light);
+}
+footer .curve {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+footer .curve svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 100px;
+}
+footer .curve .shape-fill {
+  fill: var(--f-color-light);
+}
+@media (max-width: 560px) {
+  footer .curve svg {
+    height: 70px;
+  }
+}
+@media screen and (min-width: 1300px) {
+  footer .curve svg {
+    height: 130px;
+  }
 }
 
 @media screen and (max-width: 560px) {
@@ -888,4 +671,4 @@ button {
     gap: 2rem;
     align-items: center;
   }
-}/*# sourceMappingURL=pricing.css.map */
+}/*# sourceMappingURL=contacts.css.map */
