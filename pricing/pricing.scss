@@ -202,9 +202,6 @@ body{
                 }
 
             }
-            .cart-plan-input{
-                grid-column: span 2;
-            }
 
             .cart-remove-button{
                 border-radius: 0.5rem;
@@ -218,21 +215,26 @@ body{
             }
         }
     }
+    
     .cart-hidden{
         opacity: 0;
         visibility: hidden;
         transform: translateX(-100%);
         transition: opacity var(--transition-speed-fast) ease-in-out,
-        max-height var(--transition-speed-slow) ease-in-out, 
-        visibility var(--transition-speed-slow),
-        transform var(--transition-speed-slow);
+            max-height var(--transition-speed-slow) ease-in-out, 
+            visibility var(--transition-speed-slow),
+            transform var(--transition-speed-slow),
+            box-shadow var(--transition-speed-slow);
+        box-shadow: 0 0 0 100vmax hsla(0, 0%, 20%, 0);
     }
     .cart-visible{
         opacity: 1;
         transition: opacity var(--transition-speed-slow) ease-in-out,
-        max-height var(--transition-speed-slow) ease-in-out,
-        transform var(--transition-speed-slow);
-        transform: translateX(0);
+            max-height var(--transition-speed-slow) ease-in-out,
+            transform var(--transition-speed-slow),
+            box-shadow var(--transition-speed-slow);
+            transform: translateX(0);
+        box-shadow: 0 0 0 100vmax hsla(0, 0%, 20%, 0.25);
         // box-shadow: 0 0 0px 100px hsla(172, 100%, 70%, 0.2);
     }
 }
@@ -295,7 +297,11 @@ body{
                 gap: 0.5rem;
                 align-items: center;
                 justify-items: left;
-                .cart-plan-input,
+                .cart-plan-input{
+                    grid-column: span 2;
+                    width: 100%;
+                    height: 2rem;
+                }
                 .cart-quantity-input{
                     width: 4.5rem;
                     aspect-ratio: 7/3;
@@ -339,7 +345,11 @@ body{
             .cart-item{
                 grid-template-columns: 3fr 2fr 2fr 2fr;
                 align-items: center;
-                .cart-plan-input,
+                .cart-plan-input{
+                    height: 2rem;
+                    grid-column: span 2;
+                    width: 70%;
+                }
                 .cart-quantity-input,
                 .cart-remove-button{
                     width: 4.5rem;
@@ -914,6 +924,9 @@ button{
 .half-section{
     display: grid;
     gap: 0.5rem;
+}
+option{
+    text-align: center;
 }
 @media screen and (max-width: 560px){
     .grid{

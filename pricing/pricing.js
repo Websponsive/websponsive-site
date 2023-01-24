@@ -27,6 +27,7 @@ cartButton.addEventListener('click', () => {
     cart.classList.toggle('cart-visible');
     navbarList.classList.remove('nav-visible');
     navbarList.classList.add('nav-hidden');
+    menuButton.setAttribute('aria-expanded', 'false');
 });
 
 //Cart functionalities
@@ -38,6 +39,7 @@ const prices = {
     none : 0,
 }
 
+addOnsState();
 
 const planSelect = document.querySelector('.cart-plan-input');
 const planTitle = document.querySelector('.cart-plan-title');
@@ -60,15 +62,19 @@ planSelect.addEventListener('input', () => {
     updateCartTotal();
 });
 
-const cartQuantity = document.querySelector('.cart-quantity-input');
-cartQuantity.addEventListener('input', () => {
-    if (isNaN(cartQuantity.value) || cartQuantity.value <= 0){
-        cartQuantity.value = 1;
-    } else if (cartQuantity.value >= 1000) {
-        cartQuantity.value = 999;
-    }
-    updateCartTotal();
-});
+function quantityEvents() {
+    const cartQuantities = document.querySelectorAll('.cart-quantity-input');
+    cartQuantities.forEach((item) => {
+        item.addEventListener('input', () => {
+            if (isNaN(item.value) || item.value <= 0){
+                item.value = 1;
+            } else if (item.value >= 1000) {
+                item.value = 999;
+            }
+            updateCartTotal();
+        });
+    });
+}
 
 const essentialButton = document.querySelector('.essential-button');
 const valueButton = document.querySelector('.value-button');
@@ -93,6 +99,63 @@ premiumButton.addEventListener('click', () => {
     updateCartTotal();
 });
 
+
+const pagesButton = document.querySelector('.pages-button');
+const reportButton = document.querySelector('.report-button');
+pagesButton.addEventListener('click', () => {
+    let newElement = document.createElement('div');
+    const addOnsSection = document.querySelector('.cart-add-ons');
+    if(addOnsSection.dataset.pages === "yes"){
+        const pageCount = document.querySelector('.pages-count');
+        pageCount.value = Number(pageCount.value) + 1;
+    } else {
+        newElement.innerHTML = 
+        `<div class="cart-item add-on-element">
+            <p class="cart-item-title paragraph dark">3 extra pages</p>
+            <p class="paragraph dark">$<span class="cart-item-price">39</span>/mo</p>
+            <input type="number" class="cart-quantity-input pages-count" value="1">
+            <button class="cart-remove-button light small-text">Remove</button>
+        </div>`;
+        addOnsSection.append(newElement);
+        addOnsSection.dataset.pages = 'yes';
+    }
+    quantityEvents();
+    removeButtonsEvents();
+    updateCartTotal();
+    addOnsState();
+});
+reportButton.addEventListener('click', () => {
+    let newElement = document.createElement('div');
+    const addOnsSection = document.querySelector('.cart-add-ons');
+    if (addOnsSection.dataset.report === 'yes') {
+        const reportCount = document.querySelector('.report-count');
+        reportCount.value = Number(reportCount.value) + 1;
+    } else {
+        newElement.innerHTML = 
+        `<div class="cart-item add-on-element">
+            <p class="cart-item-title paragraph dark">Monthly report</p>
+            <p class="paragraph dark">$<span class="cart-item-price">29</span>/mo</p>
+            <input type="number" class="cart-quantity-input report-count" value="1">
+            <button class="cart-remove-button light small-text">Remove</button>
+        </div>`;
+        addOnsSection.append(newElement);
+        addOnsSection.dataset.report = 'yes';
+    }
+    quantityEvents();
+    removeButtonsEvents();
+    updateCartTotal();
+    addOnsState();
+}); 
+
+function addOnsState() {
+    const addOnsSection = document.querySelector('.cart-add-ons');
+    if(addOnsSection.dataset.pages === 'no' && addOnsSection.dataset.report === 'no') {
+        addOnsSection.style.display = 'none';
+    } else {
+        addOnsSection.style.display = 'block';
+    }
+}
+
 function updateCartTotal(){
     let total = 0;
     const cartTotal = document.querySelector('.cart-total');
@@ -115,16 +178,17 @@ function updateCartTotal(){
         total += addOnPrice * addOnQuantity;
     });
 
-    
-    
     cartTotal.innerText = total;
 }
 
 
-const removeButtons = document.querySelectorAll('.cart-remove-button');
-removeButtons.forEach( (button) => {
-    button.addEventListener('click', (event) => {
-        event.target.parentNode.remove();
-        updateCartTotal();
+function removeButtonsEvents() {
+    const removeButtons = document.querySelectorAll('.cart-remove-button');
+    removeButtons.forEach( (button) => {
+        button.addEventListener('click', (event) => {
+            event.target.parentNode.remove();
+            updateCartTotal();
+            addOnsState();
+        });
     });
-});
+}

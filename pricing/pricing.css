@@ -192,9 +192,6 @@ body {
   border: 2px solid var(--bg-color-pine-green);
   outline: none;
 }
-.navbar .cart .cart-item .cart-plan-input {
-  grid-column: span 2;
-}
 .navbar .cart .cart-item .cart-remove-button {
   border-radius: 0.5rem;
   background-color: red;
@@ -209,12 +206,14 @@ body {
   opacity: 0;
   visibility: hidden;
   transform: translateX(-100%);
-  transition: opacity var(--transition-speed-fast) ease-in-out, max-height var(--transition-speed-slow) ease-in-out, visibility var(--transition-speed-slow), transform var(--transition-speed-slow);
+  transition: opacity var(--transition-speed-fast) ease-in-out, max-height var(--transition-speed-slow) ease-in-out, visibility var(--transition-speed-slow), transform var(--transition-speed-slow), box-shadow var(--transition-speed-slow);
+  box-shadow: 0 0 0 100vmax hsla(0deg, 0%, 20%, 0);
 }
 .navbar .cart-visible {
   opacity: 1;
-  transition: opacity var(--transition-speed-slow) ease-in-out, max-height var(--transition-speed-slow) ease-in-out, transform var(--transition-speed-slow);
+  transition: opacity var(--transition-speed-slow) ease-in-out, max-height var(--transition-speed-slow) ease-in-out, transform var(--transition-speed-slow), box-shadow var(--transition-speed-slow);
   transform: translateX(0);
+  box-shadow: 0 0 0 100vmax hsla(0deg, 0%, 20%, 0.25);
 }
 
 @media screen and (max-width: 760px) {
@@ -272,8 +271,12 @@ body {
     align-items: center;
     justify-items: left;
   }
-  .navbar .cart .cart-item .cart-plan-input,
-.navbar .cart .cart-item .cart-quantity-input {
+  .navbar .cart .cart-item .cart-plan-input {
+    grid-column: span 2;
+    width: 100%;
+    height: 2rem;
+  }
+  .navbar .cart .cart-item .cart-quantity-input {
     width: 4.5rem;
     aspect-ratio: 7/3;
   }
@@ -312,8 +315,12 @@ body {
     grid-template-columns: 3fr 2fr 2fr 2fr;
     align-items: center;
   }
-  .navbar .cart .cart-item .cart-plan-input,
-.navbar .cart .cart-item .cart-quantity-input,
+  .navbar .cart .cart-item .cart-plan-input {
+    height: 2rem;
+    grid-column: span 2;
+    width: 70%;
+  }
+  .navbar .cart .cart-item .cart-quantity-input,
 .navbar .cart .cart-item .cart-remove-button {
     width: 4.5rem;
     aspect-ratio: 7/3;
@@ -871,6 +878,10 @@ button {
 .half-section {
   display: grid;
   gap: 0.5rem;
+}
+
+option {
+  text-align: center;
 }
 
 @media screen and (max-width: 560px) {
