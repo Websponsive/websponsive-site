@@ -473,7 +473,7 @@ body {
 @media screen and (max-width: 560px) {
   #content .intro {
     height: calc(100vh + 100px);
-    height: calc(100dvh + 100px);
+    height: calc(100lvh + 100px);
     padding-bottom: 100px;
   }
   #content .content-section {
