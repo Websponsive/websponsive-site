@@ -46,7 +46,7 @@
                 <line x1="4" y1="18" x2="20" y2="18" class="line3"/>
             </svg>
         </button>
-        <ul class="navbar-list hidden">
+        <ul class="navbar-list nav-hidden">
             <!-- <li class="navbar-item">
                 <img id="navbar-logo" src="https://res.cloudinary.com/dvrziwgxp/image/upload/v1665761117/Logo-removebg-short_mwxc1r.png" alt="">
             </li> -->
@@ -55,8 +55,32 @@
             <li class="navbar-list-item"><a href="contacts/contacts.html" class="navbar-link dark-bg-link light">Contacts</a></li>
             <li class="navbar-list-item"><a href="" class="navbar-link dark-bg-link light">FAQ</a></li>
         </ul>
-        <div class="cart">
-            
+        <div class="cart cart-hidden">
+
+            <div class="cart-plan">
+                <h3 class="paragraph dark">Your selected plan:</h3>
+                <div class="cart-item plan-element">
+                    <p class="cart-plan-title paragraph dark">No plan selected</p>
+                    <p class="paragraph dark" style="white-space: nowrap;">$<span class="cart-plan-price">0</span>/mo
+                    </p>
+                    <select name="plan" class="cart-plan-input">
+                        <option value="none" selected>None</option>
+                        <option value="essential">Essential</option>
+                        <option value="value" >Value</option>
+                        <option value="premium">Premium</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="cart-add-ons" data-pages="no" data-report="no">
+                <h3 class="paragraph dark">Your selected add-ons:</h3>
+            </div>
+
+            <div class="cart-end">
+                <h3 class="paragraph dark">Your total:&nbsp&nbsp 
+                    $<span class="cart-total">0</span>/mo
+                </h3>
+            </div>
         </div>
     </nav> 
 

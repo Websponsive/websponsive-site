@@ -9,7 +9,7 @@
     background-color: var(--bg-color-pine-green);
     color: var(--f-color-light);
 }
-:root{
+:root{ 
     font-size: 20px;
 
     --f-family-josefin:'Josefin Sans', sans-serif;
@@ -195,8 +195,7 @@ body{
                 border: 2px solid var(--bg-color-lighter-blue);
                 transition: all var(--transition-speed-fast) ease-in-out;
 
-                &:hover,
-                &:focus{
+                &:hover{
                     border: 2px solid var(--bg-color-pine-green);
                     outline: none;
                 }

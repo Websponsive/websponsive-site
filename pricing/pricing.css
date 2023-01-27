@@ -186,9 +186,8 @@ body {
   border: 2px solid var(--bg-color-lighter-blue);
   transition: all var(--transition-speed-fast) ease-in-out;
 }
-.navbar .cart .cart-item .cart-plan-input:hover, .navbar .cart .cart-item .cart-plan-input:focus,
-.navbar .cart .cart-item .cart-quantity-input:hover,
-.navbar .cart .cart-item .cart-quantity-input:focus {
+.navbar .cart .cart-item .cart-plan-input:hover,
+.navbar .cart .cart-item .cart-quantity-input:hover {
   border: 2px solid var(--bg-color-pine-green);
   outline: none;
 }
