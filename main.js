@@ -107,7 +107,7 @@ const prices = {
     premium : 499,
     none : 0,
 }
-
+const addOnsSection = document.querySelector('.cart-add-ons');
 addOnsState();
 
 const planSelect = document.querySelector('.cart-plan-input');
@@ -178,7 +178,6 @@ function quantityEvents() {
 
 //Add-ons display function
 function addOnsState() {
-    const addOnsSection = document.querySelector('.cart-add-ons');
     if(addOnsSection.dataset.pages === 'no' && addOnsSection.dataset.report === 'no') {
         addOnsSection.style.display = 'none';
     } else {
@@ -189,34 +188,42 @@ function addOnsState() {
 
 //Cart total update function
 function updateCartTotal(){
-    let total = 0;
     let planElementPrice;
-
+    total = 0;
     planElementPrice = document.querySelector('.cart-plan-price').innerText;
-    planElementPrice = 0;
-    
     total += Number(planElementPrice);
-
-
+    
+    
     const addOns = document.querySelectorAll('.add-on-element');
     addOns.forEach((item) => {
         const addOnPrice = Number(item.querySelector('.cart-item-price').innerText);
         const addOnQuantity = Number(item.querySelector('.cart-quantity-input').value);
         total += addOnPrice * addOnQuantity;
     });
-
+    
     cartTotal.innerText = total;
+    window.localStorage.setItem('total', `${total}`);
 }
 
 //Remove buttons functionality
 function removeButtonsEvents() {
-    const removeButtons = document.querySelectorAll('.cart-remove-button');
-    removeButtons.forEach( (button) => {
-        button.addEventListener('click', (event) => {
+    try{
+        const pagesRemove = document.querySelector('.pages-remove');
+        const reportRemove = document.querySelector('.report-remove');
+        pagesRemove.addEventListener('click', (event) => {
             event.target.parentNode.remove();
+            addOnsSection.dataset.pages = 'no';
             updateCartTotal();
             addOnsState();
         });
-    });
+        reportRemove.addEventListener('click', (event) => {
+            event.target.parentNode.remove();
+            addOnsSection.dataset.report = 'no';
+            updateCartTotal();
+            addOnsState();
+        });
+    } catch{
+        return;
+    }
 }
 

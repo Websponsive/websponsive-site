@@ -61,6 +61,11 @@ if (!(selectedPlan === null)) {
     }
 }
 
+//Update add-ons from localstorage
+let storedPages = Number(window.localStorage.getItem('pages'));
+if (!storedPages){
+
+}
 
 //Plan selector from cart itself
 planSelect.addEventListener('input', () => {
@@ -127,19 +132,20 @@ premiumButton.addEventListener('click', () => {
 //Add-ons-selecter buttons from the content
 const pagesButton = document.querySelector('.pages-button');
 const reportButton = document.querySelector('.report-button');
+const addOnsSection = document.querySelector('.cart-add-ons');
 pagesButton.addEventListener('click', () => {
     let newElement = document.createElement('div');
-    const addOnsSection = document.querySelector('.cart-add-ons');
     if(addOnsSection.dataset.pages === "yes"){
         const pageCount = document.querySelector('.pages-count');
         pageCount.value = Number(pageCount.value) + 1;
+        window.localStorage.setItem('pages', `${pageCount.value}`);
     } else {
         newElement.innerHTML = 
         `<div class="cart-item add-on-element">
         <p class="cart-item-title paragraph dark">3 extra pages</p>
         <p class="paragraph dark">$<span class="cart-item-price">39</span>/mo</p>
         <input type="number" onclick="select()" class="cart-quantity-input pages-count" value="1">
-        <button class="cart-remove-button light small-text">Remove</button>
+        <button class="cart-remove-button light pages-remove small-text">Remove</button>
         </div>`;
         addOnsSection.append(newElement);
         addOnsSection.dataset.pages = 'yes';
@@ -150,10 +156,10 @@ pagesButton.addEventListener('click', () => {
     addOnsState();
 });
 reportButton.addEventListener('click', () => {
-    const addOnsSection = document.querySelector('.cart-add-ons');
     if (addOnsSection.dataset.report === 'yes') {
         const reportCount = document.querySelector('.report-count');
         reportCount.value = Number(reportCount.value) + 1;
+        window.localStorage.setItem('report', `${reportCount.value}`);
     } else {
         let newElement = document.createElement('div');
         newElement.innerHTML = 
@@ -161,10 +167,11 @@ reportButton.addEventListener('click', () => {
         <p class="cart-item-title paragraph dark">Monthly report</p>
         <p class="paragraph dark">$<span class="cart-item-price">29</span>/mo</p>
         <input type="number" onclick="select()" class="cart-quantity-input report-count" value="1">
-        <button class="cart-remove-button light small-text">Remove</button>
+        <button class="cart-remove-button report-remove light small-text">Remove</button>
         </div>`;
         addOnsSection.append(newElement);
         addOnsSection.dataset.report = 'yes';
+        window.localStorage.setItem('report', '1');
     }
     quantityEvents();
     removeButtonsEvents();
@@ -176,10 +183,10 @@ reportButton.addEventListener('click', () => {
 //Add-ons display function
 function addOnsState() {
     const addOnsSection = document.querySelector('.cart-add-ons');
-    if(addOnsSection.dataset.pages === 'no' && addOnsSection.dataset.report === 'no') {
-        addOnsSection.style.display = 'none';
-    } else {
+    if(Number(window.localStorage.getItem('pages')) || Number(window.localStorage.getItem('report'))) {
         addOnsSection.style.display = 'block';
+    } else {
+        addOnsSection.style.display = 'none';
     }
 }
 
@@ -205,14 +212,26 @@ function updateCartTotal(){
 
 //Remove buttons functionality
 function removeButtonsEvents() {
-    const removeButtons = document.querySelectorAll('.cart-remove-button');
-    removeButtons.forEach( (button) => {
-        button.addEventListener('click', (event) => {
+    try{
+        const pagesRemove = document.querySelector('.pages-remove');
+        pagesRemove.addEventListener('click', (event) => {
             event.target.parentNode.remove();
+            addOnsSection.dataset.pages = 'no';
+            window.localStorage.removeItem('pages');
             updateCartTotal();
             addOnsState();
         });
-    });
+        const reportRemove = document.querySelector('.report-remove');
+        reportRemove.addEventListener('click', (event) => {
+            event.target.parentNode.remove();
+            addOnsSection.dataset.report = 'no';
+            window.localStorage.removeItem('report');
+            updateCartTotal();
+            addOnsState();
+        });
+    } catch {
+        return;
+    }
 }
 
 //Cart display functionality
