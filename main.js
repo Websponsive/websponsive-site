@@ -24,10 +24,10 @@ menuButton.addEventListener('click', () => {
     let isOpen = menuButton.getAttribute('aria-expanded');
     if(isOpen === 'false'){
         menuButton.setAttribute('aria-expanded', 'true');
-        navbar.style.maxHeight = '80px';
+        navbar.style.maxHeight = '320px';
     } else if (isOpen === 'true'){
         menuButton.setAttribute('aria-expanded', 'false');
-        navbar.style.maxHeight = '320px';
+        navbar.style.maxHeight = '80px';
     }
 });
 

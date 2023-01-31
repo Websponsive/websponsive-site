@@ -110,6 +110,7 @@ body{
         justify-content: space-around;
         height: 1rem;
         // width: 60%;
+        transition: all var(--transition-speed-slow);
         .navbar-list-item{
             height: 1rem;
             
@@ -248,9 +249,10 @@ body{
         // max-height: 320px;
         .navbar-list{
             flex-direction: column;
-            width: 100%;
+            width: 100vw;
             grid-column: span 2;
             height: fit-content;
+            // background-color: var(--background);
             // transition: max-height var(--transition-speed-slow) ease-in-out;
             .navbar-list-item{
                 margin: 0.5rem 1rem 1.5rem 1.5rem;
