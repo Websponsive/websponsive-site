@@ -10,6 +10,7 @@ const cart = document.querySelector('.cart');
 //Navbar collapse functionality
 const menuButton = document.querySelector('#menu-button');
 const navbarList = document.querySelector('.navbar-list'); 
+const navbar = document.querySelector('.navbar');
 menuButton.addEventListener('click', () => {
     navbarList.classList.toggle('nav-hidden');
     navbarList.classList.toggle('nav-visible');
@@ -23,8 +24,10 @@ menuButton.addEventListener('click', () => {
     let isOpen = menuButton.getAttribute('aria-expanded');
     if(isOpen === 'false'){
         menuButton.setAttribute('aria-expanded', 'true');
-    } else {
+        navbar.style.maxHeight = '80px';
+    } else if (isOpen === 'true'){
         menuButton.setAttribute('aria-expanded', 'false');
+        navbar.style.maxHeight = '320px';
     }
 });
 
@@ -42,7 +45,6 @@ cartButton.addEventListener('click', () => {
 
 //Navbar fade-in animations
 
-const navbar = document.querySelector('.navbar');
 const introSection = document.querySelector('.intro');
 
 const navObserver = new IntersectionObserver((elements) => {

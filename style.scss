@@ -244,8 +244,8 @@ body{
     .navbar{
         display: grid;
         grid-template-columns: 5fr 1fr 1fr;
-        height: fit-content;
-        max-height: 320px;
+        height: max-content;
+        // max-height: 320px;
         .navbar-list{
             flex-direction: column;
             width: 100%;
