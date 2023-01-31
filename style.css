@@ -85,10 +85,21 @@ body {
   align-items: center;
   position: fixed;
   top: 0;
-  z-index: 1;
+  z-index: 999;
   width: 100vw;
   background-color: var(--background);
   transition: background-color var(--transition-speed-slow);
+  -webkit-animation-name: navbar-pop;
+          animation-name: navbar-pop;
+  -webkit-animation-duration: var(--transition-speed-slow);
+          animation-duration: var(--transition-speed-slow);
+  -webkit-animation-iteration-count: initial;
+          animation-iteration-count: initial;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+  transform: translateY(-5rem);
 }
 .navbar .navbar-logo {
   margin-left: 0.5rem;
@@ -213,7 +224,10 @@ body {
   .navbar {
     display: grid;
     grid-template-columns: 5fr 1fr 1fr;
-    height: 5rem;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    max-height: 320px;
   }
   .navbar .navbar-list {
     flex-direction: column;
