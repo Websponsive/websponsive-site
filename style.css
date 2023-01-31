@@ -213,9 +213,7 @@ body {
   .navbar {
     display: grid;
     grid-template-columns: 5fr 1fr 1fr;
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
-    height: fit-content;
+    height: 5rem;
   }
   .navbar .navbar-list {
     flex-direction: column;
