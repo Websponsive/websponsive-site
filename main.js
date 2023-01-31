@@ -35,6 +35,7 @@ cartButton.addEventListener('click', () => {
     cart.classList.toggle('cart-visible');
     navbarList.classList.remove('nav-visible');
     navbarList.classList.add('nav-hidden');
+    updateCartTotal();
     menuButton.setAttribute('aria-expanded', 'false');
 });
 
@@ -107,13 +108,14 @@ const prices = {
     premium : 499,
     none : 0,
 }
-const addOnsSection = document.querySelector('.cart-add-ons');
-addOnsState();
 
 const planSelect = document.querySelector('.cart-plan-input');
 const planTitle = document.querySelector('.cart-plan-title');
 const planPrice = document.querySelector('.cart-plan-price');
 const cartTotal = document.querySelector('.cart-total');
+const addOnsSection = document.querySelector('.cart-add-ons');
+
+addOnsState();
 
 //Update plan value from the localstorage
 let selectedPlan = window.localStorage.getItem('plan');
@@ -137,6 +139,44 @@ if (!(selectedPlan === null)) {
         planSelect.value = 'none';
     }
 }
+
+
+//Update add-ons from localstorage
+let storedPages = Number(window.localStorage.getItem('pages'));
+if (!(storedPages === null || storedPages === 0)){
+    let newElement = document.createElement('div');
+    newElement.innerHTML = 
+        `<div class="cart-item add-on-element">
+        <p class="cart-item-title paragraph dark">3 extra pages</p>
+        <p class="paragraph dark">$<span class="cart-item-price">39</span>/mo</p>
+        <input type="number" onclick="select()" class="cart-quantity-input pages-count" value="${Number(storedPages)}">
+        <button class="cart-remove-button light pages-remove small-text">Remove</button>
+        </div>`;
+    addOnsSection.append(newElement);
+    addOnsSection.dataset.pages = 'yes';
+    quantityEvents();
+    removeButtonsEvents();
+    updateCartTotal();
+    addOnsState();
+}
+let storedReports = Number(window.localStorage.getItem('report'));
+if(!(storedReports === null || storedReports === 0)){
+    let newElement = document.createElement('div');
+    newElement.innerHTML = 
+        `<div class="cart-item add-on-element">
+        <p class="cart-item-title paragraph dark">3 extra pages</p>
+        <p class="paragraph dark">$<span class="cart-item-price">39</span>/mo</p>
+        <input type="number" onclick="select()" class="cart-quantity-input pages-count" value="${Number(storedReports)}">
+        <button class="cart-remove-button light pages-remove small-text">Remove</button>
+        </div>`;
+    addOnsSection.append(newElement);
+    addOnsSection.dataset.pages = 'yes';
+    quantityEvents();
+    removeButtonsEvents();
+    updateCartTotal();
+    addOnsState();
+}
+
 
 //Plan selector from cart itself
 planSelect.addEventListener('input', () => {

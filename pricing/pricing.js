@@ -35,6 +35,7 @@ const planSelect = document.querySelector('.cart-plan-input');
 const planTitle = document.querySelector('.cart-plan-title');
 const planPrice = document.querySelector('.cart-plan-price');
 const cartTotal = document.querySelector('.cart-total');
+const addOnsSection = document.querySelector('.cart-add-ons');
 let total;
 
 
@@ -63,8 +64,38 @@ if (!(selectedPlan === null)) {
 
 //Update add-ons from localstorage
 let storedPages = Number(window.localStorage.getItem('pages'));
-if (!storedPages){
-
+if (!(storedPages === null || storedPages === 0)){
+    let newElement = document.createElement('div');
+    newElement.innerHTML = 
+        `<div class="cart-item add-on-element">
+        <p class="cart-item-title paragraph dark">3 extra pages</p>
+        <p class="paragraph dark">$<span class="cart-item-price">39</span>/mo</p>
+        <input type="number" onclick="select()" class="cart-quantity-input pages-count" value="${Number(storedPages)}">
+        <button class="cart-remove-button light pages-remove small-text">Remove</button>
+        </div>`;
+    addOnsSection.append(newElement);
+    addOnsSection.dataset.pages = 'yes';
+    quantityEvents();
+    removeButtonsEvents();
+    updateCartTotal();
+    addOnsState();
+}
+let storedReports = Number(window.localStorage.getItem('report'));
+if(!(storedReports === null || storedReports === 0)){
+    let newElement = document.createElement('div');
+    newElement.innerHTML = 
+        `<div class="cart-item add-on-element">
+        <p class="cart-item-title paragraph dark">3 extra pages</p>
+        <p class="paragraph dark">$<span class="cart-item-price">39</span>/mo</p>
+        <input type="number" onclick="select()" class="cart-quantity-input pages-count" value="${Number(storedReports)}">
+        <button class="cart-remove-button light pages-remove small-text">Remove</button>
+        </div>`;
+    addOnsSection.append(newElement);
+    addOnsSection.dataset.pages = 'yes';
+    quantityEvents();
+    removeButtonsEvents();
+    updateCartTotal();
+    addOnsState();
 }
 
 //Plan selector from cart itself
@@ -132,7 +163,6 @@ premiumButton.addEventListener('click', () => {
 //Add-ons-selecter buttons from the content
 const pagesButton = document.querySelector('.pages-button');
 const reportButton = document.querySelector('.report-button');
-const addOnsSection = document.querySelector('.cart-add-ons');
 pagesButton.addEventListener('click', () => {
     let newElement = document.createElement('div');
     if(addOnsSection.dataset.pages === "yes"){

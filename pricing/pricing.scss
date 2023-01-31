@@ -96,12 +96,12 @@ body{
     background-color: var(--background);
     transition: background-color var(--transition-speed-slow);
     
-    animation-name: navbar-pop;
-    animation-duration: var(--transition-speed-slow);
-    animation-iteration-count: initial;
-    animation-fill-mode: forwards;
+    // animation-name: navbar-pop;
+    // animation-duration: var(--transition-speed-slow);
+    // animation-iteration-count: initial;
+    // animation-fill-mode: forwards;
     // animation-delay: 3s;
-    transform: translateY(-5rem);
+    // transform: translateY(-5rem);
     
     .navbar-logo{
         margin-left: 0.5rem;

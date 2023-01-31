@@ -91,15 +91,6 @@ body {
   width: 100vw;
   background-color: var(--background);
   transition: background-color var(--transition-speed-slow);
-  -webkit-animation-name: navbar-pop;
-          animation-name: navbar-pop;
-  -webkit-animation-duration: var(--transition-speed-slow);
-          animation-duration: var(--transition-speed-slow);
-  -webkit-animation-iteration-count: initial;
-          animation-iteration-count: initial;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  transform: translateY(-5rem);
 }
 .navbar .navbar-logo {
   margin-left: 0.5rem;
