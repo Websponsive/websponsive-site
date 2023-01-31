@@ -224,9 +224,6 @@ body {
   .navbar {
     display: grid;
     grid-template-columns: 5fr 1fr 1fr;
-    height: -webkit-max-content;
-    height: -moz-max-content;
-    height: max-content;
   }
   .navbar .navbar-list {
     flex-direction: column;
