@@ -275,6 +275,7 @@ body{
             }
             #menu-button{
                 grid-column: 3/4;
+                z-index: 1000;
             }
         }
         &.nav-hidden{
