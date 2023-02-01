@@ -3,20 +3,23 @@ const menuButton = document.querySelector('#menu-button');
 const navbarList = document.querySelector('.navbar-list'); 
 const cartButton = document.querySelector('#cart-button');
 const cart = document.querySelector('.cart');
+const navbar = document.querySelector('.navbar');
 
 //Navbar collapse functionality
 
 menuButton.addEventListener('click', () => {
-    navbarList.classList.toggle('nav-hidden');
-    navbarList.classList.toggle('nav-visible');
+    navbar.classList.toggle('nav-hidden');
+    navbar.classList.toggle('nav-visible');
     cart.classList.remove('cart-visible');
     cart.classList.add('cart-hidden');
 
     let isOpen = menuButton.getAttribute('aria-expanded');
     if(isOpen === 'false'){
         menuButton.setAttribute('aria-expanded', 'true');
+        // navbar.style.maxHeight = '320px';
     } else {
         menuButton.setAttribute('aria-expanded', 'false');
+        // navbar.style.maxHeight = '80px';
     }
 });
 

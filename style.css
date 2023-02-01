@@ -85,7 +85,7 @@ body {
   align-items: center;
   position: fixed;
   top: 0;
-  z-index: 999;
+  z-index: 1;
   width: 100vw;
   background-color: var(--background);
   transition: background-color var(--transition-speed-slow);
@@ -139,16 +139,14 @@ body {
   aspect-ratio: 1/1;
 }
 .navbar .nav-button#menu-button[aria-expanded=true] .line1 {
-  translate: 0px 4.5px;
-  rotate: 45deg;
+  transform: translate(0px, 4.5px) rotateZ(45deg);
 }
 .navbar .nav-button#menu-button[aria-expanded=true] .line2 {
-  translate: -20px;
+  transform: translateX(-20px);
   opacity: 0;
 }
 .navbar .nav-button#menu-button[aria-expanded=true] .line3 {
-  translate: 0px -4px;
-  rotate: -45deg;
+  transform: translate(0px, -4px) rotateZ(-45deg);
 }
 .navbar .nav-button .nav-icon {
   width: 2rem;
@@ -224,12 +222,12 @@ body {
 @media screen and (max-width: 560px) {
   .navbar {
     display: grid;
-    grid-template-columns: 5fr 1fr 1fr;
+    grid-template-columns: 4fr 1fr 1fr;
   }
   .navbar .navbar-list {
     flex-direction: column;
-    width: 100vw;
-    grid-column: span 2;
+    width: 100%;
+    grid-column: span 3;
     height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
@@ -242,24 +240,34 @@ body {
     margin: 0.75rem 0 0.75rem 0.5rem;
     justify-self: start;
   }
+  .navbar .nav-button {
+    align-self: center;
+  }
   .navbar .nav-button #cart-button {
     grid-column: 2/3;
     grid-row: 1/2;
-    margin-right: 0.5rem;
+    z-index: 999;
   }
   .navbar .nav-button #menu-button {
     grid-column: 3/4;
   }
-  .navbar .nav-hidden {
-    max-height: 0rem;
+  .navbar.nav-hidden {
+    max-height: 80px;
+    transition: max-height var(--transition-speed-slow) ease-in-out, background-color var(--transition-speed-slow);
+  }
+  .navbar.nav-hidden .navbar-list {
     opacity: 0;
     visibility: hidden;
-    transition: opacity var(--transition-speed-fast) ease-in-out, max-height var(--transition-speed-slow) ease-in-out, visibility var(--transition-speed-slow);
+    transition: opacity 0ms ease-in-out, visibility 0ms;
+    max-height: 0px;
   }
-  .navbar .nav-visible {
+  .navbar.nav-visible {
     max-height: 320px;
+    transition: max-height var(--transition-speed-slow) ease-in-out, background-color var(--transition-speed-slow);
+  }
+  .navbar.nav-visible .navbar-list {
     opacity: 1;
-    transition: opacity var(--transition-speed-slow) ease-in-out var(--transition-speed-fast), max-height var(--transition-speed-slow) ease-in-out;
+    transition: opacity var(--transition-speed-slow) ease-in-out var(--transition-speed-fast), visibility var(--transition-speed-slow);
   }
   .navbar .cart {
     top: 4rem;
@@ -303,7 +311,7 @@ body {
     display: none;
   }
   .navbar #cart-button {
-    margin-right: 1rem;
+    margin-right: 2rem;
     order: 3;
     margin-left: auto;
   }

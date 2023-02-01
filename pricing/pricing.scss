@@ -100,7 +100,7 @@ body{
     animation-duration: var(--transition-speed-slow);
     animation-iteration-count: initial;
     animation-fill-mode: forwards;
-    animation-delay: 3s;
+    // animation-delay: 3s;
     transform: translateY(-5rem);
     
     .navbar-logo{
@@ -241,11 +241,11 @@ body{
 // .nav-scrolled{
 //     --background: hsla(226, 61%, 17%, 0.85);
 // }
-@media screen and (max-width: 760px){
+@media screen and (max-width: 560px){
     .navbar{
         display: grid;
-        grid-template-columns: 5fr 1fr 1fr;
-        height: fit-content;
+        grid-template-columns: 4fr 1fr 1fr;
+        // height: fit-content;
         .navbar-list{
             flex-direction: column;
             width: 100%;
@@ -256,19 +256,24 @@ body{
                 margin: 0.5rem 1rem 1.5rem 1.5rem;
             }
         }
-        .nav-hidden{
-            max-height: 0rem;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity var(--transition-speed-fast) ease-in-out,
-            max-height var(--transition-speed-slow) ease-in-out, visibility var(--transition-speed-slow);
+        &.nav-hidden{
+            max-height: 80px;
+            transition: max-height var(--transition-speed-slow) ease-in-out;
+            .navbar-list{
+                opacity: 0;
+                visibility: hidden;
+                transition: opacity 0ms ease-in-out, visibility 0ms;
+                max-height: 0px;
+            }
         }
-        .nav-visible{
+        &.nav-visible{
             max-height: 320px;
-            opacity: 1;
-            transition: opacity var(--transition-speed-slow) ease-in-out var(--transition-speed-fast),
-            max-height var(--transition-speed-slow) ease-in-out;
-            // box-shadow: 0 0 0px 100px hsla(172, 100%, 70%, 0.2);
+            transition: max-height var(--transition-speed-slow) ease-in-out;
+            .navbar-list{
+                opacity: 1;
+                transition: opacity var(--transition-speed-slow) ease-in-out var(--transition-speed-fast), visibility var(--transition-speed-slow);
+                // box-shadow: 0 0 0px 100px hsla(172, 100%, 70%, 0.2);
+            }
         }
         .navbar-logo{
             height: 2.5rem;
@@ -317,7 +322,7 @@ body{
         }
     }
 }
-@media screen and (min-width: 761px){
+@media screen and (min-width: 561px){
     .navbar{
         display: flex;
         height: 5rem;
@@ -332,7 +337,7 @@ body{
             display: none;
         }
         #cart-button{
-            margin-right: 1rem;
+            margin-right: 2rem;
             order: 3;
             margin-left: auto;
         }

@@ -12,8 +12,8 @@ const menuButton = document.querySelector('#menu-button');
 const navbarList = document.querySelector('.navbar-list'); 
 const navbar = document.querySelector('.navbar');
 menuButton.addEventListener('click', () => {
-    navbarList.classList.toggle('nav-hidden');
-    navbarList.classList.toggle('nav-visible');
+    navbar.classList.toggle('nav-hidden');
+    navbar.classList.toggle('nav-visible');
     cart.classList.remove('cart-visible');
     cart.classList.add('cart-hidden');
     
@@ -24,24 +24,12 @@ menuButton.addEventListener('click', () => {
     let isOpen = menuButton.getAttribute('aria-expanded');
     if(isOpen === 'false'){
         menuButton.setAttribute('aria-expanded', 'true');
-        navbar.style.maxHeight = '320px';
+        // navbar.style.maxHeight = '320px';
     } else if (isOpen === 'true'){
         menuButton.setAttribute('aria-expanded', 'false');
-        navbar.style.maxHeight = '80px';
+        // navbar.style.maxHeight = '80px';
     }
 });
-
-//Cart display functionality
-
-cartButton.addEventListener('click', () => {
-    cart.classList.toggle('cart-hidden');
-    cart.classList.toggle('cart-visible');
-    navbarList.classList.remove('nav-visible');
-    navbarList.classList.add('nav-hidden');
-    updateCartTotal();
-    menuButton.setAttribute('aria-expanded', 'false');
-});
-
 
 //Navbar fade-in animations
 
@@ -269,3 +257,13 @@ function removeButtonsEvents() {
     }
 }
 
+//Cart display functionality
+
+cartButton.addEventListener('click', () => {
+    cart.classList.toggle('cart-hidden');
+    cart.classList.toggle('cart-visible');
+    navbarList.classList.remove('nav-visible');
+    navbarList.classList.add('nav-hidden');
+    updateCartTotal();
+    menuButton.setAttribute('aria-expanded', 'false');
+});

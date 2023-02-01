@@ -99,8 +99,6 @@ body {
           animation-iteration-count: initial;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
-  -webkit-animation-delay: 3s;
-          animation-delay: 3s;
   transform: translateY(-5rem);
 }
 .navbar .navbar-logo {
@@ -217,13 +215,10 @@ body {
   box-shadow: 0 0 0 100vmax hsla(0deg, 0%, 20%, 0.25);
 }
 
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 560px) {
   .navbar {
     display: grid;
-    grid-template-columns: 5fr 1fr 1fr;
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
-    height: fit-content;
+    grid-template-columns: 4fr 1fr 1fr;
   }
   .navbar .navbar-list {
     flex-direction: column;
@@ -236,16 +231,23 @@ body {
   .navbar .navbar-list .navbar-list-item {
     margin: 0.5rem 1rem 1.5rem 1.5rem;
   }
-  .navbar .nav-hidden {
-    max-height: 0rem;
+  .navbar.nav-hidden {
+    max-height: 80px;
+    transition: max-height var(--transition-speed-slow) ease-in-out;
+  }
+  .navbar.nav-hidden .navbar-list {
     opacity: 0;
     visibility: hidden;
-    transition: opacity var(--transition-speed-fast) ease-in-out, max-height var(--transition-speed-slow) ease-in-out, visibility var(--transition-speed-slow);
+    transition: opacity 0ms ease-in-out, visibility 0ms;
+    max-height: 0px;
   }
-  .navbar .nav-visible {
+  .navbar.nav-visible {
     max-height: 320px;
+    transition: max-height var(--transition-speed-slow) ease-in-out;
+  }
+  .navbar.nav-visible .navbar-list {
     opacity: 1;
-    transition: opacity var(--transition-speed-slow) ease-in-out var(--transition-speed-fast), max-height var(--transition-speed-slow) ease-in-out;
+    transition: opacity var(--transition-speed-slow) ease-in-out var(--transition-speed-fast), visibility var(--transition-speed-slow);
   }
   .navbar .navbar-logo {
     height: 2.5rem;
@@ -286,7 +288,7 @@ body {
     aspect-ratio: 7/3;
   }
 }
-@media screen and (min-width: 761px) {
+@media screen and (min-width: 561px) {
   .navbar {
     display: flex;
     height: 5rem;
@@ -302,7 +304,7 @@ body {
     display: none;
   }
   .navbar #cart-button {
-    margin-right: 1rem;
+    margin-right: 2rem;
     order: 3;
     margin-left: auto;
   }
