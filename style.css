@@ -250,6 +250,7 @@ body {
   }
   .navbar .nav-button #menu-button {
     grid-column: 3/4;
+    z-index: 1000;
   }
   .navbar.nav-hidden {
     max-height: 80px;

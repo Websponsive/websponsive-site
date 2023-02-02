@@ -79,7 +79,7 @@ if (!(storedPages === null || storedPages === 0)){
     addOnsSection.append(newElement);
     addOnsSection.dataset.pages = 'yes';
     quantityEvents();
-    removeButtonsEvents();
+    removeButtonPages();
     updateCartTotal();
     addOnsState();
 }
@@ -96,7 +96,7 @@ if(!(storedReports === null || storedReports === 0)){
     addOnsSection.append(newElement);
     addOnsSection.dataset.pages = 'yes';
     quantityEvents();
-    removeButtonsEvents();
+    removeButtonReport();
     updateCartTotal();
     addOnsState();
 }
@@ -167,12 +167,12 @@ premiumButton.addEventListener('click', () => {
 const pagesButton = document.querySelector('.pages-button');
 const reportButton = document.querySelector('.report-button');
 pagesButton.addEventListener('click', () => {
-    let newElement = document.createElement('div');
     if(addOnsSection.dataset.pages === "yes"){
         const pageCount = document.querySelector('.pages-count');
         pageCount.value = Number(pageCount.value) + 1;
         window.localStorage.setItem('pages', `${pageCount.value}`);
     } else {
+        let newElement = document.createElement('div');
         newElement.innerHTML = 
         `<div class="cart-item add-on-element">
         <p class="cart-item-title paragraph dark">3 extra pages</p>
@@ -182,9 +182,10 @@ pagesButton.addEventListener('click', () => {
         </div>`;
         addOnsSection.append(newElement);
         addOnsSection.dataset.pages = 'yes';
+        window.localStorage.setItem('pages', '1');
     }
     quantityEvents();
-    removeButtonsEvents();
+    removeButtonPages();
     updateCartTotal();
     addOnsState();
 });
@@ -207,7 +208,7 @@ reportButton.addEventListener('click', () => {
         window.localStorage.setItem('report', '1');
     }
     quantityEvents();
-    removeButtonsEvents();
+    removeButtonReport();
     updateCartTotal();
     addOnsState();
 }); 
@@ -223,6 +224,28 @@ function addOnsState() {
     }
 }
 
+
+//Checkout functionality
+const checkoutButton = document.querySelector('.cart-checkout-button');
+checkoutButton.addEventListener('click', () => {
+    window.localStorage.clear();
+    planSelect.value = 'none';
+    planTitle.innerText = 'No plan selected';
+    planPrice.innerText = prices.none;
+    try {
+        const addOnElements = document.querySelectorAll('.add-on-element');
+        addOnElements.forEach((element) => {
+            element.remove();
+        });
+        addOnsSection.dataset.pages = 'no';
+        addOnsSection.dataset.report = 'no';
+    } catch (error) {
+        return;
+    }
+    updateCartTotal();
+    addOnsState();
+    window.alert('Thanks for checking out');
+});
 
 //Cart total update function
 function updateCartTotal(){
@@ -244,7 +267,7 @@ function updateCartTotal(){
 }
 
 //Remove buttons functionality
-function removeButtonsEvents() {
+function removeButtonPages() {
     try{
         const pagesRemove = document.querySelector('.pages-remove');
         pagesRemove.addEventListener('click', (event) => {
@@ -254,6 +277,13 @@ function removeButtonsEvents() {
             updateCartTotal();
             addOnsState();
         });
+    } catch (e) {
+        console.log(e);
+        return;
+    }
+}
+function removeButtonReport() {
+    try {
         const reportRemove = document.querySelector('.report-remove');
         reportRemove.addEventListener('click', (event) => {
             event.target.parentNode.remove();
@@ -262,7 +292,8 @@ function removeButtonsEvents() {
             updateCartTotal();
             addOnsState();
         });
-    } catch {
+    } catch (e) {
+        console.log(e);
         return;
     }
 }
