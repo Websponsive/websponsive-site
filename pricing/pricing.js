@@ -148,18 +148,21 @@ essentialButton.addEventListener('click', () => {
     planTitle.innerText = 'Essential';
     planPrice.innerText = prices.essential;
     planSelect.value = 'essential';
+    window.localStorage.setItem('plan', 'essential');
     updateCartTotal();
 });
 valueButton.addEventListener('click', () => {
     planTitle.innerText = 'Value';
     planPrice.innerText = prices.value;
     planSelect.value = 'value';
+    window.localStorage.setItem('plan', 'value');
     updateCartTotal();
 });
 premiumButton.addEventListener('click', () => {
     planTitle.innerText = 'Premium';
     planPrice.innerText = prices.premium;
     planSelect.value = 'premium';
+    window.localStorage.setItem('plan', 'premium');
     updateCartTotal();
 });
 

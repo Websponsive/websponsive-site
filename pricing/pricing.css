@@ -303,7 +303,7 @@ body {
     width: 4.5rem;
     height: 2rem;
   }
-  .navbar .cart-checkout-button {
+  .navbar .cart .cart-checkout-button {
     height: 2rem;
     width: 100%;
   }

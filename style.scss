@@ -208,10 +208,26 @@ body{
                 border-radius: 0.5rem;
                 background-color: red;
                 display: grid;
-                place-content: center;
+                place-content: center; 
                 transition: all var(--transition-speed-fast) ease-in-out;
                 &:hover{
                     transform: translateY(-2px);
+                }
+            }
+        }
+        .cart-end{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            .cart-checkout-button{
+                background-color: var(--f-color-light);
+                text-align: center;
+                border-radius: 0.5rem;
+                border: 2px solid var(--bg-color-lighter-blue);
+                transition: all var(--transition-speed-fast) ease-in-out;
+                &:hover{
+                    border: 2px solid var(--bg-color-pine-green);
+                    outline: none;
                 }
             }
         }
@@ -326,6 +342,10 @@ body{
                     aspect-ratio: 7/3;
                 }
             }
+            .cart-checkout-button{
+                height: 2rem;
+                width: 100%;
+            }
         }
     }
 }
@@ -366,6 +386,11 @@ body{
                     width: 4.5rem;
                     aspect-ratio: 7/3;
                 }
+            }
+            .cart-checkout-button{
+                height: 2.5rem;
+                width: 75%;
+                justify-self: center;
             }
         }
     }
