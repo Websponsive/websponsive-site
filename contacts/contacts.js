@@ -222,8 +222,15 @@ function removeButtonReport() {
 cartButton.addEventListener('click', () => {
     cart.classList.toggle('cart-hidden');
     cart.classList.toggle('cart-visible');
-    navbarList.classList.remove('nav-visible');
-    navbarList.classList.add('nav-hidden');
+    navbar.classList.remove('nav-visible');
+    navbar.classList.add('nav-hidden');
     updateCartTotal();
     menuButton.setAttribute('aria-expanded', 'false');
+
+    let isOpen = cartButton.getAttribute('aria-expanded');
+    if(isOpen === 'false'){
+        cartButton.setAttribute('aria-expanded', 'true');
+    } else if (isOpen === 'true'){
+        cartButton.setAttribute('aria-expanded', 'false');
+    }
 });

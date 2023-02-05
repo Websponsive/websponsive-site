@@ -12,11 +12,11 @@
 
     <script src="contacts.js" defer></script>
     <style>
-        a, p{
-        font-family: var(--f-family-josefin);
+        a, p, li, label{
+        font-family: var(--f-family-josefin), sans-serif;
         }
-        h1, h2, h3, h4, h5, h6, button{
-            font-family: var(--f-family-ubuntu);
+        h1, h2, h3, h4, h5, h6, button, select, input, option, span, textarea{
+            font-family: var(--f-family-ubuntu), sans-serif;
         }
     </style>
 </head>
@@ -24,7 +24,14 @@
     <nav class="navbar nav-hidden">
         <img src="https://res.cloudinary.com/dvrziwgxp/image/upload/v1665761117/Logo-removebg-short_mwxc1r.png" alt="the websponsive logo" draggable="false" class="navbar-logo">
         <button id="cart-button" class="nav-button" aria-expanded="false">
-            <svg xmlns="http://www.w3.org/2000/svg" class="nav-icon" viewBox="0 0 24 24" stroke-width="1.25" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <svg xmlns="http://www.w3.org/2000/svg" class="nav-icon cart-icon-1" viewBox="0 0 24 24" stroke-width="1.25" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <circle cx="6" cy="19" r="2" />
+                <circle cx="17" cy="19" r="2" />
+                <path d="M17 17h-11v-14h-2" />
+                <path d="M6 5l14 1l-1 7h-13" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="nav-icon cart-icon-2" viewBox="0 0 24 24" stroke-width="1.25" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                 <circle cx="6" cy="19" r="2" />
                 <circle cx="17" cy="19" r="2" />
@@ -84,9 +91,29 @@
 
     <!-- Content -->
     <main id="content">
-        
+        <section class="content-section grid" id="contact">
+            <div class="half-section">
+                <h1 class="contact-header dark header">Contact Us</h1>
+                <p class="paragraph gray">Making decisions about your website can be tough, but you don't have to do it alone! Our experts are here to guide you every step of the way. If you're feeling unsure about what's best for your business, give us a call. Fill out the email form, or alternatively, contact us through the links below and we'll provide recommendations and answer any questions you may have.</p>
+            </div>
+            <form action="post" onsubmit="return false">
+                <div class="form-input-group">
+                    <label for="form-name" class="gray paragraph">Name</label>
+                    <input type="text" name="name" id="form-name" class="form-input paragraph dark" placeholder="Nigel" required>
+                </div>
+                <div class="form-input-group">
+                    <label for="form-email" class="gray paragraph">Email</label>
+                    <input type="email" name="email" id="form-email" class="form-input paragraph dark" placeholder="example@gmail.com" required>
+                </div>
+                <div class="form-input-group">
+                    <label for="form-message" class="gray paragraph">Message</label>
+                    <textarea name="message" id="form-message" cols="30" rows="10" class="form-input paragraph dark" required placeholder="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem, debitis?"></textarea>
+                </div>
+            </form>
+        </section>
     </main>
-    <footer >
+
+    <footer>
         <div class="curve">
             <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
                 <path d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z" class="shape-fill"></path>
@@ -94,7 +121,9 @@
         </div>
         <article class="footer-section">
             <h2 class="small-header light">Ready to get started ?</h2>
-            <button class="footer-button button paragraph light">Sign Me Up</button>
+            <a href="../pricing/pricing.html">
+                <button class="footer-button button paragraph light">Sign Me Up</button>
+            </a>
         </article>
         <article class="footer-section">
             <img class="footer-image" src="https://res.cloudinary.com/dvrziwgxp/image/upload/v1671964814/desk_wfpdpu.jpg" alt="">

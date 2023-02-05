@@ -138,6 +138,28 @@ body {
   width: 3rem;
   aspect-ratio: 1/1;
 }
+.navbar .nav-button#cart-button {
+  position: relative;
+}
+.navbar .nav-button#cart-button .cart-icon-1 {
+  position: absolute;
+  opacity: 0;
+  transform: translateX(-2rem);
+  transition: opacity var(--transition-speed-fast) ease-in-out 100ms, transform var(--transition-speed-slow) ease-in-out;
+}
+.navbar .nav-button#cart-button .cart-icon-2 {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity var(--transition-speed-fast) ease-in-out 100ms, transform var(--transition-speed-slow) ease-in-out;
+}
+.navbar .nav-button#cart-button[aria-expanded=true] .cart-icon-1 {
+  opacity: 1;
+  transform: translateX(0);
+}
+.navbar .nav-button#cart-button[aria-expanded=true] .cart-icon-2 {
+  opacity: 0;
+  transform: translateX(2rem);
+}
 .navbar .nav-button#menu-button[aria-expanded=true] .line1 {
   transform: translate(0px, 4.5px) rotateZ(45deg);
 }

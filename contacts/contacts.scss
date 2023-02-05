@@ -141,6 +141,32 @@ body{
         // justify-self: end;
         width: 3rem;
         aspect-ratio: 1/1;
+        &#cart-button{
+            position: relative;
+            .cart-icon-1{
+                position: absolute;
+                opacity: 0;
+                transform: translateX(-2rem);
+                transition: opacity var(--transition-speed-fast) ease-in-out 100ms,
+                transform var(--transition-speed-slow) ease-in-out;
+            }
+            .cart-icon-2{
+                opacity: 1;
+                transform: translateX(0);
+                transition: opacity var(--transition-speed-fast) ease-in-out 100ms,
+                transform var(--transition-speed-slow) ease-in-out;
+            }
+            &[aria-expanded="true"]{
+                .cart-icon-1{
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+                .cart-icon-2{
+                    opacity: 0;
+                    transform: translateX(2rem);
+                }
+            }
+        }
         &#menu-button{
             &[aria-expanded="true"]{
                 .line1{
@@ -411,6 +437,36 @@ body{
 //Content styles
 
 #content{
+    #contact{
+        min-height: 100vh;
+        min-height: 100lvh;
+        p{
+            line-height: var(--f-size-title);
+        }
+        form{
+            display: grid;
+            gap: 0.5rem;
+            .form-input-group{
+                display: grid;
+                gap: 0.25rem;
+                .form-input{
+                    padding: 0.35rem;
+                    border-radius: 0.5rem;
+                    border: 2px solid var(--bg-color-lighter-blue);
+                    transition: border var(--transition-speed-fast) ease-in-out;
+                    width: 100%;
+                    &:hover,
+                    &:focus{
+                        border: 2px solid var(--bg-color-pine-green);
+                        outline: none;
+                    }
+                    &#form-message{
+                        resize: vertical;
+                    }
+                }
+            }
+        }
+    }
     .content-section{
         position: relative;
     }
