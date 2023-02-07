@@ -2,7 +2,7 @@ const navOptions = {
     rootMargin: "-300px 0px 0px 0px"
 }
 const contentOptions = {
-    rootMargin: "-150px 0px -150px 0px"
+    rootMargin: "-100px 0px -100px 0px"
 }
 const cartButton = document.querySelector('#cart-button');
 const cart = document.querySelector('.cart');
@@ -16,7 +16,8 @@ menuButton.addEventListener('click', () => {
     navbar.classList.toggle('nav-visible');
     cart.classList.remove('cart-visible');
     cart.classList.add('cart-hidden');
-    
+    cartButton.setAttribute('aria-expanded', 'false');
+
     if(!navbar.classList.contains('nav-scrolled')){
         navbar.classList.toggle('nav-scrolled');
     }
@@ -30,6 +31,27 @@ menuButton.addEventListener('click', () => {
         // navbar.style.maxHeight = '80px';
     }
 });
+
+//Snowfall effect
+// const snowStart = document.querySelector('.snow-start');
+// let snowMax = 50, currentFlakes = 0;
+// const colors = 
+// ["rgba(220,220,220,0.2)", 
+// "rgba(220,220,220,0.3)", 
+// "rgba(220,220,220,0.4)", 
+// "rgba(220,220,220,0.5)", 
+// "rgba(220,220,220,0.6)"];
+// function newSnowFlake(){
+
+// }
+// let id = setInterval(() => {
+//     // newSnowFlake();
+//     do{
+//         console.log(currentFlakes)
+//         currentFlakes++;
+//     }while(currentFlakes < snowMax);
+//     clearTimeout(id);
+// }, 5000);
 
 //Navbar fade-in animations
 

@@ -1,30 +1,24 @@
-
-const menuButton = document.querySelector('#menu-button');
-const navbarList = document.querySelector('.navbar-list'); 
+//Navbar collapse functionality
 const cartButton = document.querySelector('#cart-button');
 const cart = document.querySelector('.cart');
+const menuButton = document.querySelector('#menu-button');
+const navbarList = document.querySelector('.navbar-list'); 
 const navbar = document.querySelector('.navbar');
-
-//Navbar collapse functionality
-
 menuButton.addEventListener('click', () => {
-    navbar.classList.toggle('nav-hidden');
-    navbar.classList.toggle('nav-visible');
-    cart.classList.remove('cart-visible');
-    cart.classList.add('cart-hidden');
-    cartButton.setAttribute('aria-expanded', 'false');
-    
-    let isOpen = menuButton.getAttribute('aria-expanded');
-    if(isOpen === 'false'){
-        menuButton.setAttribute('aria-expanded', 'true');
-        // navbar.style.maxHeight = '320px';
-    } else {
-        menuButton.setAttribute('aria-expanded', 'false');
-        // navbar.style.maxHeight = '80px';
-    }
+   navbar.classList.toggle('nav-hidden');
+   navbar.classList.toggle('nav-visible');
+   cart.classList.remove('cart-visible');
+   cart.classList.add('cart-hidden');
+   cartButton.setAttribute('aria-expanded', 'false');
+   let isOpen = menuButton.getAttribute('aria-expanded');
+   if(isOpen === 'false'){
+       menuButton.setAttribute('aria-expanded', 'true');
+       // navbar.style.maxHeight = '320px';
+   } else if (isOpen === 'true'){
+       menuButton.setAttribute('aria-expanded', 'false');
+       // navbar.style.maxHeight = '80px';
+   }
 });
-
-/*************** Cart functionalities *******************/
 
 const prices = {
     essential : 129,
@@ -33,15 +27,13 @@ const prices = {
     none : 0,
 }
 
-addOnsState();
-
 const planSelect = document.querySelector('.cart-plan-input');
 const planTitle = document.querySelector('.cart-plan-title');
 const planPrice = document.querySelector('.cart-plan-price');
 const cartTotal = document.querySelector('.cart-total');
 const addOnsSection = document.querySelector('.cart-add-ons');
-let total;
 
+addOnsState();
 
 //Update plan value from the localstorage
 let selectedPlan = window.localStorage.getItem('plan');
@@ -66,6 +58,7 @@ if (!(selectedPlan === null)) {
     }
 }
 
+
 //Update add-ons from localstorage
 let storedPages = Number(window.localStorage.getItem('pages'));
 if (!(storedPages === null || storedPages === 0)){
@@ -74,7 +67,7 @@ if (!(storedPages === null || storedPages === 0)){
         `<div class="cart-item add-on-element">
         <p class="cart-item-title paragraph dark">3 extra pages</p>
         <p class="paragraph dark">$<span class="cart-item-price">39</span>/mo</p>
-        <input type="number" onclick="select()" class="cart-quantity-input pages-count" value="${Number(storedPages)}">
+        <input type="number" onclick="select()" class="cart-quantity-input pages-count" value="$Number(storedPages)}">
         <button class="cart-remove-button light pages-remove small-text">Remove</button>
         </div>`;
     addOnsSection.append(newElement);
@@ -91,7 +84,7 @@ if(!(storedReports === null || storedReports === 0)){
         `<div class="cart-item add-on-element">
         <p class="cart-item-title paragraph dark">3 extra pages</p>
         <p class="paragraph dark">$<span class="cart-item-price">39</span>/mo</p>
-        <input type="number" onclick="select()" class="cart-quantity-input pages-count" value="${Number(storedReports)}">
+        <input type="number" onclick="select()" class="cart-quantity-input pages-count" value="$Number(storedReports)}">
         <button class="cart-remove-button light pages-remove small-text">Remove</button>
         </div>`;
     addOnsSection.append(newElement);
@@ -101,6 +94,7 @@ if(!(storedReports === null || storedReports === 0)){
     updateCartTotal();
     addOnsState();
 }
+
 
 //Plan selector from cart itself
 planSelect.addEventListener('input', () => {
@@ -124,6 +118,7 @@ planSelect.addEventListener('input', () => {
     
     updateCartTotal();
 });
+
 //Add-ons quantity checker
 function quantityEvents() {
     const cartQuantities = document.querySelectorAll('.cart-quantity-input');
@@ -140,94 +135,14 @@ function quantityEvents() {
 }
 
 
-//Plan-selecter buttons from the content
-const essentialButton = document.querySelector('.essential-button');
-const valueButton = document.querySelector('.value-button');
-const premiumButton = document.querySelector('.premium-button');
-
-essentialButton.addEventListener('click', () => {
-    planTitle.innerText = 'Essential';
-    planPrice.innerText = prices.essential;
-    planSelect.value = 'essential';
-    window.localStorage.setItem('plan', 'essential');
-    updateCartTotal();
-});
-valueButton.addEventListener('click', () => {
-    planTitle.innerText = 'Value';
-    planPrice.innerText = prices.value;
-    planSelect.value = 'value';
-    window.localStorage.setItem('plan', 'value');
-    updateCartTotal();
-});
-premiumButton.addEventListener('click', () => {
-    planTitle.innerText = 'Premium';
-    planPrice.innerText = prices.premium;
-    planSelect.value = 'premium';
-    window.localStorage.setItem('plan', 'premium');
-    updateCartTotal();
-});
-
-//Add-ons-selecter buttons from the content
-const pagesButton = document.querySelector('.pages-button');
-const reportButton = document.querySelector('.report-button');
-pagesButton.addEventListener('click', () => {
-    if(addOnsSection.dataset.pages === "yes"){
-        const pageCount = document.querySelector('.pages-count');
-        pageCount.value = Number(pageCount.value) + 1;
-        window.localStorage.setItem('pages', `${pageCount.value}`);
-    } else {
-        let newElement = document.createElement('div');
-        newElement.innerHTML = 
-        `<div class="cart-item add-on-element">
-        <p class="cart-item-title paragraph dark">3 extra pages</p>
-        <p class="paragraph dark">$<span class="cart-item-price">39</span>/mo</p>
-        <input type="number" onclick="select()" class="cart-quantity-input pages-count" value="1">
-        <button class="cart-remove-button light pages-remove small-text">Remove</button>
-        </div>`;
-        addOnsSection.append(newElement);
-        addOnsSection.dataset.pages = 'yes';
-        window.localStorage.setItem('pages', '1');
-    }
-    quantityEvents();
-    removeButtonPages();
-    updateCartTotal();
-    addOnsState();
-});
-reportButton.addEventListener('click', () => {
-    if (addOnsSection.dataset.report === 'yes') {
-        const reportCount = document.querySelector('.report-count');
-        reportCount.value = Number(reportCount.value) + 1;
-        window.localStorage.setItem('report', `${reportCount.value}`);
-    } else {
-        let newElement = document.createElement('div');
-        newElement.innerHTML = 
-        `<div class="cart-item add-on-element">
-        <p class="cart-item-title paragraph dark">Monthly report</p>
-        <p class="paragraph dark">$<span class="cart-item-price">29</span>/mo</p>
-        <input type="number" onclick="select()" class="cart-quantity-input report-count" value="1">
-        <button class="cart-remove-button report-remove light small-text">Remove</button>
-        </div>`;
-        addOnsSection.append(newElement);
-        addOnsSection.dataset.report = 'yes';
-        window.localStorage.setItem('report', '1');
-    }
-    quantityEvents();
-    removeButtonReport();
-    updateCartTotal();
-    addOnsState();
-}); 
-
-
 //Add-ons display function
 function addOnsState() {
-    const addOnsSection = document.querySelector('.cart-add-ons');
-    if(Number(window.localStorage.getItem('pages')) || Number(window.localStorage.getItem('report'))) {
-        addOnsSection.style.display = 'block';
-    } else {
+    if(addOnsSection.dataset.pages === 'no' && addOnsSection.dataset.report === 'no') {
         addOnsSection.style.display = 'none';
+    } else {
+        addOnsSection.style.display = 'block';
     }
 }
-
 
 //Checkout functionality
 const checkoutButton = document.querySelector('.cart-checkout-button');
@@ -314,8 +229,8 @@ cartButton.addEventListener('click', () => {
 
     let isOpen = cartButton.getAttribute('aria-expanded');
     if(isOpen === 'false'){
-        cartButton.setAttribute('aria-expanded', 'true');
+       cartButton.setAttribute('aria-expanded', 'true');
     } else if (isOpen === 'true'){
-        cartButton.setAttribute('aria-expanded', 'false');
+       cartButton.setAttribute('aria-expanded', 'false');
     }
 });

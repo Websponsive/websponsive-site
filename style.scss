@@ -17,12 +17,12 @@
     
     --bg-color-green: hsl(155, 82%, 59%);
     --bg-color-pine-green: hsl(175, 98%, 30%);
-    --bg-color-darker-blue: hsl(226, 61%, 14%);
+    --bg-color-darker-blue: #0e1839;
     --bg-color-dark-blue: hsl(226, 61%, 17%);
     --bg-color-less-dark-blue: hsl(226, 61%, 20%);
     --bg-color-darkish-blue: hsl(226, 61%, 25%);
-    --bg-color-lighter-blue: hsl(226, 74%, 30%);
-    --bg-color-light-blue: hsl(209, 56%, 50%);
+    --bg-color-lighter-blue: #142e85;
+    --bg-color-light-blue: #3882c7;
     --bg-color-purple: hsl(282, 68%, 38%);
     --bg-color-violet: hsl(262, 52%, 47%);
     --bg-color-pink: hsl(340, 82%, 76%);
@@ -533,6 +533,10 @@ body{
             padding: 0.5rem;
         }
     }
+    .star-start{
+        position: absolute;
+        bottom: 0;
+    }
 }
 @keyframes text-rotate {
     from{transform: rotateX(-90deg) translateY(60px);}
@@ -590,13 +594,14 @@ body{
 
     
     #seo,
-    #security,
-    #benefits{
+    #security{
         background-color: var(--bg-color-dark-blue);
     }
 
     #benefits{
         display: grid;
+        background: url(https://res.cloudinary.com/dvrziwgxp/image/upload/v1675796915/low-poly-grid-haikei_2_qxs341.svg), hsla(0, 0%, 0%, 0.35);
+        background-blend-mode: darken;
         .benefits-header{
             justify-self: center;
             margin-bottom: 3rem;
@@ -635,7 +640,7 @@ body{
     }
     @media screen and (max-width: 560px){
         #benefits{
-            padding: 10rem 1.5rem 1.5rem 1.5rem;
+            padding: 10rem 1.5rem 5rem 1.5rem;
             .cards{
                 grid-template-columns: repeat(1, 1fr);
                 gap: 1rem;
@@ -657,7 +662,7 @@ body{
     @media screen and (min-width: 561px){
         #benefits{
             padding-top: 20rem;
-            padding-bottom: 2rem;
+            padding-bottom: 7rem;
             .cards{
                 grid-template-columns: repeat(2, 1fr);
                 gap: 1rem;
@@ -676,7 +681,7 @@ body{
                         left: 0;
                         top: 0;
                         background-image: radial-gradient(
-                            45vw circle at var(--mouse-x) var(--mouse-y), 
+                            80vw circle at var(--mouse-x) var(--mouse-y), 
                             hsla(172, 100%, 70%, 0.2),
                             transparent 40%
                         );
@@ -702,12 +707,12 @@ body{
     @media screen and (min-width: 1300px) {
         #benefits{
             padding-top: 35rem;
-            padding-bottom: 4rem;
+            padding-bottom: 9rem;
             .cards{
                 grid-template-columns: repeat(3, 1fr);
                 gap: 1.5rem;
                 .benefit{
-                    aspect-ratio: 1/1;
+                    aspect-ratio: 4/3;
                     grid-template-rows: 2fr 3fr;
                     .icon{
                         width: 4rem;
@@ -720,7 +725,7 @@ body{
                         left: 0;
                         top: 0;
                         background-image: radial-gradient(
-                            30vw circle at var(--mouse-x) var(--mouse-y), 
+                            40vw circle at var(--mouse-x) var(--mouse-y), 
                             hsla(172, 100%, 70%, 0.2),
                             transparent 40%
                         );
@@ -909,7 +914,7 @@ body{
     }
     .curve {
         position: absolute;
-        top: 0;
+        bottom: 0;
         left: 0;
         width: 100%;
         overflow: hidden;
@@ -922,7 +927,8 @@ body{
             height: 100px;
         }
         .shape-fill {
-            fill: #111D46;
+            fill: var(--bg-color-darker-blue);
+            // fill: transparent;
         }
     }
     

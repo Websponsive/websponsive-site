@@ -434,46 +434,10 @@ body{
 }
 
 
-//Content styles
-
+// Content styles
 #content{
-    #contact{
-        min-height: 100vh;
-        min-height: 100lvh;
-        p{
-            line-height: var(--f-size-title);
-        }
-        form{
-            display: grid;
-            gap: 0.5rem;
-            .form-input-group{
-                display: grid;
-                gap: 0.25rem;
-                .form-input{
-                    padding: 0.35rem;
-                    border-radius: 0.5rem;
-                    border: 2px solid var(--bg-color-lighter-blue);
-                    transition: border var(--transition-speed-fast) ease-in-out;
-                    width: 100%;
-                    box-shadow: 0 0 10px var(--f-color-less-light);
-                    &:hover,
-                    &:focus{
-                        border: 2px solid var(--bg-color-pine-green);
-                        outline: none;
-                    }
-                    &#form-message{
-                        resize: vertical;
-                        min-height: 2rem;
-                        background: linear-gradient(
-                            -45deg,
-                            var(--f-color-less-light) 0.75rem,
-                            transparent 1rem 
-                        );
-                    }
-                }
-            }
-        }
-    }
+
+
     .content-section{
         position: relative;
     }
@@ -547,10 +511,7 @@ body{
             background-color: var(--f-color-light);
         }
     }
-
-    
 }
-
 
 
 // Footer styles
@@ -713,6 +674,7 @@ footer{
         }
     }
 }
+
 
 //Utility classes
 ul{

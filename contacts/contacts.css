@@ -423,6 +423,7 @@ body {
   border: 2px solid var(--bg-color-lighter-blue);
   transition: border var(--transition-speed-fast) ease-in-out;
   width: 100%;
+  box-shadow: 0 0 10px var(--f-color-less-light);
 }
 #content #contact form .form-input-group .form-input:hover, #content #contact form .form-input-group .form-input:focus {
   border: 2px solid var(--bg-color-pine-green);
@@ -430,6 +431,8 @@ body {
 }
 #content #contact form .form-input-group .form-input#form-message {
   resize: vertical;
+  min-height: 2rem;
+  background: linear-gradient(-45deg, var(--f-color-less-light) 0.75rem, transparent 1rem);
 }
 #content .content-section {
   position: relative;

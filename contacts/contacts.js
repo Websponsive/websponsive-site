@@ -9,7 +9,7 @@ menuButton.addEventListener('click', () => {
     navbar.classList.toggle('nav-visible');
     cart.classList.remove('cart-visible');
     cart.classList.add('cart-hidden');
-    
+    cartButton.setAttribute('aria-expanded', 'false');
     let isOpen = menuButton.getAttribute('aria-expanded');
     if(isOpen === 'false'){
         menuButton.setAttribute('aria-expanded', 'true');
