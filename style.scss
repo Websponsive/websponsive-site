@@ -546,7 +546,6 @@ body{
 
 /* Content styles */
 #content{
-
     .section-image{
         border-radius: 1rem;
     }
@@ -601,6 +600,9 @@ body{
     #benefits{
         display: grid;
         background: url(https://res.cloudinary.com/dvrziwgxp/image/upload/v1675796915/low-poly-grid-haikei_2_qxs341.svg), hsla(0, 0%, 0%, 0.35);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
         background-blend-mode: darken;
         .benefits-header{
             justify-self: center;

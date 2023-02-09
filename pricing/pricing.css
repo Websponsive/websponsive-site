@@ -91,14 +91,10 @@ body {
   width: 100vw;
   background-color: var(--background);
   transition: background-color var(--transition-speed-slow);
-  -webkit-animation-name: navbar-pop;
-          animation-name: navbar-pop;
-  -webkit-animation-duration: var(--transition-speed-slow);
-          animation-duration: var(--transition-speed-slow);
-  -webkit-animation-iteration-count: initial;
-          animation-iteration-count: initial;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
+  animation-name: navbar-pop;
+  animation-duration: var(--transition-speed-slow);
+  animation-iteration-count: initial;
+  animation-fill-mode: forwards;
   transform: translateY(-5rem);
 }
 .navbar .navbar-logo {
@@ -185,7 +181,6 @@ body {
   margin: 0.5rem;
   background-color: hsla(246deg, 9%, 85%, 0.85);
   border-radius: 1rem;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   display: flex;
@@ -262,7 +257,6 @@ body {
     flex-direction: column;
     width: 100%;
     grid-column: span 3;
-    height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
   }
@@ -366,7 +360,7 @@ body {
     width: 70%;
   }
   .navbar .cart .cart-item .cart-quantity-input,
-.navbar .cart .cart-item .cart-remove-button {
+  .navbar .cart .cart-item .cart-remove-button {
     width: 4.5rem;
     aspect-ratio: 7/3;
   }
@@ -382,14 +376,6 @@ body {
     right: 0;
     width: 50%;
     padding: 1rem;
-  }
-}
-@-webkit-keyframes navbar-pop {
-  from {
-    transform: translateY(-5rem);
-  }
-  to {
-    transform: translateY(0);
   }
 }
 @keyframes navbar-pop {
@@ -501,14 +487,10 @@ body {
 #content #subscription-plans .plan.value::before {
   background-image: linear-gradient(90deg, var(--bg-color-green), var(--bg-color-pine-green), var(--bg-color-light-blue), var(--bg-color-pine-green), var(--bg-color-green));
   background-size: 200%;
-  -webkit-animation-name: border-gradient;
-          animation-name: border-gradient;
-  -webkit-animation-duration: 5s;
-          animation-duration: 5s;
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
+  animation-name: border-gradient;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
 #content #subscription-plans .plan.premium::before {
   background-color: var(--bg-color-light-blue);
@@ -522,14 +504,6 @@ body {
   top: -7.5px;
   left: -7.5px;
   z-index: -1;
-}
-@-webkit-keyframes border-gradient {
-  0% {
-    background-position: 0% center;
-  }
-  100% {
-    background-position: -200% center;
-  }
 }
 @keyframes border-gradient {
   0% {
@@ -636,7 +610,6 @@ body {
   font-size: var(--f-size-paragraph);
   transition: all var(--transition-speed-fast) ease-in-out;
   white-space: nowrap;
-  width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
 }
@@ -857,8 +830,7 @@ ul {
   background-size: 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  -webkit-animation: text-gradient 3s infinite linear;
-          animation: text-gradient 3s infinite linear;
+  animation: text-gradient 3s infinite linear;
   /* text-shadow: 0 0 0px var(--f-color-gray); */
 }
 
@@ -870,8 +842,7 @@ ul {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   /* text-shadow: 0 0 0px var(--f-color-gray); */
-  -webkit-animation: text-gradient 3s infinite linear;
-          animation: text-gradient 3s infinite linear;
+  animation: text-gradient 3s infinite linear;
 }
 
 .gray-gradient-text {
@@ -882,15 +853,6 @@ ul {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   /* text-shadow: 0 0 0px var(--f-color-gray); */
-}
-
-@-webkit-keyframes text-gradient {
-  0% {
-    background-position: 0% center;
-  }
-  100% {
-    background-position: -200% center;
-  }
 }
 
 @keyframes text-gradient {

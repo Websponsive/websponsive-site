@@ -89,14 +89,10 @@ body {
   width: 100vw;
   background-color: var(--background);
   transition: background-color var(--transition-speed-slow);
-  -webkit-animation-name: navbar-pop;
-          animation-name: navbar-pop;
-  -webkit-animation-duration: var(--transition-speed-slow);
-          animation-duration: var(--transition-speed-slow);
-  -webkit-animation-iteration-count: initial;
-          animation-iteration-count: initial;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
+  animation-name: navbar-pop;
+  animation-duration: var(--transition-speed-slow);
+  animation-iteration-count: initial;
+  animation-fill-mode: forwards;
   transform: translateY(-5rem);
 }
 .navbar .navbar-logo {
@@ -182,7 +178,6 @@ body {
   margin: 0.5rem;
   background-color: hsla(246deg, 9%, 85%, 0.85);
   border-radius: 1rem;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   display: flex;
@@ -255,12 +250,12 @@ body {
   .navbar {
     display: grid;
     grid-template-columns: 4fr 1fr 1fr;
+    transition: max-height var(--transition-speed-slow) ease-in-out, background-color var(--transition-speed-slow);
   }
   .navbar .navbar-list {
     flex-direction: column;
     width: 100%;
     grid-column: span 3;
-    height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
   }
@@ -286,7 +281,6 @@ body {
   }
   .navbar.nav-hidden {
     max-height: 80px;
-    transition: max-height var(--transition-speed-slow) ease-in-out, background-color var(--transition-speed-slow);
   }
   .navbar.nav-hidden .navbar-list {
     opacity: 0;
@@ -296,7 +290,6 @@ body {
   }
   .navbar.nav-visible {
     max-height: 320px;
-    transition: max-height var(--transition-speed-slow) ease-in-out, background-color var(--transition-speed-slow);
   }
   .navbar.nav-visible .navbar-list {
     opacity: 1;
@@ -368,7 +361,7 @@ body {
     width: 70%;
   }
   .navbar .cart .cart-item .cart-quantity-input,
-.navbar .cart .cart-item .cart-remove-button {
+  .navbar .cart .cart-item .cart-remove-button {
     width: 4.5rem;
     aspect-ratio: 7/3;
   }
@@ -386,14 +379,6 @@ body {
     padding: 1rem;
   }
 }
-@-webkit-keyframes navbar-pop {
-  from {
-    transform: translateY(-5rem);
-  }
-  to {
-    transform: translateY(0);
-  }
-}
 @keyframes navbar-pop {
   from {
     transform: translateY(-5rem);
@@ -402,8 +387,70 @@ body {
     transform: translateY(0);
   }
 }
+#content .question-section {
+  display: grid;
+  gap: 1rem;
+}
+#content .question-section .question-section-header {
+  border-bottom: 1px var(--f-color-gray) solid;
+  padding-bottom: 1rem;
+}
+#content .question-section .question {
+  max-height: 3rem;
+  cursor: pointer;
+  transition: max-height 750ms ease-in-out;
+  background-color: var(--bg-color-light-blue);
+  border-radius: 0.5rem;
+}
+#content .question-section .question .question-text {
+  text-align: center;
+  padding: 1.5rem 2rem;
+  background-color: var(--bg-color-darkish-blue);
+  border-radius: inherit;
+}
+#content .question-section .question .question-text::before {
+  content: "+";
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: var(--f-size-small-header);
+}
+#content .question-section .question .question-text::after {
+  content: "+";
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: var(--f-size-small-header);
+}
+#content .question-section .question .dropdown {
+  width: 100%;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+#content .question-section .question .dropdown .answer-text {
+  text-align: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: var(--transition-speed-fast) ease-in-out 100ms;
+}
+#content .question-section .question:hover, #content .question-section .question:focus-within, #content .question-section .question:focus {
+  height: auto;
+  max-height: 500px;
+}
+#content .question-section .question:hover .question-text::before, #content .question-section .question:hover .question-text::after, #content .question-section .question:focus-within .question-text::before, #content .question-section .question:focus-within .question-text::after, #content .question-section .question:focus .question-text::before, #content .question-section .question:focus .question-text::after {
+  content: "-";
+}
+#content .question-section .question:hover .answer-text, #content .question-section .question:focus-within .answer-text, #content .question-section .question:focus .answer-text {
+  visibility: visible;
+  opacity: 1;
+}
 #content .content-section {
   position: relative;
+  display: grid;
+  gap: 3rem;
 }
 @media screen and (max-width: 560px) {
   #content .content-section {
@@ -412,6 +459,9 @@ body {
   #content .section-image {
     width: 90%;
     justify-self: center;
+  }
+  #content .question {
+    margin-block: 1rem;
   }
 }
 @media screen and (min-width: 561px) {
@@ -422,6 +472,9 @@ body {
     width: clamp(30vw, 90%, 45vw);
     max-width: 500px;
     justify-self: center;
+  }
+  #content .question {
+    margin-block: 0.5rem;
   }
 }
 @media screen and (min-width: 1300px) {
@@ -435,7 +488,6 @@ body {
   font-size: var(--f-size-paragraph);
   transition: all var(--transition-speed-fast) ease-in-out;
   white-space: nowrap;
-  width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
 }
@@ -655,8 +707,7 @@ ul {
   background-size: 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  -webkit-animation: text-gradient 3s infinite linear;
-          animation: text-gradient 3s infinite linear;
+  animation: text-gradient 3s infinite linear;
   /* text-shadow: 0 0 0px var(--f-color-gray); */
 }
 
@@ -668,8 +719,7 @@ ul {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   /* text-shadow: 0 0 0px var(--f-color-gray); */
-  -webkit-animation: text-gradient 3s infinite linear;
-          animation: text-gradient 3s infinite linear;
+  animation: text-gradient 3s infinite linear;
 }
 
 .gray-gradient-text {
@@ -680,15 +730,6 @@ ul {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   /* text-shadow: 0 0 0px var(--f-color-gray); */
-}
-
-@-webkit-keyframes text-gradient {
-  0% {
-    background-position: 0% center;
-  }
-  100% {
-    background-position: -200% center;
-  }
 }
 
 @keyframes text-gradient {
