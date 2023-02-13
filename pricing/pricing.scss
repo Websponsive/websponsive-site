@@ -27,16 +27,24 @@
     --bg-color-violet: hsl(262, 52%, 47%);
     --bg-color-pink: hsl(340, 82%, 76%);
 
+    // --bg-gradient-button: linear-gradient(
+    //     135deg,
+    //     var(--bg-color-violet), 
+    //     var(--bg-color-purple), 
+    //     var(--bg-color-pink),
+    //     var(--bg-color-green), 
+    //     var(--bg-color-light-blue),
+    //     var(--bg-color-lighter-blue)
+    // );
     --bg-gradient-button: linear-gradient(
-        135deg,
-        var(--bg-color-violet), 
-        var(--bg-color-purple), 
-        var(--bg-color-pink),
+        135deg, 
+        var(--bg-color-lighter-blue), 
+        var(--bg-color-light-blue),
+        var(--bg-color-green),
         var(--bg-color-green), 
         var(--bg-color-light-blue),
         var(--bg-color-lighter-blue)
     );
-    
     --f-color-light: hsl(0, 0%, 95%);
     --f-color-less-light: hsl(0, 0%, 75%);
     --f-color-dark: hsl(0, 0%, 20%);

@@ -32,26 +32,6 @@ menuButton.addEventListener('click', () => {
     }
 });
 
-//Snowfall effect
-// const snowStart = document.querySelector('.snow-start');
-// let snowMax = 50, currentFlakes = 0;
-// const colors = 
-// ["rgba(220,220,220,0.2)", 
-// "rgba(220,220,220,0.3)", 
-// "rgba(220,220,220,0.4)", 
-// "rgba(220,220,220,0.5)", 
-// "rgba(220,220,220,0.6)"];
-// function newSnowFlake(){
-
-// }
-// let id = setInterval(() => {
-//     // newSnowFlake();
-//     do{
-//         console.log(currentFlakes)
-//         currentFlakes++;
-//     }while(currentFlakes < snowMax);
-//     clearTimeout(id);
-// }, 5000);
 
 //Navbar fade-in animations
 
@@ -70,6 +50,26 @@ const navObserver = new IntersectionObserver((elements) => {
 
 navObserver.observe(introSection);
 
+//Snowfall effect
+// const snowStart = document.querySelector('.snow-start');
+// let snowMax = 50, currentFlakes = 0;
+// const colors = 
+// ["rgba(220,220,220,0.2)", 
+// "rgba(220,220,220,0.3)", 
+// "rgba(220,220,220,0.4)", 
+// "rgba(220,220,220,0.5)", 
+// "rgba(220,220,220,0.6)"];
+
+// function newSnowFlake(){
+
+// }
+// do{
+    
+//     setTimeout(() => {
+//         currentFlakes++;
+//         console.log(currentFlakes);
+//     }, 5000);
+// }while(currentFlakes < snowMax);
 
 
 

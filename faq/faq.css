@@ -21,23 +21,24 @@
   --f-family-ubuntu: "Ubuntu", sans-serif;
   --bg-color-green: hsl(155, 82%, 59%);
   --bg-color-pine-green: hsl(175, 98%, 30%);
-  --bg-color-darker-blue: hsl(226, 61%, 14%);
-  --bg-color-dark-blue: hsl(226, 61%, 17%);
-  --bg-color-less-dark-blue: hsl(226, 61%, 20%);
-  --bg-color-darkish-blue: hsl(226, 61%, 25%);
-  --bg-color-lighter-blue: hsl(226, 74%, 30%);
-  --bg-color-light-blue: hsl(209, 56%, 50%);
+  --bg-color-blue-900: hsl(226, 61%, 14%);
+  --bg-color-blue-800: hsl(226, 61%, 17%);
+  --bg-color-blue-700: hsl(226, 61%, 20%);
+  --bg-color-blue-600: hsl(226, 61%, 25%);
+  --bg-color-blue-500: hsl(226, 74%, 30%);
+  --bg-color-blue-400: hsl(226, 50%, 45%);
+  --bg-color-blue-200: hsl(209, 56%, 50%);
   --bg-color-purple: hsl(282, 68%, 38%);
   --bg-color-violet: hsl(262, 52%, 47%);
   --bg-color-pink: hsl(340, 82%, 76%);
   --bg-gradient-button: linear-gradient(
       135deg,
-      var(--bg-color-violet),
-      var(--bg-color-purple),
-      var(--bg-color-pink),
+      var(--bg-color-blue-500),
+      var(--bg-color-blue-200),
       var(--bg-color-green),
-      var(--bg-color-light-blue),
-      var(--bg-color-lighter-blue)
+      var(--bg-color-green),
+      var(--bg-color-blue-200),
+      var(--bg-color-blue-500)
   );
   --f-color-light: hsl(0, 0%, 95%);
   --f-color-less-light: hsl(0, 0%, 75%);
@@ -46,7 +47,7 @@
   --f-color-gradient-blue: linear-gradient(
       90deg,
       var(--bg-color-green),
-      var(--bg-color-light-blue),
+      var(--bg-color-blue-200),
       var(--bg-color-green));
   --f-color-gradient-violet: linear-gradient(
       90deg,
@@ -197,7 +198,7 @@ body {
 .navbar .cart .cart-item .cart-quantity-input {
   text-align: center;
   border-radius: 0.5rem;
-  border: 2px solid var(--bg-color-lighter-blue);
+  border: 2px solid var(--bg-color-blue-500);
   transition: all var(--transition-speed-fast) ease-in-out;
 }
 .navbar .cart .cart-item .cart-plan-input:hover, .navbar .cart .cart-item .cart-plan-input:focus,
@@ -225,7 +226,7 @@ body {
   background-color: var(--f-color-light);
   text-align: center;
   border-radius: 0.5rem;
-  border: 2px solid var(--bg-color-lighter-blue);
+  border: 2px solid var(--bg-color-blue-500);
   transition: all var(--transition-speed-fast) ease-in-out;
 }
 .navbar .cart .cart-end .cart-checkout-button:hover {
@@ -396,16 +397,16 @@ body {
   padding-bottom: 1rem;
 }
 #content .question-section .question {
-  max-height: 3rem;
+  max-height: 4rem;
   cursor: pointer;
   transition: max-height 750ms ease-in-out;
-  background-color: var(--bg-color-light-blue);
-  border-radius: 0.5rem;
+  background-color: var(--bg-color-blue-200);
+  border-radius: 1rem;
 }
 #content .question-section .question .question-text {
   text-align: center;
-  padding: 1.5rem 2rem;
-  background-color: var(--bg-color-darkish-blue);
+  padding: 1.5rem 2.5rem;
+  background: linear-gradient(135deg, var(--bg-color-blue-400) 10%, var(--bg-color-blue-700) 80%, var(--bg-color-blue-800));
   border-radius: inherit;
 }
 #content .question-section .question .question-text::before {
@@ -428,29 +429,36 @@ body {
   width: 100%;
   display: grid;
   place-items: center;
-  padding: 1rem;
+  padding: 1.5rem;
+  max-height: 0px;
+  transition: max-height 750ms ease-in-out;
+  overflow: hidden;
 }
 #content .question-section .question .dropdown .answer-text {
   text-align: center;
   visibility: hidden;
   opacity: 0;
-  transition: var(--transition-speed-fast) ease-in-out 100ms;
+  height: 100%;
+  transition: var(--transition-speed-fast) ease-in-out 50ms;
 }
 #content .question-section .question:hover, #content .question-section .question:focus-within, #content .question-section .question:focus {
   height: auto;
-  max-height: 500px;
+  max-height: 800px;
 }
 #content .question-section .question:hover .question-text::before, #content .question-section .question:hover .question-text::after, #content .question-section .question:focus-within .question-text::before, #content .question-section .question:focus-within .question-text::after, #content .question-section .question:focus .question-text::before, #content .question-section .question:focus .question-text::after {
   content: "-";
 }
-#content .question-section .question:hover .answer-text, #content .question-section .question:focus-within .answer-text, #content .question-section .question:focus .answer-text {
+#content .question-section .question:hover .dropdown, #content .question-section .question:focus-within .dropdown, #content .question-section .question:focus .dropdown {
+  max-height: 1000px;
+}
+#content .question-section .question:hover .dropdown .answer-text, #content .question-section .question:focus-within .dropdown .answer-text, #content .question-section .question:focus .dropdown .answer-text {
   visibility: visible;
   opacity: 1;
 }
 #content .content-section {
   position: relative;
   display: grid;
-  gap: 3rem;
+  gap: 5rem;
 }
 @media screen and (max-width: 560px) {
   #content .content-section {
@@ -461,7 +469,7 @@ body {
     justify-self: center;
   }
   #content .question {
-    margin-block: 1rem;
+    margin-block: 0.5rem;
   }
 }
 @media screen and (min-width: 561px) {
@@ -479,7 +487,7 @@ body {
 }
 @media screen and (min-width: 1300px) {
   #content .content-section {
-    padding: 10rem 12rem 6rem 12rem;
+    padding: 10rem 16rem 6rem 16rem;
   }
 }
 .link {
@@ -526,7 +534,7 @@ body {
 }
 
 footer {
-  background-color: var(--bg-color-darker-blue);
+  background-color: var(--bg-color-blue-900);
   display: grid;
 }
 footer .footer-section {
