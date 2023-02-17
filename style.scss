@@ -17,12 +17,13 @@
     
     --bg-color-green: hsl(155, 82%, 59%);
     --bg-color-pine-green: hsl(175, 98%, 30%);
-    --bg-color-darker-blue: #0e1839;
-    --bg-color-dark-blue: hsl(226, 61%, 17%);
-    --bg-color-less-dark-blue: hsl(226, 61%, 20%);
-    --bg-color-darkish-blue: hsl(226, 61%, 25%);
-    --bg-color-lighter-blue: #142e85;
-    --bg-color-light-blue: #3882c7;
+    --bg-color-blue-900: hsl(226, 61%, 14%);
+    --bg-color-blue-800: hsl(226, 61%, 17%);
+    --bg-color-blue-700: hsl(226, 61%, 20%);
+    --bg-color-blue-600: hsl(226, 61%, 25%);
+    --bg-color-blue-500: hsl(226, 74%, 30%);
+    --bg-color-blue-400: hsl(226, 50%, 45%);
+    --bg-color-blue-200: hsl(209, 56%, 50%);
     --bg-color-purple: hsl(282, 68%, 38%);
     --bg-color-violet: hsl(262, 52%, 47%);
     --bg-color-pink: hsl(340, 82%, 76%);
@@ -33,17 +34,17 @@
     //     var(--bg-color-purple), 
     //     var(--bg-color-pink),
     //     var(--bg-color-green), 
-    //     var(--bg-color-light-blue),
-    //     var(--bg-color-lighter-blue)
+    //     var(--bg-color-blue-200),
+    //     var(--bg-color-blue-500)
     // );
     --bg-gradient-button: linear-gradient(
         135deg, 
-        var(--bg-color-lighter-blue), 
-        var(--bg-color-light-blue),
+        var(--bg-color-blue-500), 
+        var(--bg-color-blue-200),
         var(--bg-color-green),
         var(--bg-color-green), 
-        var(--bg-color-light-blue),
-        var(--bg-color-lighter-blue)
+        var(--bg-color-blue-200),
+        var(--bg-color-blue-500)
     );
     
     --f-color-light: hsl(0, 0%, 95%);
@@ -53,7 +54,7 @@
     --f-color-gradient-blue: linear-gradient(
         90deg, 
         var(--bg-color-green), 
-        var(--bg-color-light-blue), 
+        var(--bg-color-blue-200), 
         var(--bg-color-green));
     --f-color-gradient-violet: linear-gradient(
         90deg, 
@@ -98,7 +99,7 @@ body{
     align-items: center;
     position: fixed;
     top: 0; 
-    z-index: 1;
+    z-index: 999;
     width: 100vw;
     background-color: var(--background);
     transition: background-color var(--transition-speed-slow);
@@ -228,7 +229,7 @@ body{
             .cart-quantity-input{
                 text-align: center;
                 border-radius: 0.5rem;
-                border: 2px solid var(--bg-color-lighter-blue);
+                border: 2px solid var(--bg-color-blue-500);
                 transition: all var(--transition-speed-fast) ease-in-out;
 
                 &:hover,
@@ -258,7 +259,7 @@ body{
                 background-color: var(--f-color-light);
                 text-align: center;
                 border-radius: 0.5rem;
-                border: 2px solid var(--bg-color-lighter-blue);
+                border: 2px solid var(--bg-color-blue-500);
                 transition: all var(--transition-speed-fast) ease-in-out;
                 &:hover{
                     border: 2px solid var(--bg-color-pine-green);
@@ -449,23 +450,24 @@ body{
 
 /* Intro Page Styles */
 .intro{
+    overflow: hidden;
     background: radial-gradient(
         circle at 10% 100%, 
-        var(--bg-color-lighter-blue) 5%,
-        var(--bg-color-darkish-blue) 20%,
-        var(--bg-color-less-dark-blue) 40%, 
+        var(--bg-color-blue-500) 5%,
+        var(--bg-color-blue-600) 20%,
+        var(--bg-color-blue-700) 40%, 
         transparent 70%
     ), radial-gradient(
         circle at 0% 0%, 
-        var(--bg-color-lighter-blue) 5%,
-        var(--bg-color-darkish-blue) 20%,
-        var(--bg-color-less-dark-blue) 40%, 
+        var(--bg-color-blue-500) 5%,
+        var(--bg-color-blue-600) 20%,
+        var(--bg-color-blue-700) 40%, 
         transparent 70%
     ), radial-gradient(
         circle at 100% 40%, 
-        var(--bg-color-lighter-blue) 0%,
-        var(--bg-color-darkish-blue) 25%,
-        var(--bg-color-less-dark-blue) 50%, 
+        var(--bg-color-blue-500) 0%,
+        var(--bg-color-blue-600) 25%,
+        var(--bg-color-blue-700) 50%, 
         transparent 75%
     );
     display: grid;
@@ -476,6 +478,7 @@ body{
         justify-items: center;
         grid-template-rows: 1fr 1fr;
         gap: 2rem;
+        z-index: 1;
 
         .intro-header{
             font-family: var(--f-family-ubuntu);
@@ -547,12 +550,37 @@ body{
         position: absolute;
         bottom: 0;
     }
+    .blob{
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        background: linear-gradient(
+            90deg,
+            aquamarine,
+            mediumpurple
+        );
+        filter: blur(200px);
+        opacity: 0;
+        transition: opacity var(--transition-speed-slow) ease;
+        // animation-name: blob-spin;
+        // animation-duration: 20s;
+        // animation-timing-function: linear;
+        // animation-iteration-count: infinite;
+        // animation-fill-mode: forwards;
+    }
 }
 @keyframes text-rotate {
     from{transform: rotateX(-90deg) translateY(60px);}
     to{transform: rotateX(0deg) translateY(0px);}
 }
-
+// @keyframes blob-spin {
+//     from{transform: rotateZ(0deg);}
+//     to{transform: rotateZ(360deg);}
+// }
 
 /* Content styles */
 #content{
@@ -561,6 +589,7 @@ body{
     }
     .content-section{
         position: relative;
+        z-index: 99;
     }
     @media screen and (max-width: 560px){
         .intro{
@@ -581,6 +610,11 @@ body{
         .intro{
             height: calc(100vh + 150px);
             padding-bottom: 150px;
+            &:hover{
+                .blob{
+                    opacity: 0.6;
+                }
+            }
         }
         .content-section{
             padding: 8rem 2rem 18rem 2rem;
@@ -604,9 +638,11 @@ body{
     
     #seo,
     #security{
-        background-color: var(--bg-color-dark-blue);
+        background-color: var(--bg-color-blue-800);
     }
-
+    #design{
+        z-index: 10;
+    }
     #benefits{
         display: grid;
         background: url(https://res.cloudinary.com/dvrziwgxp/image/upload/v1675796915/low-poly-grid-haikei_2_qxs341.svg), hsla(0, 0%, 0%, 0.35);
@@ -622,7 +658,7 @@ body{
         .cards{
             display: grid;
             .benefit{
-                background-color: var(--bg-color-darkish-blue);
+                background-color: var(--bg-color-blue-600);
                 opacity: 0.8;
                 border: 2px solid rgba(255, 255, 255, 0.2);
                 width: 100%;
@@ -757,7 +793,7 @@ body{
 
     // Footer styles
     footer{
-        background-color: var(--bg-color-darker-blue);
+        background-color: var(--bg-color-blue-900);
         display: grid;
 
         // min-height: 300px;
@@ -903,7 +939,7 @@ body{
         }
         &-design .shape-fill,
         &-accessibility .shape-fill{
-            fill: var(--bg-color-dark-blue);
+            fill: var(--bg-color-blue-800);
         }
 
     }
@@ -939,7 +975,7 @@ body{
             height: 100px;
         }
         .shape-fill {
-            fill: var(--bg-color-darker-blue);
+            fill: var(--bg-color-blue-900);
             // fill: transparent;
         }
     }
@@ -1201,9 +1237,11 @@ button{
     border: none;
     cursor: pointer;
     // text-transform: uppercase;
-    transition: background-position var(--transition-speed-slow)  cubic-bezier(.77,0,.18,1);
+    transition: var(--transition-speed-slow)  cubic-bezier(.77,0,.18,1);
     box-shadow: 0 0 20px hsla(0, 0%, 0%, 0.5);
-    &:hover{
+    &:hover,
+    &:focus{
         background-position: 0% 0%;
+        scale: 0.975;
     }
 }

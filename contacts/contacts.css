@@ -21,23 +21,24 @@
   --f-family-ubuntu: "Ubuntu", sans-serif;
   --bg-color-green: hsl(155, 82%, 59%);
   --bg-color-pine-green: hsl(175, 98%, 30%);
-  --bg-color-darker-blue: hsl(226, 61%, 14%);
-  --bg-color-dark-blue: hsl(226, 61%, 17%);
-  --bg-color-less-dark-blue: hsl(226, 61%, 20%);
-  --bg-color-darkish-blue: hsl(226, 61%, 25%);
-  --bg-color-lighter-blue: hsl(226, 74%, 30%);
-  --bg-color-light-blue: hsl(209, 56%, 50%);
+  --bg-color-blue-900: hsl(226, 61%, 14%);
+  --bg-color-blue-800: hsl(226, 61%, 17%);
+  --bg-color-blue-700: hsl(226, 61%, 20%);
+  --bg-color-blue-600: hsl(226, 61%, 25%);
+  --bg-color-blue-500: hsl(226, 74%, 30%);
+  --bg-color-blue-400: hsl(226, 50%, 45%);
+  --bg-color-blue-200: hsl(209, 56%, 50%);
   --bg-color-purple: hsl(282, 68%, 38%);
   --bg-color-violet: hsl(262, 52%, 47%);
   --bg-color-pink: hsl(340, 82%, 76%);
   --bg-gradient-button: linear-gradient(
       135deg,
-      var(--bg-color-lighter-blue),
-      var(--bg-color-light-blue),
+      var(--bg-color-blue-500),
+      var(--bg-color-blue-200),
       var(--bg-color-green),
       var(--bg-color-green),
-      var(--bg-color-light-blue),
-      var(--bg-color-lighter-blue)
+      var(--bg-color-blue-200),
+      var(--bg-color-blue-500)
   );
   --f-color-light: hsl(0, 0%, 95%);
   --f-color-less-light: hsl(0, 0%, 75%);
@@ -46,7 +47,7 @@
   --f-color-gradient-blue: linear-gradient(
       90deg,
       var(--bg-color-green),
-      var(--bg-color-light-blue),
+      var(--bg-color-blue-200),
       var(--bg-color-green));
   --f-color-gradient-violet: linear-gradient(
       90deg,
@@ -197,7 +198,7 @@ body {
 .navbar .cart .cart-item .cart-quantity-input {
   text-align: center;
   border-radius: 0.5rem;
-  border: 2px solid var(--bg-color-lighter-blue);
+  border: 2px solid var(--bg-color-blue-500);
   transition: all var(--transition-speed-fast) ease-in-out;
 }
 .navbar .cart .cart-item .cart-plan-input:hover, .navbar .cart .cart-item .cart-plan-input:focus,
@@ -225,7 +226,7 @@ body {
   background-color: var(--f-color-light);
   text-align: center;
   border-radius: 0.5rem;
-  border: 2px solid var(--bg-color-lighter-blue);
+  border: 2px solid var(--bg-color-blue-500);
   transition: all var(--transition-speed-fast) ease-in-out;
 }
 .navbar .cart .cart-end .cart-checkout-button:hover {
@@ -406,7 +407,7 @@ body {
 #content #contact form .form-input-group .form-input {
   padding: 0.35rem;
   border-radius: 0.5rem;
-  border: 2px solid var(--bg-color-lighter-blue);
+  border: 2px solid var(--bg-color-blue-500);
   transition: border var(--transition-speed-fast) ease-in-out;
   width: 100%;
   box-shadow: 0 0 10px var(--f-color-less-light);
@@ -419,6 +420,18 @@ body {
   resize: vertical;
   min-height: 2rem;
   background: linear-gradient(-45deg, var(--f-color-less-light) 0.75rem, transparent 1rem);
+}
+#content #contact form .form-submit {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 2px solid var(--bg-color-blue-500);
+  box-shadow: 0 0 10px var(--f-color-less-light);
+  transition: all var(--transition-speed-fast) ease-in-out;
+}
+#content #contact form .form-submit:hover, #content #contact form .form-submit:focus {
+  border: 2px solid var(--bg-color-pine-green);
+  background-color: var(--bg-color-pine-green);
+  color: var(--f-color-light);
 }
 #content .content-section {
   position: relative;
@@ -491,7 +504,7 @@ body {
 }
 
 footer {
-  background-color: var(--bg-color-darker-blue);
+  background-color: var(--bg-color-blue-900);
   display: grid;
 }
 footer .footer-section {
@@ -718,11 +731,12 @@ button {
   background-position: 100% 100%;
   border: none;
   cursor: pointer;
-  transition: background-position var(--transition-speed-slow) cubic-bezier(0.77, 0, 0.18, 1);
+  transition: all var(--transition-speed-slow) cubic-bezier(0.77, 0, 0.18, 1);
   box-shadow: 0 0 20px hsla(0deg, 0%, 25%, 0.5);
 }
-.button:hover {
+.button:hover, .button:focus {
   background-position: 0% 0%;
+  scale: 0.975;
 }
 
 .grid {

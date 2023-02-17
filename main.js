@@ -1,5 +1,5 @@
 const navOptions = {
-    rootMargin: "-300px 0px 0px 0px"
+    rootMargin: "-800px 0px 0px 0px"
 }
 const contentOptions = {
     rootMargin: "-100px 0px -100px 0px"
@@ -50,6 +50,16 @@ const navObserver = new IntersectionObserver((elements) => {
 
 navObserver.observe(introSection);
 
+//Intro blob effect
+const blob = document.querySelector('.blob');
+
+introSection.onpointermove = event => {
+    const {clientX, pageY} = event;
+    blob.animate({
+        left: `${clientX}px`,
+        top: `${pageY}px`
+    }, {duration: 3000, fill: 'forwards'});
+}
 //Snowfall effect
 // const snowStart = document.querySelector('.snow-start');
 // let snowMax = 50, currentFlakes = 0;
