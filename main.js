@@ -1,5 +1,5 @@
 const navOptions = {
-    rootMargin: "-800px 0px 0px 0px"
+    rootMargin: "-500px 0px 0px 0px"
 }
 const contentOptions = {
     rootMargin: "-100px 0px -100px 0px"
