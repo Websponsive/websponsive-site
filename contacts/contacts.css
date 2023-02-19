@@ -734,7 +734,7 @@ button {
   transition: all var(--transition-speed-slow) cubic-bezier(0.77, 0, 0.18, 1);
   box-shadow: 0 0 20px hsla(0deg, 0%, 25%, 0.5);
 }
-.button:hover, .button:focus {
+.button:hover {
   background-position: 0% 0%;
   scale: 0.975;
 }

@@ -20,6 +20,8 @@ menuButton.addEventListener('click', () => {
     }
 });
 
+/*************** Cart functionalities *******************/
+
 const prices = {
     essential : 129,
     value : 249,
@@ -82,10 +84,10 @@ if(!(storedReports === null || storedReports === 0)){
     let newElement = document.createElement('div');
     newElement.innerHTML = 
         `<div class="cart-item add-on-element">
-        <p class="cart-item-title paragraph dark">3 extra pages</p>
-        <p class="paragraph dark">$<span class="cart-item-price">39</span>/mo</p>
-        <input type="number" onclick="select()" class="cart-quantity-input pages-count" value="${Number(storedReports)}">
-        <button class="cart-remove-button light pages-remove small-text">Remove</button>
+        <p class="cart-item-title paragraph dark">Monthly report</p>
+        <p class="paragraph dark">$<span class="cart-item-price">29</span>/mo</p>
+        <input type="number" onclick="select()" class="cart-quantity-input report-count" value="1">
+        <button class="cart-remove-button report-remove light small-text">Remove</button>
         </div>`;
     addOnsSection.append(newElement);
     addOnsSection.dataset.pages = 'yes';
@@ -118,7 +120,6 @@ planSelect.addEventListener('input', () => {
     
     updateCartTotal();
 });
-
 //Add-ons quantity checker
 function quantityEvents() {
     const cartQuantities = document.querySelectorAll('.cart-quantity-input');
@@ -165,6 +166,7 @@ checkoutButton.addEventListener('click', () => {
     addOnsState();
     window.alert('Thanks for checking out');
 });
+
 
 //Cart total update function
 function updateCartTotal(){

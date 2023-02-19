@@ -568,6 +568,22 @@ body{
             &.premium{
                 &::before{
                     background-color: var(--bg-color-blue-200);
+                    // background-image: linear-gradient(
+                    // 90deg, 
+                    // #b78628,
+                    // #c69320, 
+                    // #dba514,
+                    // #eeb609,
+                    // #fcc201,
+                    // #eeb609,
+                    // #dba514,
+                    // #c69320,
+                    // #b78628,);
+                    // background-size: 200%;
+                    // animation-name: border-gradient;
+                    // animation-duration: 5s;
+                    // animation-timing-function: linear;
+                    // animation-iteration-count: infinite;
                 }
             }
             &::before{
@@ -978,8 +994,7 @@ button{
     // text-transform: uppercase;
     transition: all var(--transition-speed-slow)  cubic-bezier(.77,0,.18,1);
     box-shadow: 0 0 20px hsla(0, 0%, 25%, 0.5);
-    &:hover,
-    &:focus{
+    &:hover{
         background-position: 0% 0%;
         scale: 0.975;
     }

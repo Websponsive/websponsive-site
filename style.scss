@@ -612,7 +612,7 @@ body{
             padding-bottom: 150px;
             &:hover{
                 .blob{
-                    opacity: 0.6;
+                    opacity: 0.5;
                 }
             }
         }
@@ -1239,8 +1239,7 @@ button{
     // text-transform: uppercase;
     transition: var(--transition-speed-slow)  cubic-bezier(.77,0,.18,1);
     box-shadow: 0 0 20px hsla(0, 0%, 0%, 0.5);
-    &:hover,
-    &:focus{
+    &:hover{
         background-position: 0% 0%;
         scale: 0.975;
     }

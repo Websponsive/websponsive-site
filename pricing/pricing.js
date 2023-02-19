@@ -89,10 +89,10 @@ if(!(storedReports === null || storedReports === 0)){
     let newElement = document.createElement('div');
     newElement.innerHTML = 
         `<div class="cart-item add-on-element">
-        <p class="cart-item-title paragraph dark">3 extra pages</p>
-        <p class="paragraph dark">$<span class="cart-item-price">39</span>/mo</p>
-        <input type="number" onclick="select()" class="cart-quantity-input pages-count" value="${Number(storedReports)}">
-        <button class="cart-remove-button light pages-remove small-text">Remove</button>
+        <p class="cart-item-title paragraph dark">Monthly report</p>
+        <p class="paragraph dark">$<span class="cart-item-price">29</span>/mo</p>
+        <input type="number" onclick="select()" class="cart-quantity-input report-count" value="1">
+        <button class="cart-remove-button report-remove light small-text">Remove</button>
         </div>`;
     addOnsSection.append(newElement);
     addOnsSection.dataset.pages = 'yes';
@@ -151,6 +151,7 @@ essentialButton.addEventListener('click', () => {
     planSelect.value = 'essential';
     window.localStorage.setItem('plan', 'essential');
     updateCartTotal();
+    cartButtonSpin();
 });
 valueButton.addEventListener('click', () => {
     planTitle.innerText = 'Value';
@@ -158,6 +159,7 @@ valueButton.addEventListener('click', () => {
     planSelect.value = 'value';
     window.localStorage.setItem('plan', 'value');
     updateCartTotal();
+    cartButtonSpin();
 });
 premiumButton.addEventListener('click', () => {
     planTitle.innerText = 'Premium';
@@ -165,6 +167,7 @@ premiumButton.addEventListener('click', () => {
     planSelect.value = 'premium';
     window.localStorage.setItem('plan', 'premium');
     updateCartTotal();
+    cartButtonSpin();
 });
 
 //Add-ons-selecter buttons from the content
@@ -192,6 +195,7 @@ pagesButton.addEventListener('click', () => {
     removeButtonPages();
     updateCartTotal();
     addOnsState();
+    cartButtonSpin();
 });
 reportButton.addEventListener('click', () => {
     if (addOnsSection.dataset.report === 'yes') {
@@ -215,8 +219,15 @@ reportButton.addEventListener('click', () => {
     removeButtonReport();
     updateCartTotal();
     addOnsState();
+    cartButtonSpin();
 }); 
 
+//Cart button spin animation
+function cartButtonSpin() {
+    cartButton.animate({
+        transform: 'rotateZ(360deg)'
+    } , {duration: 500, easing: 'ease'});
+}
 
 //Add-ons display function
 function addOnsState() {
