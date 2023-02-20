@@ -471,19 +471,6 @@ body {
   position: absolute;
   bottom: 0;
 }
-.intro .blob {
-  position: absolute;
-  width: 500px;
-  height: 500px;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  background: linear-gradient(90deg, aquamarine, mediumpurple);
-  filter: blur(200px);
-  opacity: 0;
-  transition: opacity var(--transition-speed-slow) ease;
-}
 
 @keyframes text-rotate {
   from {

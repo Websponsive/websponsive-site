@@ -883,7 +883,7 @@ button {
 }
 .button:hover {
   background-position: 0% 0%;
-  scale: 0.975;
+  scale: 0.95;
 }
 
 .grid {

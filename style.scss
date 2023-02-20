@@ -550,28 +550,28 @@ body{
         position: absolute;
         bottom: 0;
     }
-    .blob{
-        position: absolute;
-        width: 500px;
-        height: 500px;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        border-radius: 50%;
-        background: linear-gradient(
-            90deg,
-            aquamarine,
-            mediumpurple
-        );
-        filter: blur(200px);
-        opacity: 0;
-        transition: opacity var(--transition-speed-slow) ease;
-        // animation-name: blob-spin;
-        // animation-duration: 20s;
-        // animation-timing-function: linear;
-        // animation-iteration-count: infinite;
-        // animation-fill-mode: forwards;
-    }
+    // .blob{
+    //     position: absolute;
+    //     width: 500px;
+    //     height: 500px;
+    //     left: 50%;
+    //     top: 50%;
+    //     transform: translate(-50%, -50%);
+    //     border-radius: 50%;
+    //     background: linear-gradient(
+    //         90deg,
+    //         aquamarine,
+    //         mediumpurple
+    //     );
+    //     filter: blur(200px);
+    //     opacity: 0;
+    //     transition: opacity var(--transition-speed-slow) ease;
+    //     // animation-name: blob-spin;
+    //     // animation-duration: 20s;
+    //     // animation-timing-function: linear;
+    //     // animation-iteration-count: infinite;
+    //     // animation-fill-mode: forwards;
+    // }
 }
 @keyframes text-rotate {
     from{transform: rotateX(-90deg) translateY(60px);}

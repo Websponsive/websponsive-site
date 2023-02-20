@@ -86,7 +86,7 @@ if(!(storedReports === null || storedReports === 0)){
         `<div class="cart-item add-on-element">
         <p class="cart-item-title paragraph dark">Monthly report</p>
         <p class="paragraph dark">$<span class="cart-item-price">29</span>/mo</p>
-        <input type="number" onclick="select()" class="cart-quantity-input report-count" value="1">
+        <input type="number" onclick="select()" class="cart-quantity-input report-count" value="${Number(storedReports)}">
         <button class="cart-remove-button report-remove light small-text">Remove</button>
         </div>`;
     addOnsSection.append(newElement);

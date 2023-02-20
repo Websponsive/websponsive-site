@@ -51,15 +51,15 @@ const navObserver = new IntersectionObserver((elements) => {
 navObserver.observe(introSection);
 
 //Intro blob effect
-const blob = document.querySelector('.blob');
+// const blob = document.querySelector('.blob');
 
-introSection.onpointermove = event => {
-    const {clientX, pageY} = event;
-    blob.animate({
-        left: `${clientX}px`,
-        top: `${pageY}px`
-    }, {duration: 3000, fill: 'forwards'});
-}
+// introSection.onpointermove = event => {
+//     const {clientX, pageY} = event;
+//     blob.animate({
+//         left: `${clientX}px`,
+//         top: `${pageY}px`
+//     }, {duration: 3000, fill: 'forwards'});
+// }
 //Snowfall effect
 // const snowStart = document.querySelector('.snow-start');
 // let snowMax = 50, currentFlakes = 0;
@@ -180,7 +180,7 @@ if (!(storedPages === null || storedPages === 0)){
     removeButtonPages();
     updateCartTotal();
     addOnsState();
-}
+} 
 let storedReports = Number(window.localStorage.getItem('report'));
 if(!(storedReports === null || storedReports === 0)){
     let newElement = document.createElement('div');
@@ -188,7 +188,7 @@ if(!(storedReports === null || storedReports === 0)){
         `<div class="cart-item add-on-element">
         <p class="cart-item-title paragraph dark">Monthly report</p>
         <p class="paragraph dark">$<span class="cart-item-price">29</span>/mo</p>
-        <input type="number" onclick="select()" class="cart-quantity-input report-count" value="1">
+        <input type="number" onclick="select()" class="cart-quantity-input report-count" value="${Number(storedReports)}">
         <button class="cart-remove-button report-remove light small-text">Remove</button>
         </div>`;
     addOnsSection.append(newElement);
