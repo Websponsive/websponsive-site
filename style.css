@@ -1,5 +1,5 @@
 body {
-  background-color: var(--f-color-light);
+  background-color: var(--background-body);
 }
 
 .navbar {
@@ -16,7 +16,7 @@ body {
 /* Intro Page Styles */
 .intro {
   overflow: hidden;
-  background: radial-gradient(circle at 10% 100%, var(--bg-color-blue-500) 5%, var(--bg-color-blue-600) 20%, var(--bg-color-blue-700) 40%, transparent 70%), radial-gradient(circle at 0% 0%, var(--bg-color-blue-500) 5%, var(--bg-color-blue-600) 20%, var(--bg-color-blue-700) 40%, transparent 70%), radial-gradient(circle at 100% 40%, var(--bg-color-blue-500) 0%, var(--bg-color-blue-600) 25%, var(--bg-color-blue-700) 50%, transparent 75%);
+  background: radial-gradient(circle at 10% -5%, var(--bg-color-blue-700) 5%, var(--bg-color-blue-600) 30%, var(--bg-color-blue-500) 50%, var(--bg-color-blue-300) 100%);
   display: grid;
   place-items: center;
 }
@@ -39,7 +39,7 @@ body {
   font-size: var(--f-size-header);
   text-align: center;
   line-height: 3rem;
-  width: 80%;
+  width: 100%;
 }
 .animated-element {
   display: inline-block;
@@ -224,9 +224,6 @@ body {
   #content .content-section {
     padding: 8rem 1rem 13rem 1rem;
   }
-  #content .content-section#design {
-    padding-top: 0;
-  }
   #content .section-image {
     width: 90%;
     justify-self: center;
@@ -235,6 +232,9 @@ body {
 @media screen and (min-width: 561px) {
   #content .intro {
     height: calc(100vh + 150px);
+  }
+  #content .intro .intro-header {
+    width: 80%;
   }
   #content #what {
     padding: 0rem 8rem 0rem 8rem;
@@ -499,7 +499,7 @@ body {
   line-height: 0;
 }
 #content .wave-intro .shape-fill {
-  fill: var(--f-color-light);
+  fill: var(--background-body);
 }
 #content .wave-intro svg {
   position: relative;
@@ -523,7 +523,7 @@ body {
   width: calc(100% + 1.3px);
 }
 #content .wave-why .shape-fill, #content .wave-security .shape-fill {
-  fill: var(--f-color-light);
+  fill: var(--background-body);
 }
 #content .wave-design .shape-fill, #content .wave-accessibility .shape-fill {
   fill: var(--bg-color-blue-700);
@@ -543,7 +543,7 @@ body {
   height: 200px;
 }
 #content .opaque-wave .shape-fill {
-  fill: var(--f-color-light);
+  fill: var(--background-body);
 }
 #content .curve {
   position: absolute;
@@ -617,6 +617,9 @@ body {
 }
 .light-bg-link::before {
   background-color: var(--f-color-dark);
+}
+.light-bg-link svg {
+  stroke: var(--f-color-dark);
 }
 
 .dark-bg-link:hover {

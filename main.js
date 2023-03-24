@@ -44,7 +44,7 @@ const navObserver = new IntersectionObserver((elements) => {
             navbar.style.animationDelay = "0s";
         } else {
             navbar.classList.remove('nav-scrolled');
-        }
+        } 
     });
 }, navOptions);
 

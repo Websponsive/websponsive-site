@@ -24,10 +24,11 @@
   --bg-color-blue-900: hsl(226, 61%, 14%);
   --bg-color-blue-800: hsl(226, 61%, 17%);
   --bg-color-blue-700: hsl(226, 61%, 19%);
-  --bg-color-blue-600: #192b67;
-  --bg-color-blue-500: #142e85;
-  --bg-color-blue-400: #3954ac;
-  --bg-color-blue-200: #3882c7;
+  --bg-color-blue-600: hsl(226, 61%, 25%);
+  --bg-color-blue-500: hsl(226, 74%, 30%);
+  --bg-color-blue-400: hsl(226, 50%, 45%);
+  --bg-color-blue-300: hsl(209, 75%, 46%);
+  --bg-color-blue-200: hsl(209, 56%, 50%);
   --bg-color-purple: hsl(282, 68%, 38%);
   --bg-color-violet: hsl(262, 52%, 47%);
   --bg-color-pink: hsl(340, 82%, 76%);
@@ -44,6 +45,8 @@
   --f-color-less-light: hsl(0, 0%, 75%);
   --f-color-dark: hsl(0, 0%, 20%);
   --f-color-gray: hsl(246, 9%, 54%);
+  --background-body: hsl(0, 0%, 95%);
+  --cart-bg: hsla(246, 9%, 85%, 0.85);
   --f-color-gradient-blue: linear-gradient(
       90deg,
       var(--bg-color-green),
@@ -70,10 +73,57 @@
   --computer-break-point: 1300px;
 }
 
+.dark-mode {
+  --bg-color-green: #50f1ae;
+  --bg-color-pine-green: hsl(175, 98%, 30%);
+  --bg-color-blue-900: hsl(226, 61%, 14%);
+  --bg-color-blue-800: hsl(226, 61%, 17%);
+  --bg-color-blue-700: hsl(226, 61%, 12%);
+  --bg-color-blue-600: hsl(226, 61%, 20%);
+  --bg-color-blue-500: hsl(226, 74%, 25%);
+  --bg-color-blue-400: hsl(226, 50%, 45%);
+  --bg-color-blue-300: hsl(209, 75%, 40%);
+  --bg-color-blue-200: hsl(209, 56%, 50%);
+  --bg-color-purple: hsl(282, 68%, 38%);
+  --bg-color-violet: hsl(262, 52%, 47%);
+  --bg-color-pink: hsl(340, 82%, 76%);
+  --bg-gradient-button: linear-gradient(
+      135deg,
+      var(--bg-color-blue-500),
+      var(--bg-color-blue-200),
+      var(--bg-color-green),
+      var(--bg-color-green),
+      var(--bg-color-blue-200),
+      var(--bg-color-blue-500)
+  );
+  --f-color-light: hsl(0, 0%, 95%);
+  --f-color-less-light: hsl(0, 0%, 75%);
+  --f-color-dark: hsl(0, 0%, 95%);
+  --f-color-gray: hsl(249, 6%, 76%);
+  --background-body: hsl(226, 61%, 17%);
+  --cart-bg: hsla(246, 9%, 45%, 0.85);
+}
+
 html, body {
   margin: 0;
   padding: 0;
   height: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--bg-color-blue-600);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--bg-color-blue-400);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--bg-color-blue-200);
 }
 
 /* Navbar Styles */
@@ -177,7 +227,7 @@ html, body {
 .navbar .cart {
   position: absolute;
   margin: 0.5rem;
-  background-color: hsla(246, 9%, 85%, 0.85);
+  background-color: var(--cart-bg);
   border-radius: 1rem;
   height: -moz-fit-content;
   height: fit-content;
@@ -263,6 +313,7 @@ html, body {
     grid-column: span 3;
     height: -moz-fit-content;
     height: fit-content;
+    visibility: hidden;
   }
   .navbar .navbar-list .navbar-list-item {
     display: flex;
@@ -288,6 +339,9 @@ html, body {
   }
   .navbar.nav-visible {
     height: 380px;
+  }
+  .navbar.nav-visible .navbar-list {
+    visibility: visible;
   }
   .navbar.nav-visible .navbar-list .navbar-list-item {
     animation-name: fade-in;

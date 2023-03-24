@@ -1,6 +1,6 @@
 
 body{
-    background-color: var(--f-color-light);
+    background-color: var(--background-body);
 }
 // *{
 //     outline: red 3px solid;
@@ -22,23 +22,11 @@ body{
 .intro{
     overflow: hidden;
     background: radial-gradient(
-        circle at 10% 100%, 
-        var(--bg-color-blue-500) 5%,
-        var(--bg-color-blue-600) 20%,
-        var(--bg-color-blue-700) 40%, 
-        transparent 70%
-    ), radial-gradient(
-        circle at 0% 0%, 
-        var(--bg-color-blue-500) 5%,
-        var(--bg-color-blue-600) 20%,
-        var(--bg-color-blue-700) 40%, 
-        transparent 70%
-    ), radial-gradient(
-        circle at 100% 40%, 
-        var(--bg-color-blue-500) 0%,
-        var(--bg-color-blue-600) 25%,
-        var(--bg-color-blue-700) 50%, 
-        transparent 75%
+        circle at 10% -5%, 
+        var(--bg-color-blue-700) 5%,
+        var(--bg-color-blue-600) 30%,
+        var(--bg-color-blue-500) 50%,
+        var(--bg-color-blue-300) 100%
     );
     display: grid;
     place-items: center;
@@ -64,7 +52,7 @@ body{
             font-size: var(--f-size-header);
             text-align: center;
             line-height: 3rem;
-            width: 80%;
+            width: 100%;
     
             @at-root .animated-element{
                 display: inline-block;
@@ -255,7 +243,7 @@ body{
         #advantages{
             gap: 2rem;
             .blob{
-                right: -100%;
+                right: -100%; 
             }
             .advantage{
                 width: 80vw;
@@ -284,9 +272,6 @@ body{
         }
         .content-section{
             padding: 8rem 1rem 13rem 1rem;
-            &#design{
-                padding-top: 0;
-            }
         }
         .section-image{
             width: 90%;
@@ -297,6 +282,9 @@ body{
         
         .intro{
             height: calc(100vh + 150px);
+            .intro-header{
+                width: 80%;
+            }
         }
         #what{
             padding: 0rem 8rem 0rem 8rem;
@@ -306,7 +294,7 @@ body{
             .blob{
                 right: -50%;
                 top: 10%;
-            }
+            } 
             .advantage{
                 width: 60vw;
                 gap: 0.5rem;
@@ -588,7 +576,7 @@ body{
         overflow: hidden;
         line-height: 0;
         .shape-fill{
-            fill: var(--f-color-light);
+            fill: var(--background-body);
         }
         svg{
             position: relative;
@@ -615,7 +603,7 @@ body{
         
         &-why .shape-fill,
         &-security .shape-fill{
-            fill: var(--f-color-light);
+            fill: var(--background-body);
         }
         &-design .shape-fill,
         &-accessibility .shape-fill{
@@ -637,7 +625,7 @@ body{
             height: 200px;
         }
         .shape-fill{
-            fill: var(--f-color-light);
+            fill: var(--background-body);
         }
     }
     .curve {
@@ -729,6 +717,9 @@ body{
         }
         &::before{
             background-color: var(--f-color-dark);
+        }
+        svg{
+            stroke: var(--f-color-dark);
         }
     }
     @at-root .dark-bg-link{
