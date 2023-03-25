@@ -1,6 +1,7 @@
 
 body{
     background-color: var(--background-body);
+    transition: background-color var(--transition-speed-slow) ease;
 }
 // *{
 //     outline: red 3px solid;
@@ -30,7 +31,6 @@ body{
     );
     display: grid;
     place-items: center;
-
     .intro-img{
         position: absolute;
         // height: 250px;
@@ -435,6 +435,7 @@ body{
             display: grid;
             .benefit{
                 background-color: var(--bg-color-blue-600);
+                transition: background-color var(--transition-speed-slow) ease;
                 opacity: 0.8;
                 border: 2px solid rgba(255, 255, 255, 0.2);
                 width: 100%;
@@ -577,6 +578,7 @@ body{
         line-height: 0;
         .shape-fill{
             fill: var(--background-body);
+            transition: fill var(--transition-speed-slow) ease;
         }
         svg{
             position: relative;
@@ -604,10 +606,12 @@ body{
         &-why .shape-fill,
         &-security .shape-fill{
             fill: var(--background-body);
+            transition: fill var(--transition-speed-slow) ease;
         }
         &-design .shape-fill,
         &-accessibility .shape-fill{
             fill: var(--bg-color-blue-700);
+            transition: fill var(--transition-speed-slow) ease;
         }
 
     }
@@ -626,6 +630,7 @@ body{
         }
         .shape-fill{
             fill: var(--background-body);
+            transition: fill var(--transition-speed-slow) ease;
         }
     }
     .curve {

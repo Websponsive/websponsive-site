@@ -1,5 +1,8 @@
 //Content styles
-
+body{
+    background-color: var(--background-body);
+    transition: background-color var(--transition-speed-slow) ease;
+}
 #content{
     #contact{
         min-height: 100vh;

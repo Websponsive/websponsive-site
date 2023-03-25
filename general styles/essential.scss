@@ -114,7 +114,64 @@
     --f-color-dark: hsl(0, 0%, 95%);
     --f-color-gray: hsl(249, 6%, 76%);
     --background-body: hsl(226, 61%, 17%);
-    --cart-bg: hsla(246, 9%, 45%, 0.85);
+    --cart-bg: hsla(246, 9%, 30%, 0.85);
+    .cart{
+        // p, h3{
+        //     color: hsl(0, 0%, 20%);
+        // }
+        .cart-item{
+            width: 100%;
+            display: grid;
+            background-color: hsl(246, 9%, 54%) !important;
+            box-shadow: 0 0 10px hsl(0, 0%, 20%) !important;
+            // box-shadow: none !important;
+            .cart-plan-input,
+            .cart-quantity-input{
+                text-align: center;
+                border-radius: 0.5rem;
+                border: 2px solid var(--bg-color-blue-500);
+                transition: all var(--transition-speed-fast) ease-in-out;
+
+                &:hover,
+                &:focus{
+                    border: 2px solid var(--bg-color-pine-green);
+                    outline: none;
+                }
+
+            }
+
+            .cart-remove-button{
+                border-radius: 0.5rem;
+                background-color: red;
+                display: grid;
+                place-content: center; 
+                transition: all var(--transition-speed-fast) ease-in-out;
+                &:hover{
+                    transform: translateY(-2px);
+                }
+            }
+        }
+        .cart-end{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            .cart-checkout-button{
+                background-color: var(--f-color-light);
+                text-align: center;
+                border-radius: 0.5rem;
+                border: 2px solid var(--bg-color-blue-500);
+                transition: all var(--transition-speed-fast) ease-in-out;
+                &:hover{
+                    border: 2px solid var(--bg-color-pine-green);
+                    outline: none;
+                }
+            }
+        }
+    }
+}
+
+p, h1, h2, h3, h4, h5, h6, span, li, a, input{
+    transition: color var(--transition-speed-slow) ease;
 }
 html, body {
     margin: 0;
@@ -202,11 +259,44 @@ html, body {
         // justify-self: end;
         width: 3rem;
         aspect-ratio: 1/1;
+        &#dark-mode-button{
+            position: relative;
+            display: grid;
+            place-items: center;
+            .moon{
+                opacity: 1;
+                // position: absolute;
+                transform: translateY(0);
+                transition: opacity var(--transition-speed-fast) ease-in-out 100ms,
+                transform var(--transition-speed-slow) ease-in-out;
+                // left: 0;
+            }
+            .sun{
+                position: absolute;
+                // left: 0;
+                opacity: 0;
+                transform: translateY(2rem);
+                transition: opacity var(--transition-speed-fast) ease-in-out 100ms,
+                transform var(--transition-speed-slow) ease-in-out;
+            }
+            &[aria-expanded="true"]{
+                .sun{
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+                .moon{
+                    opacity: 0;
+                    transform: translateY(2rem);
+                }
+            }
+        }
         &#cart-button{
             position: relative;
+            z-index: 1;
             .cart-icon-1{
                 position: absolute;
                 opacity: 0;
+                visibility: hidden;
                 transform: translateX(-2rem);
                 transition: opacity var(--transition-speed-fast) ease-in-out 100ms,
                 transform var(--transition-speed-slow) ease-in-out;
@@ -221,6 +311,7 @@ html, body {
                 .cart-icon-1{
                     opacity: 1;
                     transform: translateX(0);
+                    visibility: visible;
                 }
                 .cart-icon-2{
                     opacity: 0;
@@ -344,7 +435,7 @@ html, body {
 @media screen and (max-width: 760px){
     .navbar{
         display: grid;
-        grid-template-columns: 5fr 1fr 1fr;
+        grid-template-columns: 5fr 1fr 1fr 1fr;
         height: 80px;
         transition: height var(--transition-speed-slow) ease-in-out, background-color var(--transition-speed-slow);
         .navbar-list{
@@ -464,9 +555,14 @@ html, body {
         #menu-button{
             display: none;
         }
+        #dark-mode-button{
+            // margin-right: 4rem;
+            order: 3;
+            margin-left: auto;
+        }
         #cart-button{
             margin-right: 2rem;
-            order: 3;
+            order: 4;
             margin-left: auto;
         }
         .cart{
@@ -598,6 +694,9 @@ button{
     -webkit-text-fill-color: transparent;
     /* text-shadow: 0 0 0px var(--f-color-gray); */
     // animation: text-gradient 3s infinite linear;
+}
+section{
+    transition: background-color var(--transition-speed-slow) ease;
 }
 @keyframes text-gradient{
     0%{background-position: 0% center;}

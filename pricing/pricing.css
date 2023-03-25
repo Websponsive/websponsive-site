@@ -1,4 +1,9 @@
 @charset "UTF-8";
+body {
+  background-color: var(--background-body);
+  transition: background-color var(--transition-speed-slow) ease;
+}
+
 #content .content-section {
   position: relative;
 }
@@ -49,7 +54,8 @@
   padding: 1rem;
   position: relative;
   border-radius: 1rem;
-  background-color: var(--f-color-light);
+  background-color: var(--background-body);
+  transition: background-color var(--transition-speed-slow) ease;
 }
 #content #subscription-plans .plan .plan-title {
   text-align: center;
@@ -143,7 +149,7 @@
   padding: 1rem;
   position: relative;
   border-radius: 1rem;
-  background-color: var(--f-color-light);
+  background-color: var(--background-body);
 }
 #content #add-ons .add-on .add-on-title {
   text-align: center;

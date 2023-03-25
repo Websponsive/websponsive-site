@@ -101,7 +101,56 @@
   --f-color-dark: hsl(0, 0%, 95%);
   --f-color-gray: hsl(249, 6%, 76%);
   --background-body: hsl(226, 61%, 17%);
-  --cart-bg: hsla(246, 9%, 45%, 0.85);
+  --cart-bg: hsla(246, 9%, 30%, 0.85);
+}
+.dark-mode .cart .cart-item {
+  width: 100%;
+  display: grid;
+  background-color: hsl(246, 9%, 54%) !important;
+  box-shadow: 0 0 10px hsl(0, 0%, 20%) !important;
+}
+.dark-mode .cart .cart-item .cart-plan-input,
+.dark-mode .cart .cart-item .cart-quantity-input {
+  text-align: center;
+  border-radius: 0.5rem;
+  border: 2px solid var(--bg-color-blue-500);
+  transition: all var(--transition-speed-fast) ease-in-out;
+}
+.dark-mode .cart .cart-item .cart-plan-input:hover, .dark-mode .cart .cart-item .cart-plan-input:focus,
+.dark-mode .cart .cart-item .cart-quantity-input:hover,
+.dark-mode .cart .cart-item .cart-quantity-input:focus {
+  border: 2px solid var(--bg-color-pine-green);
+  outline: none;
+}
+.dark-mode .cart .cart-item .cart-remove-button {
+  border-radius: 0.5rem;
+  background-color: red;
+  display: grid;
+  place-content: center;
+  transition: all var(--transition-speed-fast) ease-in-out;
+}
+.dark-mode .cart .cart-item .cart-remove-button:hover {
+  transform: translateY(-2px);
+}
+.dark-mode .cart .cart-end {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+.dark-mode .cart .cart-end .cart-checkout-button {
+  background-color: var(--f-color-light);
+  text-align: center;
+  border-radius: 0.5rem;
+  border: 2px solid var(--bg-color-blue-500);
+  transition: all var(--transition-speed-fast) ease-in-out;
+}
+.dark-mode .cart .cart-end .cart-checkout-button:hover {
+  border: 2px solid var(--bg-color-pine-green);
+  outline: none;
+}
+
+p, h1, h2, h3, h4, h5, h6, span, li, a, input {
+  transition: color var(--transition-speed-slow) ease;
 }
 
 html, body {
@@ -183,12 +232,38 @@ html, body {
   width: 3rem;
   aspect-ratio: 1/1;
 }
+.navbar .nav-button#dark-mode-button {
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+.navbar .nav-button#dark-mode-button .moon {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity var(--transition-speed-fast) ease-in-out 100ms, transform var(--transition-speed-slow) ease-in-out;
+}
+.navbar .nav-button#dark-mode-button .sun {
+  position: absolute;
+  opacity: 0;
+  transform: translateY(2rem);
+  transition: opacity var(--transition-speed-fast) ease-in-out 100ms, transform var(--transition-speed-slow) ease-in-out;
+}
+.navbar .nav-button#dark-mode-button[aria-expanded=true] .sun {
+  opacity: 1;
+  transform: translateY(0);
+}
+.navbar .nav-button#dark-mode-button[aria-expanded=true] .moon {
+  opacity: 0;
+  transform: translateY(2rem);
+}
 .navbar .nav-button#cart-button {
   position: relative;
+  z-index: 1;
 }
 .navbar .nav-button#cart-button .cart-icon-1 {
   position: absolute;
   opacity: 0;
+  visibility: hidden;
   transform: translateX(-2rem);
   transition: opacity var(--transition-speed-fast) ease-in-out 100ms, transform var(--transition-speed-slow) ease-in-out;
 }
@@ -200,6 +275,7 @@ html, body {
 .navbar .nav-button#cart-button[aria-expanded=true] .cart-icon-1 {
   opacity: 1;
   transform: translateX(0);
+  visibility: visible;
 }
 .navbar .nav-button#cart-button[aria-expanded=true] .cart-icon-2 {
   opacity: 0;
@@ -300,7 +376,7 @@ html, body {
 @media screen and (max-width: 760px) {
   .navbar {
     display: grid;
-    grid-template-columns: 5fr 1fr 1fr;
+    grid-template-columns: 5fr 1fr 1fr 1fr;
     height: 80px;
     transition: height var(--transition-speed-slow) ease-in-out, background-color var(--transition-speed-slow);
   }
@@ -415,9 +491,13 @@ html, body {
   .navbar #menu-button {
     display: none;
   }
+  .navbar #dark-mode-button {
+    order: 3;
+    margin-left: auto;
+  }
   .navbar #cart-button {
     margin-right: 2rem;
-    order: 3;
+    order: 4;
     margin-left: auto;
   }
   .navbar .cart {
@@ -562,6 +642,10 @@ button {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   /* text-shadow: 0 0 0px var(--f-color-gray); */
+}
+
+section {
+  transition: background-color var(--transition-speed-slow) ease;
 }
 
 @keyframes text-gradient {

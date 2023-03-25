@@ -23,6 +23,20 @@ menuButton.addEventListener('click', () => {
         // navbar.style.maxHeight = '80px';
     }
 });
+// Dark mode functionality
+const darkModeButton = document.querySelector('#dark-mode-button');
+darkModeButton.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+
+    let isOpen = darkModeButton.getAttribute('aria-expanded');
+    if(isOpen === 'false'){
+        darkModeButton.setAttribute('aria-expanded', 'true');
+        // navbar.style.maxHeight = '320px';
+    } else if (isOpen === 'true'){
+        darkModeButton.setAttribute('aria-expanded', 'false');
+        // navbar.style.maxHeight = '80px';
+    }
+}) ;
 
 /*************** Cart functionalities *******************/
 

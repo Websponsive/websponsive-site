@@ -52,7 +52,8 @@ footer .curve svg {
   height: 100px;
 }
 footer .curve .shape-fill {
-  fill: var(--f-color-light);
+  fill: var(--background-body);
+  transition: fill var(--transition-speed-slow) ease;
 }
 @media (max-width: 560px) {
   footer .curve svg {

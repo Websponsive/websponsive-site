@@ -1,5 +1,6 @@
 body {
   background-color: var(--background-body);
+  transition: background-color var(--transition-speed-slow) ease;
 }
 
 .navbar {
@@ -378,6 +379,7 @@ body {
 }
 #content #benefits .cards .benefit {
   background-color: var(--bg-color-blue-600);
+  transition: background-color var(--transition-speed-slow) ease;
   opacity: 0.8;
   border: 2px solid rgba(255, 255, 255, 0.2);
   width: 100%;
@@ -500,6 +502,7 @@ body {
 }
 #content .wave-intro .shape-fill {
   fill: var(--background-body);
+  transition: fill var(--transition-speed-slow) ease;
 }
 #content .wave-intro svg {
   position: relative;
@@ -524,9 +527,11 @@ body {
 }
 #content .wave-why .shape-fill, #content .wave-security .shape-fill {
   fill: var(--background-body);
+  transition: fill var(--transition-speed-slow) ease;
 }
 #content .wave-design .shape-fill, #content .wave-accessibility .shape-fill {
   fill: var(--bg-color-blue-700);
+  transition: fill var(--transition-speed-slow) ease;
 }
 #content .opaque-wave {
   position: absolute;
@@ -544,6 +549,7 @@ body {
 }
 #content .opaque-wave .shape-fill {
   fill: var(--background-body);
+  transition: fill var(--transition-speed-slow) ease;
 }
 #content .curve {
   position: absolute;
