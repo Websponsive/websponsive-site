@@ -38,12 +38,13 @@
             <svg xmlns="http://www.w3.org/2000/svg" class="nav-icon moon" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5"  fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                 <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
-            </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" class="nav-icon sun" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            </svg> 
+            <svg xmlns="http://www.w3.org/2000/svg" class="nav-icon
+            sun" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                <circle cx="12" cy="12" r="3" />
-                <path d="M6 6h3.5l2.5 -2.5l2.5 2.5h3.5v3.5l2.5 2.5l-2.5 2.5v3.5h-3.5l-2.5 2.5l-2.5 -2.5h-3.5v-3.5l-2.5 -2.5l2.5 -2.5z" />
-            </svg>
+                <circle cx="12" cy="12" r="4" />
+                <path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" />
+              </svg>
         </button>
         <button id="cart-button" name="Cart Button" class="nav-button" aria-expanded="false">
             <svg xmlns="http://www.w3.org/2000/svg" class="nav-icon cart-icon-1" viewBox="0 0 24 24" stroke-width="1.25" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -244,22 +245,39 @@
                 </svg>
             </div>
         </section>
-        <section id="accessibility" class="content-section grid">
-            <div class="half-section faded-in-left">
-                <h2 class="header dark">Honed for <span class="blue-gradient-text">accessibility</span></h2>
-                <p class="paragraph gray">We build our websites with accessibility in mind in order to offer an equal experience to all your clients with disabilities, whether they are blind or have low vision, are deaf or hard of hearing, or are cognitively impaired.</p> <br>
-                <a href="design/design.html" class="link light-bg-link paragraph gray">Why is accessibility important ?
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-loop-right" width="52" height="52" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                        <path class="stroke" d="M12 21v-13a4 4 0 1 0 -4 4h13" />
-                        <path class="arrow" d="M18 15l3 -3l-3 -3" />
-                      </svg>
-                </a>
+        <section id="portofolio">
+            <div id="container">
+                <h2 class="small-header dark">OUR <span class="blue-gradient-text">PORTOFOLIO</span></h2>
+                <div class="graphics">
+                <div class="dash"></div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="what-icon" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <line x1="4" y1="12" x2="9" y2="12" />
+                    <line x1="15" y1="12" x2="20" y2="12" />
+                    <rect x="9" y="6" width="6" height="12" rx="2" />
+                  </svg>
+                <div class="dash" style="transform: rotateZ(180deg);"></div>
             </div>
-            <div class="half-section faded-in-right image-section">
-                <img src="https://res.cloudinary.com/dvrziwgxp/image/upload/v1672858860/accessibility_fcyhqs.png" alt="" class="section-image">
             </div>
-            <div class="wave-accessibility wave">
+            <article class="work">
+                <img src="https://res.cloudinary.com/dvrziwgxp/image/upload/v1678370709/mockuper_1_tdvggb.png" alt="" class="work-img">
+                <h3 class="dark title">Lorem, ipsum dolor.</h3>
+                <p class="paragraph gray">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo consequatur fugiat, suscipit dignissimos illum quam!</p>
+                <button class="button light paragraph">Visit</button>
+            </article>
+            <article class="work">
+                <img src="https://res.cloudinary.com/dvrziwgxp/image/upload/v1678370709/mockuper_1_tdvggb.png" alt="" class="work-img">
+                <h3 class="dark title">Lorem, ipsum dolor.</h3>
+                <p class="paragraph gray">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo consequatur fugiat, suscipit dignissimos illum quam!</p>
+                <button class="button light paragraph">Visit</button>
+            </article>
+            <article class="work">
+                <img src="https://res.cloudinary.com/dvrziwgxp/image/upload/v1678370709/mockuper_1_tdvggb.png" alt="" class="work-img">
+                <h3 class="dark title">Lorem, ipsum dolor.</h3>
+                <p class="paragraph gray">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo consequatur fugiat, suscipit dignissimos illum quam!</p>
+                <button class="button light paragraph">Visit</button>
+            </article>
+            <div class="wave-portofolio wave">
                 <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
                     <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
                 </svg>

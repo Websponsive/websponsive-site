@@ -180,6 +180,33 @@ body {
   left: -3rem;
   content: url(https://res.cloudinary.com/dvrziwgxp/image/upload/v1678729843/tick2_orpv8v.svg);
 }
+#content #portofolio {
+  display: grid;
+}
+#content #portofolio > div {
+  display: grid;
+  justify-items: center;
+}
+#content #portofolio .work {
+  background-color: var(--bg-color-white);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  display: grid;
+  justify-items: center;
+  gap: 0.5rem;
+  transition: background-color var(--transition-speed-slow) ease;
+  position: relative;
+  border-top: var(--bg-color-blue-200) 12px solid;
+}
+#content #portofolio .work .work-img {
+  width: 100%;
+}
+#content #portofolio .work h3, #content #portofolio .work p {
+  text-align: center;
+}
+#content #portofolio .work .button {
+  padding: 0.75rem 3rem;
+}
 #content .section-image {
   border-radius: 1rem;
 }
@@ -221,6 +248,16 @@ body {
     gap: 2rem;
     margin-top: 3rem;
     padding-left: 2.5rem;
+  }
+  #content #portofolio {
+    padding: 8rem 1rem 13rem 1rem;
+    gap: 1rem;
+  }
+  #content #portofolio .work {
+    padding: 1rem;
+  }
+  #content #portofolio .work .work-img {
+    width: 100%;
   }
   #content .content-section {
     padding: 8rem 1rem 13rem 1rem;
@@ -273,6 +310,17 @@ body {
     grid-template-columns: 1fr 1fr;
     margin-top: 3rem;
     padding-left: 2.5rem;
+  }
+  #content #portofolio {
+    padding: 8rem 7rem 16rem 7rem;
+    gap: 2rem;
+  }
+  #content #portofolio .work {
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+  #content #portofolio .work .work-img {
+    width: 80%;
   }
   #content .content-section {
     padding: 8rem 2rem 16rem 2rem;
@@ -328,6 +376,12 @@ body {
     grid-template-columns: 1fr 1fr;
     margin-top: 3rem;
     padding-left: 2.5rem;
+  }
+  #content #portofolio {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  #content #portofolio #container {
+    grid-column: span 3;
   }
   #content .content-section {
     padding: 10rem 8rem 22rem 8rem;
@@ -529,7 +583,7 @@ body {
   fill: var(--background-body);
   transition: fill var(--transition-speed-slow) ease;
 }
-#content .wave-design .shape-fill, #content .wave-accessibility .shape-fill {
+#content .wave-design .shape-fill, #content .wave-portofolio .shape-fill {
   fill: var(--bg-color-blue-700);
   transition: fill var(--transition-speed-slow) ease;
 }

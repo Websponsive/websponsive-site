@@ -28,6 +28,7 @@
     --bg-color-purple: hsl(282, 68%, 38%);
     --bg-color-violet: hsl(262, 52%, 47%);
     --bg-color-pink: hsl(340, 82%, 76%);
+    --bg-color-white: hsl(0, 0%, 100%);
 
     // --bg-gradient-button: linear-gradient(
     //     135deg,
@@ -53,7 +54,7 @@
     --f-color-dark: hsl(0, 0%, 20%);
     --f-color-gray: hsl(246, 9%, 54%);
 
-    --background-body: hsl(0, 0%, 95%);
+    --background-body: hsl(0, 0%, 93%);
     --cart-bg: hsla(246, 9%, 85%, 0.85);
     
     --f-color-gradient-blue: linear-gradient(
@@ -100,6 +101,7 @@
     --bg-color-purple: hsl(282, 68%, 38%);
     --bg-color-violet: hsl(262, 52%, 47%);
     --bg-color-pink: hsl(340, 82%, 76%);
+    --bg-color-white: hsl(226, 61%, 20%);
     --bg-gradient-button: linear-gradient(
         135deg, 
         var(--bg-color-blue-500), 
@@ -263,6 +265,7 @@ html, body {
             position: relative;
             display: grid;
             place-items: center;
+            z-index: 2;
             .moon{
                 opacity: 1;
                 // position: absolute;
@@ -296,7 +299,6 @@ html, body {
             .cart-icon-1{
                 position: absolute;
                 opacity: 0;
-                visibility: hidden;
                 transform: translateX(-2rem);
                 transition: opacity var(--transition-speed-fast) ease-in-out 100ms,
                 transform var(--transition-speed-slow) ease-in-out;
@@ -444,7 +446,7 @@ html, body {
             justify-content: center;
             justify-items: center;
             width: 100%;
-            grid-column: span 3;
+            grid-column: span 4;
             height: fit-content;
             visibility: hidden;
             .navbar-list-item{
@@ -563,7 +565,7 @@ html, body {
         #cart-button{
             margin-right: 2rem;
             order: 4;
-            margin-left: auto;
+            margin-left: 0rem;
         }
         .cart{
             top: 5rem; 
@@ -594,9 +596,11 @@ html, body {
 }
 @media screen and (min-width: 1300px){
     .navbar{
-        height: 7rem;
-        #cart-button{
-            width: 2.5rem;
+        height: 6rem;
+        #cart-button,
+        #dark-mode-button{
+            width: 3rem;
+            margin-right: 3rem;
             .nav-icon{
                 width: 2.5rem;
                 height: 2.5rem;
