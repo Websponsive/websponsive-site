@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../general styles/essential.css">
-    <link rel="stylesheet" href="pricing.css">
+    <link rel="stylesheet" href="../pricing/pricing.css">
     <link rel="preload" href="../general styles/footer.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
-        <link rel="stylesheet" href="./general styles/footer.css">
+        <link rel="stylesheet" href="../general styles/footer.css">
     </noscript>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,7 +25,7 @@
             font-family: var(--f-family-ubuntu), sans-serif;
         }
     </style>
-    <script src="pricing.js" defer></script>
+    <script src="../pricing/pricing.js" defer></script>
 </head>
 <body>
     <nav class="navbar nav-hidden">
@@ -35,11 +35,12 @@
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                 <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
             </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" class="nav-icon sun" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <svg xmlns="http://www.w3.org/2000/svg" class="nav-icon
+            sun" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                <circle cx="12" cy="12" r="3" />
-                <path d="M6 6h3.5l2.5 -2.5l2.5 2.5h3.5v3.5l2.5 2.5l-2.5 2.5v3.5h-3.5l-2.5 2.5l-2.5 -2.5h-3.5v-3.5l-2.5 -2.5l2.5 -2.5z" />
-            </svg>
+                <circle cx="12" cy="12" r="4" />
+                <path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" />
+              </svg>
         </button>
         <button id="cart-button" class="nav-button" aria-expanded="false">
             <svg xmlns="http://www.w3.org/2000/svg" class="nav-icon cart-icon-1" viewBox="0 0 24 24" stroke-width="1.25" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -69,18 +70,18 @@
             <!-- <li class="navbar-item">
                 <img id="navbar-logo" src="https://res.cloudinary.com/dvrziwgxp/image/upload/v1665761117/Logo-removebg-short_mwxc1r.png" alt="">
             </li> -->
-            <li class="navbar-list-item"><a href="../index.html" class="navbar-link dark-bg-link light">About</a></li>
-            <li class="navbar-list-item"><a href="#" class="navbar-link dark-bg-link light active">Pricing</a></li>
-            <li class="navbar-list-item"><a href="../contacts/contacts.html" class="navbar-link dark-bg-link light">Contacts</a></li>
-            <li class="navbar-list-item"><a href="../faq/faq.html" class="navbar-link dark-bg-link light">FAQ</a></li>
-            <li class="navbar-list-item"><a href="#" class="navbar-link dark-bg-link light">Blogs</a></li>
+            <li class="navbar-list-item"><a href="index.html" class="navbar-link dark-bg-link light">Despre</a></li>
+            <li class="navbar-list-item"><a href="#" class="navbar-link dark-bg-link light active">Prețuri</a></li>
+            <li class="navbar-list-item"><a href="contacts.html" class="navbar-link dark-bg-link light">Contacte</a></li>
+            <li class="navbar-list-item"><a href="faq.html" class="navbar-link dark-bg-link light">FAQ</a></li>
+            <li class="navbar-list-item"><a href="#" class="navbar-link dark-bg-link light">Bloguri</a></li>
         </ul>
  
         <!-- Cart -->
         <div class="cart cart-hidden">
 
             <div class="cart-plan">
-                <h3 class="paragraph dark">Your selected plan:</h3>
+                <h3 class="paragraph dark">Planul selectat:</h3>
                 <div class="cart-item plan-element">
                     <p class="cart-plan-title paragraph dark">No plan selected</p>
                     <p class="paragraph dark" style="white-space: nowrap;">$<span class="cart-plan-price">0</span>/mo
@@ -95,14 +96,14 @@
             </div>
 
             <div class="cart-add-ons" data-pages="no" data-report="no">
-                <h3 class="paragraph dark">Your selected add-ons:</h3>
+                <h3 class="paragraph dark">Opțiuni suplimentare selectate:</h3>
             </div>
 
             <div class="cart-end">
-                <h3 class="paragraph dark">Your total:&nbsp&nbsp 
+                <h3 class="paragraph dark">Totalul:&nbsp&nbsp 
                     $<span class="cart-total">0</span>/mo
                 </h3>
-                <button class="cart-checkout-button paragraph">Checkout</button>
+                <button class="cart-checkout-button small-text">Finisează cumpărătura</button>
             </div>
         </div>
     </nav> 
@@ -110,101 +111,101 @@
     <main id="content">
         <section class="content-section grid" id="description">
             <div class="half-section">
-                <h2 class="small-header dark description-header">Building a site for your business</h2>
-                <p class="paragraph gray description-paragraph">We at Websponsive specialize in crafting visually stunning and highly responsive websites. Our expert developers work closely with our clients to understand their specific needs and create the best solution that drives business success. Whether you're looking to revamp your existing website or build a new one, Websponsive has the skills and experience to deliver a website that will exceed expectations. Sign up today ! <br><br>
-                Browse our available subscription plans below</p>
+                <h2 class="small-header dark description-header">Dezvoltarea unui site pentru afacerea ta</h2>
+                <p class="paragraph gray description-paragraph">Noi la Websponsive ne specializăm în crearea site-urilor adaptabile cu impact vizual deosebit. Experții noștri lucrează mână în mână cu clienții noștri pentru a le înțelege cerințele specifice. Dacă doriți refacerea unui site existent sau crearea unuia de la zero, Websponsive dispune de aptitudinile și experiența necesară pentru a livra un produs care vă va întrece așteptările. Înscrie-te astăzi ! <br><br>
+                Navighează planurile noastre mai jos</p>
             </div>
             <figure class="half-section image-section">
                 <img class="section-image" src="https://res.cloudinary.com/dvrziwgxp/image/upload/v1673808663/web-design_cgrvnz.webp" alt="">
             </figure>
         </section>
         <section id="subscription-plans" class="content-section">
-            <h2 class="plans-header header dark">Plans:</h2>
+            <h2 class="plans-header header dark">Planuri:</h2>
             <!-- Essential plan -->
             <article class="plan essential">
                 <h3 class="plan-title dark small-header">Essential</h3>
-                <h3 class="plan-price header dark">$129
-                    <span class="plan-month paragraph">/mo</span>
+                <h3 class="plan-price header dark">€129
+                    <span class="plan-month small-text">/lună</span>
                 </h3>
-                <p class="gray plan-description paragraph">Only essential features included, ideal for small businesses with tight-budgets</p>
+                <p class="gray plan-description paragraph">Doar caracteristicile esențiale incluse, ideal pentru afaceri mici cu bugeturi limitate</p>
                 <ul class="plan-benefit-list">
-                    <li class="enabled-benefit gray paragraph">Unlimited revisions</li>
-                    <li class="enabled-benefit gray paragraph">Website hosting</li>
-                    <li class="enabled-benefit gray paragraph">Custom domain name</li>
-                    <li class="enabled-benefit gray paragraph">Blazing performance</li>
-                    <li class="enabled-benefit gray paragraph">Basic security, yearly patches</li>
-                    <li class="enabled-benefit gray paragraph">Basic theme</li>
-                    <li class="enabled-benefit gray paragraph">Basic on-page SEO</li>
-                    <li class="enabled-benefit gray paragraph">1-5 web pages</li>
-                    <li class="disabled-benefit gray paragraph">Typography</li>
-                    <li class="disabled-benefit gray paragraph">Back-end functionalities</li>
+                    <li class="enabled-benefit gray small-text">Revizii nelimitate</li>
+                    <li class="enabled-benefit gray small-text">Hostarea site-ului</li>
+                    <li class="enabled-benefit gray small-text">Domeniu la alegere</li>
+                    <li class="enabled-benefit gray small-text">Performanță uluitoare</li>
+                    <li class="enabled-benefit gray small-text">Securitate de bază</li>
+                    <li class="enabled-benefit gray small-text">Design de bază</li>
+                    <li class="enabled-benefit gray small-text">SEO de bază (on-page)</li>
+                    <li class="enabled-benefit gray small-text">1-3 pagini web</li>
+                    <li class="disabled-benefit gray small-text">Tipografie</li>
+                    <li class="disabled-benefit gray small-text">Funcționalități back-end</li>
                 </ul>
-                <button class="plan-button essential-button button light paragraph">Choose plan</button>
+                <button class="plan-button essential-button button light paragraph">Alege planul</button>
             </article>
 
             <!-- Value plan -->
             <article class="plan value">
                 <h3 class="plan-title dark small-header">Value</h3>
-                <h3 class="plan-price header dark">$249
-                    <span class="plan-month paragraph">/mo</span>
+                <h3 class="plan-price header dark">€229
+                    <span class="plan-month small-text">/lună</span>
                 </h3>
-                <p class="gray plan-description paragraph">Best bang for the buck, ideal for those who want to elevate their online presence to the next level</p>
+                <p class="gray plan-description paragraph">Cel mai avantajos plan, ideal pentru afaceri care își valorează prezența pe internet</p>
                 <ul class="plan-benefit-list">
-                    <li class="enabled-benefit gray paragraph">Unlimited revisions</li>
-                    <li class="enabled-benefit gray paragraph">Website hosting</li>
-                    <li class="enabled-benefit gray paragraph">Custom domain name</li>
-                    <li class="enabled-benefit gray paragraph">Blazing performance</li>
-                    <li class="enabled-benefit gray paragraph">Advanced security, bi-yearly patches</li>
-                    <li class="enabled-benefit gray paragraph">Premium theme</li>
-                    <li class="enabled-benefit gray paragraph">Advanced on-page and off-page SEO</li>
-                    <li class="enabled-benefit gray paragraph">1-10 web pages</li>
-                    <li class="enabled-benefit gray paragraph">Typography</li>
-                    <li class="enabled-benefit gray paragraph">Basic back-end functionalities</li>
+                    <li class="enabled-benefit gray small-text">Revizii nelimitate</li>
+                    <li class="enabled-benefit gray small-text">Hostarea site-ului</li>
+                    <li class="enabled-benefit gray small-text">Domeniu la alegere</li>
+                    <li class="enabled-benefit gray small-text">Performanță uluitoare</li>
+                    <li class="enabled-benefit gray small-text">Securitate avansată</li>
+                    <li class="enabled-benefit gray small-text">Design premium</li>
+                    <li class="enabled-benefit gray small-text">SEO avansat (off-page și on-page)</li>
+                    <li class="enabled-benefit gray small-text">1-10 pagini web</li>
+                    <li class="enabled-benefit gray small-text">Tipografie</li>
+                    <li class="enabled-benefit gray small-text">Funcționalități back-end de bază</li>
                 </ul>
-                <button class="plan-button value-button button light paragraph">Choose plan</button>
+                <button class="plan-button value-button button light paragraph">Alege planul</button>
             </article>
 
             <!-- Premium plan -->
             <article class="plan premium">
                 <h3 class="plan-title dark small-header">Premium</h3>
-                <h3 class="plan-price header dark">$499
-                    <span class="plan-month paragraph">/mo</span>
+                <h3 class="plan-price header dark">€499
+                    <span class="plan-month small-text">/lună</span>
                 </h3>
-                <p class="gray plan-description paragraph">The best of what we can offer, ideal for enterprise-level businesses</p>
+                <p class="gray plan-description paragraph">Tot ce-i mai bun din ce putem oferi, ideal pentru afaceri de nivel enterprise</p>
                 <ul class="plan-benefit-list">
-                    <li class="enabled-benefit gray paragraph">Unlimited revisions</li>
-                    <li class="enabled-benefit gray paragraph">Website hosting</li>
-                    <li class="enabled-benefit gray paragraph">Custom domain name</li>
-                    <li class="enabled-benefit gray paragraph">Blazing performance</li>
-                    <li class="enabled-benefit gray paragraph">Bulletproof security, quarterly patches</li>
-                    <li class="enabled-benefit gray paragraph">Premium theme</li>
-                    <li class="enabled-benefit gray paragraph">Advanced on-page, off-page and local SEO</li>
-                    <li class="enabled-benefit gray paragraph">As many web pages as needed</li>
-                    <li class="enabled-benefit gray paragraph">Typography</li>
-                    <li class="enabled-benefit gray paragraph">Advanced back-end functionalities</li>
+                    <li class="enabled-benefit gray small-text">Revizii nelimitate</li>
+                    <li class="enabled-benefit gray small-text">Hostarea site-ului</li>
+                    <li class="enabled-benefit gray small-text">Domeniu la alegere</li>
+                    <li class="enabled-benefit gray small-text">Performanță uluitoare</li>
+                    <li class="enabled-benefit gray small-text">Securitate impenetrabilă</li>
+                    <li class="enabled-benefit gray small-text">Design premium</li>
+                    <li class="enabled-benefit gray small-text">SEO avansat (local, on-page și off-page)</li>
+                    <li class="enabled-benefit gray small-text">Oricâte pagini web aveți nevoie</li>
+                    <li class="enabled-benefit gray small-text">Tipografie</li>
+                    <li class="enabled-benefit gray small-text">Funcționalități back-end avansate</li>
                 </ul>
-                <button class="plan-button premium-button button light paragraph">Choose plan</button>
+                <button class="plan-button premium-button button light paragraph">Alege planul</button>
             </article>
         </section>
 
         <section id="add-ons" class="content-section">
-            <h2 class="add-ons-header dark header">Add-ons:</h2>
+            <h2 class="add-ons-header dark header">Opțiuni suplimentare</h2>
             <article class="add-on">
-                <h3 class="add-on-title dark title">Add 3 web pages</h3>
-                <h3 class="add-on-price dark header">+$39
-                    <span class="add-on-month paragraph">/mo</span>
+                <h3 class="add-on-title dark title">Adăugați 3 pagini web</h3>
+                <h3 class="add-on-price dark header">+€39
+                    <span class="add-on-month small-text">/lună</span>
                 </h3>
-                <p class="add-on-description paragraph gray">Add 3 extra web pages on top of the allocated amount. The pages remain consistent with the overall design and will be fully maintained by us</p>
-                <button class="add-on-button pages-button button light paragraph">Add to cart</button>
+                <p class="add-on-description paragraph gray">Adăugați 3 pagini web la site-ul vostru. Paginile rămân consistente cu specificațiile planului ales</p>
+                <button class="add-on-button pages-button button light paragraph">Adăugați în coș</button>
             </article>
 
             <article class="add-on">
-                <h3 class="add-on-title dark title">Monthly analytics report</h3>
-                <h3 class="add-on-price dark header">+$29
-                    <span class="add-on-month paragraph">/mo</span>
+                <h3 class="add-on-title dark title">Raport analitic lunar</h3>
+                <h3 class="add-on-price dark header">+€29
+                    <span class="add-on-month small-text">/lună</span>
                 </h3>
-                <p class="add-on-description paragraph gray">Receive a detailed report on your website's traffic and user behavior in your inbox every month</p>
-                <button class="add-on-button report-button button light paragraph">Add to cart</button>
+                <p class="add-on-description paragraph gray">Primiți un raport cu privire la traficul pe site și comportamentele utilizatorilor în fiecare lună</p>
+                <button class="add-on-button report-button button light paragraph">Adăugați în coș</button>
             </article>
             
             <!-- <article class="add-on">
@@ -224,9 +225,9 @@
                 </svg>
             </div>
             <article class="footer-section">
-                <h3 class="small-header light">Ready to get started ?</h3>
+                <h3 class="small-header light">Gata să începeți ?</h3>
                 <a href="#subscription-plans">
-                    <button class="footer-button button paragraph light">Sign Me Up</button>
+                    <button class="footer-button button paragraph light">Înscrie-mă</button>
                 </a>
             </article>
             <article class="footer-section">
@@ -234,7 +235,7 @@
             </article>
             <article class="footer-section contacts">
                 <img src="https://res.cloudinary.com/dvrziwgxp/image/upload/v1665761117/Logo-removebg-short_mwxc1r.png" alt="the websponsive logo" class="footer-logo" draggable="false">
-                <p class="gray small-text">2023 Websponsive. All Rights Reserved</p>
+                <p class="gray small-text">2023 Websponsive. Toate drepturile rezervate</p>
                 <ul class="footer-social-list">
                     <li class="footer-social-link">
                         <a href="" class="footer-social-link-anchor" aria-label="websponsive profile on instagram">

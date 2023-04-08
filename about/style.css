@@ -3,6 +3,10 @@ body {
   transition: background-color var(--transition-speed-slow) ease;
 }
 
+.paragraph {
+  line-height: var(--f-size-title);
+}
+
 .navbar {
   animation-delay: 2.4s;
   --background: hsla(226, 61%, 17%, 0.2);
@@ -26,6 +30,14 @@ body {
   right: 0;
   top: 200px;
   z-index: 2;
+}
+.intro .language-selector {
+  transform: translateX(60px);
+  animation-name: fade;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-delay: 2.4s;
+  opacity: 0;
 }
 .intro .container {
   display: grid;
@@ -106,6 +118,16 @@ body {
     transform: rotateX(0deg) translateY(0px);
   }
 }
+@keyframes fade {
+  from {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
 /* Content styles */
 #content #what {
   display: grid;
@@ -170,12 +192,12 @@ body {
 #content #why .why-list {
   display: grid;
 }
-#content #why li {
+#content #why .why-list li {
   position: relative;
   display: grid;
   gap: 0.5rem;
 }
-#content #why li::before {
+#content #why .why-list li::before {
   position: absolute;
   left: -3rem;
   content: url(https://res.cloudinary.com/dvrziwgxp/image/upload/v1678729843/tick2_orpv8v.svg);

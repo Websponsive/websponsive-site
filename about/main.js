@@ -6,6 +6,29 @@ const contentOptions = {
 }
 const cartButton = document.querySelector('#cart-button');
 const cart = document.querySelector('.cart');
+const darkModeButton = document.querySelector('#dark-mode-button');
+
+//Remember dark mode preference
+if(window.localStorage.getItem('darkMode') === 'true'){
+    document.body.classList.add('dark-mode');
+    darkModeButton.setAttribute('aria-expanded', 'true')
+}
+
+// Dark mode functionality
+darkModeButton.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+
+    let isOpen = darkModeButton.getAttribute('aria-expanded');
+    if(isOpen === 'false'){
+        darkModeButton.setAttribute('aria-expanded', 'true');
+        window.localStorage.setItem('darkMode', 'true');
+        console.log(window.localStorage.getItem('darkMode'));
+    } else if (isOpen === 'true'){
+        darkModeButton.setAttribute('aria-expanded', 'false');
+        window.localStorage.setItem('darkMode', 'false');
+        console.log(window.localStorage.getItem('darkMode'));
+    }
+}) ;
 
 //Navbar collapse functionality
 const menuButton = document.querySelector('#menu-button');
@@ -32,20 +55,6 @@ menuButton.addEventListener('click', () => {
     }
 });
 
-// Dark mode functionality
-const darkModeButton = document.querySelector('#dark-mode-button');
-darkModeButton.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-
-    let isOpen = darkModeButton.getAttribute('aria-expanded');
-    if(isOpen === 'false'){
-        darkModeButton.setAttribute('aria-expanded', 'true');
-        // navbar.style.maxHeight = '320px';
-    } else if (isOpen === 'true'){
-        darkModeButton.setAttribute('aria-expanded', 'false');
-        // navbar.style.maxHeight = '80px';
-    }
-}) ;
 
 
 //Navbar fade-in animations

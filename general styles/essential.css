@@ -65,7 +65,7 @@
   --f-size-xxl: calc(2rem + 1.5vw);
   --f-size-header: calc(1.75rem + 1vw);
   --f-size-small-header: calc(1.25rem + 1vw);
-  --f-size-title: calc(1rem + 0.5vw);
+  --f-size-title: calc(1.25rem + 0.5vw);
   --f-size-paragraph: calc(1rem + 0.25vw);
   --f-size-small: calc(0.75rem + 0.25vw);
   --transition-speed-fast: 250ms;
@@ -177,6 +177,38 @@ html, body {
   background-color: var(--bg-color-blue-200);
 }
 
+.language-selector {
+  position: absolute;
+  padding: 0.25rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  border: 2px solid var(--bg-color-blue-500);
+  transition: all var(--transition-speed-fast) ease-in-out;
+  background-color: var(--background-body);
+  color: var(--f-color-dark);
+}
+.language-selector:hover, .language-selector:focus {
+  border: 2px solid var(--bg-color-pine-green);
+}
+
+@media (max-width: 760px) {
+  .language-selector {
+    top: 5rem;
+    right: 0.5rem;
+  }
+}
+@media (min-width: 761px) {
+  .language-selector {
+    top: 6rem;
+    right: 1rem;
+  }
+}
+@media (min-width: 1300px) {
+  .language-selector {
+    top: 7rem;
+    right: 1rem;
+  }
+}
 /* Navbar Styles */
 .navbar {
   --background: hsla(226, 61%, 14%, 0.85);

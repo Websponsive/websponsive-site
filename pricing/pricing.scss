@@ -83,6 +83,7 @@ body{
                 justify-items: center;
                 li{
                     text-align: center;
+                    transition: border var(--transition-speed-slow) ease;
                     &.enabled-benefit::before{
                         content: '\2714';
                         margin-right: 0.25rem;
@@ -96,6 +97,7 @@ body{
                     &:not(:last-child){
                         border-bottom: 2px solid var(--f-color-dark);
                         padding-block: 0.5rem;
+
                     }
                     &:last-child{
                         padding-top: 0.5rem;
@@ -183,6 +185,7 @@ body{
             position: relative;
             border-radius: 1rem;
             background-color: var(--background-body);
+            transition: background-color var(--transition-speed-slow) ease;
             .add-on-title{
                 text-align: center;
             }

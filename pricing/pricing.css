@@ -79,6 +79,7 @@ body {
 }
 #content #subscription-plans .plan .plan-benefit-list li {
   text-align: center;
+  transition: border var(--transition-speed-slow) ease;
 }
 #content #subscription-plans .plan .plan-benefit-list li.enabled-benefit::before {
   content: "✔";
@@ -150,6 +151,7 @@ body {
   position: relative;
   border-radius: 1rem;
   background-color: var(--background-body);
+  transition: background-color var(--transition-speed-slow) ease;
 }
 #content #add-ons .add-on .add-on-title {
   text-align: center;
