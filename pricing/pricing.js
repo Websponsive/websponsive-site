@@ -257,23 +257,29 @@ function addOnsState() {
 //Checkout functionality
 const checkoutButton = document.querySelector('.cart-checkout-button');
 checkoutButton.addEventListener('click', () => {
-    window.localStorage.clear();
-    planSelect.value = 'none';
-    planTitle.innerText = 'No plan selected';
-    planPrice.innerText = prices.none;
-    try {
-        const addOnElements = document.querySelectorAll('.add-on-element');
-        addOnElements.forEach((element) => {
-            element.remove();
-        });
-        addOnsSection.dataset.pages = 'no';
-        addOnsSection.dataset.report = 'no';
-    } catch (error) {
+    console.log(window.localStorage.getItem('total'));
+    if(window.localStorage.getItem('total') === '0'){
+        window.alert('Your cart is empty !');
         return;
     }
+    window.location.href = './checkout.html'
+    // window.localStorage.clear();
+    // planSelect.value = 'none';
+    // planTitle.innerText = 'No plan selected';
+    // planPrice.innerText = prices.none;
+    // try {
+    //     const addOnElements = document.querySelectorAll('.add-on-element');
+    //     addOnElements.forEach((element) => {
+    //         element.remove();
+    //     });
+    //     addOnsSection.dataset.pages = 'no';
+    //     addOnsSection.dataset.report = 'no';
+    // } catch (error) {
+    //     return;
+    // }
     updateCartTotal();
     addOnsState();
-    window.alert('Thanks for checking out');
+    // window.alert('Thanks for checking out');
 });
 
 //Cart total update function

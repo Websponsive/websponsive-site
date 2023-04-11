@@ -3,6 +3,17 @@ body {
   transition: background-color var(--transition-speed-slow) ease;
 }
 
+#content .content-section .image-container {
+  width: 100%;
+  position: relative;
+}
+#content .content-section .image-container .section-image {
+  width: 100%;
+}
+#content .content-section .image-container .blob {
+  position: absolute;
+  z-index: -1;
+}
 #content .question-section {
   display: grid;
   gap: 1rem;
@@ -73,36 +84,79 @@ body {
 #content .content-section {
   position: relative;
   display: grid;
-  gap: 5rem;
+  gap: 1rem;
+  margin-top: 4rem;
 }
 @media screen and (max-width: 560px) {
-  #content .content-section {
-    padding: 8rem 1rem 4rem 1rem;
+  #content .content-section,
+  #content .question-section {
+    padding: 4rem 1rem 4rem 1rem;
   }
-  #content .section-image {
+  #content .content-section .image-container,
+  #content .question-section .image-container {
+    width: 100%;
+  }
+  #content .content-section .image-container .section-image,
+  #content .question-section .image-container .section-image {
     width: 90%;
-    justify-self: center;
+  }
+  #content .content-section .image-container .blob,
+  #content .question-section .image-container .blob {
+    top: -20%;
+    left: -15%;
+    width: 130%;
   }
   #content .question {
     margin-block: 1rem;
   }
 }
 @media screen and (min-width: 561px) {
-  #content .content-section {
-    padding: 8rem 3rem 4rem 3rem;
+  #content .content-section,
+  #content .question-section {
+    padding: 4rem 3rem 4rem 3rem;
   }
-  #content .section-image {
-    width: clamp(30vw, 90%, 45vw);
-    max-width: 500px;
-    justify-self: center;
+  #content .content-section .image-container,
+  #content .question-section .image-container {
+    width: 100%;
+  }
+  #content .content-section .image-container .section-image,
+  #content .question-section .image-container .section-image {
+    width: 100%;
+  }
+  #content .content-section .image-container .blob,
+  #content .question-section .image-container .blob {
+    top: -20%;
+    left: -20%;
+    z-index: -1;
+    width: 140%;
+  }
+  #content .content-section {
+    grid-template-columns: 1fr 1fr;
   }
   #content .question {
     margin-block: 0.5rem;
   }
 }
 @media screen and (min-width: 1300px) {
-  #content .content-section {
-    padding: 10rem 16rem 6rem 16rem;
+  #content .content-section,
+  #content .question-section {
+    padding: 5rem 16rem 5rem 16rem;
+    gap: 2rem;
+  }
+  #content .content-section .image-container,
+  #content .question-section .image-container {
+    width: 100%;
+  }
+  #content .content-section .image-container .section-image,
+  #content .question-section .image-container .section-image {
+    width: 80%;
+  }
+  #content .content-section .image-container .blob,
+  #content .question-section .image-container .blob {
+    top: -25%;
+    left: -20%;
+    z-index: -1;
+    width: 120%;
   }
 }
 .link {
