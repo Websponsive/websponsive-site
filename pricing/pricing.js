@@ -23,8 +23,15 @@ menuButton.addEventListener('click', () => {
         // navbar.style.maxHeight = '80px';
     }
 });
-// Dark mode functionality
+
+
+//Remember dark mode preference
 const darkModeButton = document.querySelector('#dark-mode-button');
+if(window.localStorage.getItem('darkMode') === 'true'){
+    document.body.classList.add('dark-mode');
+    darkModeButton.setAttribute('aria-expanded', 'true')
+}
+// Dark mode functionality
 darkModeButton.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
 

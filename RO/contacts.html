@@ -69,18 +69,18 @@
             <!-- <li class="navbar-item">
                 <img id="navbar-logo" src="https://res.cloudinary.com/dvrziwgxp/image/upload/v1665761117/Logo-removebg-short_mwxc1r.png" alt="">
             </li> -->
-            <li class="navbar-list-item"><a href="about.html" class="navbar-link dark-bg-link light">About</a></li>
-            <li class="navbar-list-item"><a href="pricing.html" class="navbar-link dark-bg-link light">Pricing</a></li>
-            <li class="navbar-list-item"><a href="#" class="navbar-link dark-bg-link light active">Contacts</a></li>
+            <li class="navbar-list-item"><a href="about.html" class="navbar-link dark-bg-link light">Despre</a></li>
+            <li class="navbar-list-item"><a href="pricing.html" class="navbar-link dark-bg-link light">Prețuri</a></li>
+            <li class="navbar-list-item"><a href="#" class="navbar-link dark-bg-link light active">Contacte</a></li>
             <li class="navbar-list-item"><a href="faq.html" class="navbar-link dark-bg-link light">FAQ</a></li>
-            <li class="navbar-list-item"><a href="#" class="navbar-link dark-bg-link light">Blogs</a></li>
+            <li class="navbar-list-item"><a href="#" class="navbar-link dark-bg-link light">Bloguri</a></li>
         </ul>
 
         <!-- Cart -->
         <div class="cart cart-hidden">
 
             <div class="cart-plan">
-                <h3 class="paragraph dark">Your selected plan:</h3>
+                <h3 class="paragraph dark">Planul selectat:</h3>
                 <div class="cart-item plan-element">
                     <p class="cart-plan-title paragraph dark">No plan selected</p>
                     <p class="paragraph dark" style="white-space: nowrap;">$<span class="cart-plan-price">0</span>/mo
@@ -95,14 +95,14 @@
             </div>
 
             <div class="cart-add-ons" data-pages="no" data-report="no">
-                <h3 class="paragraph dark">Your selected add-ons:</h3>
+                <h3 class="paragraph dark">Opțiuni suplimentare selectate:</h3>
             </div>
 
             <div class="cart-end">
-                <h3 class="paragraph dark">Your total:&nbsp&nbsp 
-                    $<span class="cart-total">0</span>/mo
+                <h3 class="paragraph dark">Totalul:&nbsp&nbsp 
+                    €<span class="cart-total">0</span>/mo
                 </h3>
-                <button class="cart-checkout-button paragraph">Checkout</button>
+                <button class="cart-checkout-button paragraph">Finisează cumpărătura</button>
             </div>
         </div>
     </nav>
@@ -111,13 +111,17 @@
     <!-- Content -->
     <main id="content">
         <section class="content-section grid" id="contact">
+            <select name="language-selector" aria-label="change language" class="language-selector small-text" onchange="javascript:location.href = this.value">
+                <option value="../ENG/contacts.html">🇬🇧 English</option>
+                <option value="" selected>🇷🇴 Română</option>
+            </select>
             <div class="half-section">
-                <h1 class="contact-header dark header">Contact Us</h1>
-                <p class="paragraph gray">Making decisions about your website can be tough, but you don't have to do it alone! Our experts are here to guide you every step of the way. If you're feeling unsure about what's best for your business, give us a call. Fill out the email form, or alternatively, contact us through the links below and we'll provide recommendations and answer any questions you may have.</p>
+                <h1 class="contact-header dark header">Contactați-ne</h1>
+                <p class="paragraph gray">Întreprinderea unei decizii poate fi dificilă, însă nu ești nevoit s-o faci singur! Experții noștri îți vor fi alături. În caz că te simți nesigur despre ce e mai bine pentru afacerea ta, dați-ne un sunet. Completați formularul sau contactați-ne prin linkurile de mai jos și noi vă vom oferi recomandații și răspunsuri la orice întrebare.</p>
             </div>
             <form>
                 <div class="form-input-group">
-                    <label for="form-name" class="gray paragraph">Name</label>
+                    <label for="form-name" class="gray paragraph">Nume</label>
                     <input type="text" name="name" id="form-name" class="form-input small-text dark" placeholder="Nigel" required>
                 </div>
                 <div class="form-input-group">
@@ -125,10 +129,10 @@
                     <input type="email" name="email" id="form-email" class="form-input small-text dark" placeholder="example@gmail.com" required>
                 </div>
                 <div class="form-input-group">
-                    <label for="form-message" class="gray paragraph">Message</label>
+                    <label for="form-message" class="gray paragraph">Mesaj</label>
                     <textarea name="message" id="form-message" cols="30" rows="10" class="form-input small-text dark" required placeholder="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem, debitis?"></textarea>
                 </div>
-                <button type="submit" class="dark paragraph form-submit">Send</button>
+                <button type="submit" class="dark paragraph form-submit">Trimite</button>
             </form>
         </section>
     </main>

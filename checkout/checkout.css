@@ -1,4 +1,6 @@
 main {
+  transition: background-color var(--transition-speed-slow) ease;
+  background-color: var(--background-body);
   display: grid;
   place-content: center;
   min-height: 100vh;

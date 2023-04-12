@@ -186,6 +186,7 @@ html, body {
   transition: all var(--transition-speed-fast) ease-in-out;
   background-color: var(--background-body);
   color: var(--f-color-dark);
+  z-index: 998;
 }
 .language-selector:hover, .language-selector:focus {
   border: 2px solid var(--bg-color-pine-green);
