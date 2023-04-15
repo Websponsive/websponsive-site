@@ -218,6 +218,7 @@ body {
   gap: 0.5rem;
   transition: background-color var(--transition-speed-slow) ease;
   position: relative;
+  filter: drop-shadow(0 0 10px hsla(155, 85%, 63%, 0.25));
   border-top: var(--bg-color-blue-200) 12px solid;
 }
 #content #portofolio .work .work-img {
@@ -753,9 +754,14 @@ body {
     opacity: 0;
     transition: all var(--transition-speed-slow);
   }
+  .faded-in-down {
+    transform: translateY(2rem) scale(0.9);
+    opacity: 0;
+    transition: all var(--transition-speed-slow);
+  }
   .faded-out {
     opacity: 1;
-    transform: translateX(0rem) scale(1);
+    transform: translate(0rem) scale(1);
   }
 }
 @media screen and (min-width: 561px) {
@@ -769,9 +775,22 @@ body {
     opacity: 0;
     transition: all var(--transition-speed-slow);
   }
+  .faded-in-down {
+    transform: translateY(2rem) scale(0.9);
+    opacity: 0;
+    transition: all var(--transition-speed-slow);
+  }
   .faded-out {
     opacity: 1;
-    transform: translateX(0rem) scale(1);
+    transform: translate(0rem) scale(1);
+  }
+}
+@media screen and (min-width: 1300px) {
+  .faded-in-down.second {
+    transition-delay: 200ms;
+  }
+  .faded-in-down.third {
+    transition-delay: 400ms;
   }
 }
 .grid {

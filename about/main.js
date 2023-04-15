@@ -121,6 +121,7 @@ const contentObserver = new IntersectionObserver((elements) => {
 
 const hiddenToLeftElements = document.querySelectorAll('.faded-in-left');
 const hiddenToRightElements = document.querySelectorAll('.faded-in-right');
+const hiddenToDownElements = document.querySelectorAll('.faded-in-down');
 
 hiddenToLeftElements.forEach((element) => {
     contentObserver.observe(element);
@@ -128,7 +129,9 @@ hiddenToLeftElements.forEach((element) => {
 hiddenToRightElements.forEach((element) => {
     contentObserver.observe(element);
 });
-
+hiddenToDownElements.forEach((element) => {
+    contentObserver.observe(element);
+});
 
 //Card background glow effect
 
