@@ -597,6 +597,10 @@ ul {
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 .xxl {
   font-size: var(--f-size-xxl);
 }

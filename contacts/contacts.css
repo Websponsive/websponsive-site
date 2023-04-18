@@ -3,6 +3,10 @@ body {
   transition: background-color var(--transition-speed-slow) ease;
 }
 
+.dark-mode .contact-link svg {
+  stroke: var(--bg-color-blue-200) !important;
+}
+
 #content #contact {
   min-height: 100vh;
   min-height: 100lvh;
@@ -35,6 +39,9 @@ body {
   min-height: 2rem;
   background: linear-gradient(-45deg, var(--f-color-less-light) 0.75rem, transparent 1rem);
 }
+#content #contact form .form-input-group .form-input#form-email, #content #contact form .form-input-group .form-input#form-name {
+  background-color: transparent;
+}
 #content #contact form .form-submit {
   padding: 0.5rem;
   border-radius: 0.5rem;
@@ -47,12 +54,36 @@ body {
   background-color: var(--bg-color-pine-green);
   color: var(--f-color-light);
 }
+#content .contact-links {
+  display: grid;
+}
+#content .contact-links .contact-link {
+  display: flex;
+  align-content: center;
+  gap: 0.5rem;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+#content .contact-links .contact-link svg {
+  stroke: var(--bg-color-blue-600);
+  height: 3rem;
+  width: 3rem;
+  transition: stroke var(--transition-speed-slow) ease;
+}
+#content .contact-links .contact-link span {
+  line-height: 3rem;
+}
 #content .content-section {
   position: relative;
 }
 @media screen and (max-width: 560px) {
   #content .content-section {
     padding: 8rem 1rem 4rem 1rem;
+  }
+  #content .contact-links {
+    padding: 0rem 1rem 4rem 1rem;
+    justify-content: center;
+    gap: 0.5rem;
   }
   #content .section-image {
     width: 90%;
@@ -68,10 +99,38 @@ body {
     max-width: 500px;
     justify-self: center;
   }
+  #content .email-link {
+    grid-column: 1/3;
+  }
+  #content .contact-links {
+    padding: 0rem 3rem 4rem 3rem;
+    justify-items: center;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
 }
 @media screen and (min-width: 1300px) {
   #content .content-section {
     padding: 10rem 12rem 6rem 12rem;
+  }
+  #content .contact-links {
+    padding: 0rem 16rem 6rem 16rem;
+  }
+  #content .contact-links .contact-link {
+    display: flex;
+    align-content: center;
+    gap: 0.5rem;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  #content .contact-links .contact-link svg {
+    stroke: var(--bg-color-blue-600);
+    height: 3rem;
+    width: 3rem;
+  }
+  #content .contact-links .contact-link span {
+    line-height: 3rem;
   }
 }
 .link {

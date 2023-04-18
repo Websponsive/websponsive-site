@@ -22,11 +22,9 @@ darkModeButton.addEventListener('click', () => {
     if(isOpen === 'false'){
         darkModeButton.setAttribute('aria-expanded', 'true');
         window.localStorage.setItem('darkMode', 'true');
-        console.log(window.localStorage.getItem('darkMode'));
     } else if (isOpen === 'true'){
         darkModeButton.setAttribute('aria-expanded', 'false');
         window.localStorage.setItem('darkMode', 'false');
-        console.log(window.localStorage.getItem('darkMode'));
     }
 }) ;
 

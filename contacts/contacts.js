@@ -17,7 +17,7 @@ menuButton.addEventListener('click', () => {
     } else if (isOpen === 'true'){
         menuButton.setAttribute('aria-expanded', 'false');
         // navbar.style.maxHeight = '80px';
-    }
+    } 
 });
 
 //Remember dark mode preference
@@ -33,10 +33,10 @@ darkModeButton.addEventListener('click', () => {
     let isOpen = darkModeButton.getAttribute('aria-expanded');
     if(isOpen === 'false'){
         darkModeButton.setAttribute('aria-expanded', 'true');
-        // navbar.style.maxHeight = '320px';
+        window.localStorage.setItem('darkMode', 'true');
     } else if (isOpen === 'true'){
         darkModeButton.setAttribute('aria-expanded', 'false');
-        // navbar.style.maxHeight = '80px';
+        window.localStorage.setItem('darkMode', 'false');
     }
 }) ;
 

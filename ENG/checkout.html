@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
 
     <link rel="stylesheet" href="../general styles/essential.css">
     <link rel="stylesheet" href="../checkout/checkout.css">
@@ -18,98 +19,63 @@
         a, p, li{
         font-family: var(--f-family-josefin), sans-serif;
         }
-        h1, h2, h3, h4, h5, h6, button, select, input, option, span{
+        h1, h2, h3, h4, h5, h6, button, select, input, option, span, label, textarea{
             font-family: var(--f-family-ubuntu), sans-serif;
         }
     </style>
     <script src="../checkout/checkout.js" defer></script>
 </head>
 <body>
-    <nav class="navbar nav-hidden">
-        <img src="https://res.cloudinary.com/dvrziwgxp/image/upload/v1665761117/Logo-removebg-short_mwxc1r.png" alt="the websponsive logo" draggable="false" class="navbar-logo">
-        <button id="dark-mode-button" name="Cart Button" class="nav-button" aria-label="switch the color profile" aria-expanded="false">
-            <svg xmlns="http://www.w3.org/2000/svg" class="nav-icon moon" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5"  fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
-            </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" class="nav-icon
-            sun" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                <circle cx="12" cy="12" r="4" />
-                <path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" />
-              </svg>
-        </button>
-        <button id="cart-button" class="nav-button" aria-expanded="false">
-            <svg xmlns="http://www.w3.org/2000/svg" class="nav-icon cart-icon-1" viewBox="0 0 24 24" stroke-width="1.25" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                <circle cx="6" cy="19" r="2" />
-                <circle cx="17" cy="19" r="2" />
-                <path d="M17 17h-11v-14h-2" />
-                <path d="M6 5l14 1l-1 7h-13" />
-              </svg>
-              <svg xmlns="http://www.w3.org/2000/svg" class="nav-icon cart-icon-2" viewBox="0 0 24 24" stroke-width="1.25" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                <circle cx="6" cy="19" r="2" />
-                <circle cx="17" cy="19" r="2" />
-                <path d="M17 17h-11v-14h-2" />
-                <path d="M6 5l14 1l-1 7h-13" />
-              </svg>
-        </button>
-        <button id="menu-button" class="nav-button" aria-expanded="false">
-            <svg xmlns="http://www.w3.org/2000/svg" class="nav-icon pressed" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h34v24H0z" fill="none"/>
-                <line x1="4" y1="6" x2="20" y2="6" class="line1"/>
-                <line x1="4" y1="12" x2="20" y2="12" class="line2"/>
-                <line x1="4" y1="18" x2="20" y2="18" class="line3"/>
-            </svg>
-        </button>
-        <ul class="navbar-list">
-            <!-- <li class="navbar-item">
-                <img id="navbar-logo" src="https://res.cloudinary.com/dvrziwgxp/image/upload/v1665761117/Logo-removebg-short_mwxc1r.png" alt="">
-            </li> -->
-            <li class="navbar-list-item"><a href="../index.html" class="navbar-link dark-bg-link light">About</a></li>
-            <li class="navbar-list-item"><a href="#" class="navbar-link dark-bg-link light">Pricing</a></li>
-            <li class="navbar-list-item"><a href="contacts.html" class="navbar-link dark-bg-link light">Contacts</a></li>
-            <li class="navbar-list-item"><a href="faq.html" class="navbar-link dark-bg-link light">FAQ</a></li>
-            <li class="navbar-list-item"><a href="#" class="navbar-link dark-bg-link light">Blogs</a></li>
-        </ul>
- 
-        <!-- Cart -->
-        <div class="cart cart-hidden">
-
-            <div class="cart-plan">
-                <h3 class="paragraph dark">Planul selectat:</h3>
-                <div class="cart-item plan-element">
-                    <p class="cart-plan-title paragraph dark">No plan selected</p>
-                    <p class="paragraph dark" style="white-space: nowrap;">$<span class="cart-plan-price">0</span>/mo
-                    </p>
-                    <select name="plan" class="cart-plan-input dark">
+    <!-- Main content -->
+    <main>
+        <section class="confirm">
+            <h2 class="small-header dark">Your order:</h2>
+            <section class="order-items">
+                <div class="plan order-item">
+                    <h3 class="plan-name dark paragraph">No plan selected !</h3>
+                    <p class="paragraph dark">$<span class="plan-price price">0</span>/mo</p>
+                    <select name="plan" class="plan-input">
                         <option value="none" selected>None</option>
                         <option value="essential">Essential</option>
                         <option value="value" >Value</option>
                         <option value="premium">Premium</option>
                     </select>
                 </div>
-            </div>
+            </section>
+        <button class="proceed paragraph dark">Confirm</button> 
+        </section>
 
-            <div class="cart-add-ons" data-pages="no" data-report="no">
-                <h3 class="paragraph dark">Opțiuni suplimentare selectate:</h3>
-            </div>
-
-            <div class="cart-end">
-                <h3 class="paragraph dark">Totalul:&nbsp&nbsp 
-                    $<span class="cart-total">0</span>/mo
-                </h3>
-                <button class="cart-checkout-button small-text">Finisează cumpărătura</button>
-            </div>
-        </div>
-    </nav>
-
-
-    <!-- Main content -->
-    <main>
-        <h2 class="small-header dark">Your order:</h2>
-        
+        <section class="info">
+            <h2 class="small-header dark">Enter your information</h2>
+            <form>
+                <div class="form-input-group">
+                    <label for="form-email" class="gray paragraph">Email</label>
+                    <input type="email" name="email" id="form-email" class="form-input small-text dark" placeholder="example@gmail.com" required>
+                </div>
+                <div class="form-input-group">
+                    <label for="cc" class="gray paragraph">Credit card number</label>
+                    <input type="number" name="cc" id="cc" class="form-input small-text dark" placeholder="1234 5678 9012 3456" required>
+                </div>
+                <div class="small-inputs">
+                    <div class="form-input-group">
+                        <label for="cvv" class="gray paragraph">CVV/CCV</label>
+                        <input type="number" name="cvv" id="cvv" class="form-input small-text dark" placeholder="123" required>
+                    </div>
+                    <div class="form-input-group">
+                        <label for="expiry" class="gray paragraph">Expiry date</label>
+                        <input type="number" name="expiry date" id="expiry" class="form-input small-text dark" placeholder="123" required>
+                    </div>
+                </div>
+                
+                <button type="submit" class="dark paragraph form-submit">Finish order</button>
+            </form>
+            <button aria-label="return to previous screen" class="return">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-back-up" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#3882c7" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M9 13l-4 -4l4 -4m-4 4h11a4 4 0 0 1 0 8h-1" />
+                </svg>
+            </button>
+        </section>
     </main>
 </body>
 </html>

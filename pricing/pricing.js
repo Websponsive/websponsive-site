@@ -38,10 +38,10 @@ darkModeButton.addEventListener('click', () => {
     let isOpen = darkModeButton.getAttribute('aria-expanded');
     if(isOpen === 'false'){
         darkModeButton.setAttribute('aria-expanded', 'true');
-        // navbar.style.maxHeight = '320px';
+        window.localStorage.setItem('darkMode', 'true');
     } else if (isOpen === 'true'){
         darkModeButton.setAttribute('aria-expanded', 'false');
-        // navbar.style.maxHeight = '80px';
+        window.localStorage.setItem('darkMode', 'false');
     }
 }) ;
 
@@ -264,7 +264,6 @@ function addOnsState() {
 //Checkout functionality
 const checkoutButton = document.querySelector('.cart-checkout-button');
 checkoutButton.addEventListener('click', () => {
-    console.log(window.localStorage.getItem('total'));
     if(window.localStorage.getItem('total') === '0'){
         window.alert('Your cart is empty !');
         return;
