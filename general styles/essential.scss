@@ -9,6 +9,9 @@
     background-color: var(--bg-color-pine-green);
     color: var(--f-color-light);
 }
+html{
+    scroll-behavior: smooth;
+}
 :root{
     font-size: 20px;
 

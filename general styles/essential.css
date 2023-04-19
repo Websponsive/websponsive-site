@@ -15,6 +15,10 @@
   color: var(--f-color-light);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   font-size: 20px;
   --f-family-josefin:"Josefin Sans", sans-serif;
