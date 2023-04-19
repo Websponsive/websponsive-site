@@ -151,8 +151,8 @@ function handleMouseMovement (w) {
 
 const prices = {
     essential : 129,
-    value : 249,
-    premium : 499,
+    value : 229,
+    premium : 599,
     none : 0,
 }
 
@@ -275,23 +275,13 @@ function addOnsState() {
 //Checkout functionality
 const checkoutButton = document.querySelector('.cart-checkout-button');
 checkoutButton.addEventListener('click', () => {
-    window.localStorage.clear();
-    planSelect.value = 'none';
-    planTitle.innerText = 'No plan selected';
-    planPrice.innerText = prices.none;
-    try {
-        const addOnElements = document.querySelectorAll('.add-on-element');
-        addOnElements.forEach((element) => {
-            element.remove();
-        });
-        addOnsSection.dataset.pages = 'no';
-        addOnsSection.dataset.report = 'no';
-    } catch (error) {
+    if(window.localStorage.getItem('total') === '0'){
+        window.alert('Your cart is empty !');
         return;
     }
+    window.location.href = './checkout.html'
     updateCartTotal();
     addOnsState();
-    window.alert('Thanks for checking out');
 });
 
 

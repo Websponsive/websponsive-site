@@ -3,7 +3,8 @@ main{
     background-color: var(--background-body);
     display: grid;
     place-items: center;
-    min-height: 100vh;
+    height: 100vh;
+    height: 100svh;
     position: relative;
     overflow-x: hidden;
     .confirm{
@@ -143,6 +144,20 @@ main{
                 }
             }
         }
+    }
+
+    .pop-up{
+        position: fixed;
+        place-self: center;
+        width: 100vw;
+        display: grid;
+        place-content: center;
+        height: 100vh;
+        height: 100svh;
+        background-color: hsla(175, 98%, 30%, 0.75);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity var(--transition-speed-slow) ease;
     }
 }
 @media screen and (max-width: 760px){
