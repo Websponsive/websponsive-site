@@ -131,9 +131,24 @@ hiddenToDownElements.forEach((element) => {
     contentObserver.observe(element);
 });
 
+
+//Fade-in animations for lines
+const strokes = document.querySelectorAll('.process-stroke')
+const lineObserver = new IntersectionObserver((elements) => {
+    elements.forEach((element) => {
+        if(element.isIntersecting){
+            element.target.classList.add('extended');
+        }
+    });
+}, contentOptions)
+
+strokes.forEach((e) => {
+    lineObserver.observe(e);
+})
+
 //Card background glow effect
 
-for(const benefit of document.querySelectorAll(".benefit")) {
+for(const benefit of document.querySelectorAll(".card")) {
     benefit.onmousemove = w => handleMouseMovement(w);
 }
 function handleMouseMovement (w) {

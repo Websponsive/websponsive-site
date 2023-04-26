@@ -270,6 +270,42 @@ body{
             }
         }
     }
+
+    #process{
+        display: grid;
+        background: url(https://res.cloudinary.com/dvrziwgxp/image/upload/v1675796915/low-poly-grid-haikei_2_qxs341.svg), hsla(0, 0%, 0%, 0.35);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-blend-mode: darken;
+        
+        place-content: center;
+        place-items: center;
+        .container{
+            display: grid;
+            justify-items: center;
+        }
+        .process-step{
+            display: grid;
+            gap: 2rem;
+            align-items: center;
+            .card{
+                background-color: hsla(226, 61%, 25%, 0.8);
+                border-radius: 0.5rem;
+                display: grid;
+                place-content: center;
+                place-items: center;
+                border: 2px hsla(0, 0%, 50%, 0.5) solid;
+                &:hover::before{
+                    opacity: 1;
+                }
+            }
+            .text-container{
+                display: grid;
+                gap: 0.75rem;
+            }
+        }
+    }
     .section-image{
         border-radius: 1rem;
     }
@@ -325,6 +361,26 @@ body{
                 }
             }
         }
+        #process{
+            padding: 10rem 1.5rem 5rem 1.5rem;
+            gap: 3rem;
+            .process-step{
+                .card{
+                    width: 100%;
+                    height: 75px;
+                    svg{
+                        width: 80%;
+                        height: 80%;
+                    }
+                }
+                .text-container{
+                    text-align: center;
+                }
+                .process-line{
+                    display: none;
+                }
+            }
+        }
         .content-section{
             padding: 8rem 1rem 13rem 1rem;
         }
@@ -334,7 +390,6 @@ body{
         }
     }
     @media screen and (min-width: 561px){
-        
         .intro{
             height: calc(100vh + 150px);
             .intro-header{
@@ -392,6 +447,79 @@ body{
                 }
             }
         }
+
+        #process{
+            padding-top: 20rem;
+            padding-bottom: 7rem;
+            gap: 2rem;
+            .process-step{
+                grid-template-columns: 1fr 3fr;
+                &:nth-child(2n){
+                    grid-template-columns: 3fr 1fr;
+                    .text-container{
+                        grid-row: 1 / 2;
+                        text-align: right;
+                    }
+                }
+                .card{
+                    width: 200px;
+                    height: 200px;
+                    svg{
+                        width: 65%;
+                        height: 65%;
+                    }
+                    &::before{
+                        content: '';
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        background-image: radial-gradient(
+                            50vw circle at var(--mouse-x) var(--mouse-y), 
+                            hsla(172, 100%, 70%, 0.2),
+                            transparent 40%
+                        );
+                        // z-index: 1;
+                        transition: opacity var(--transition-speed-slow) ease;
+                        opacity: 0;
+                        border-radius: inherit;
+                    }
+                }
+                .text-container{
+                    justify-self: left;
+                }
+                .process-line{
+                    width: 70vw;
+                    grid-column: span 2;
+                    justify-self: center;
+                    &.flip{
+                        transform: rotateY(180deg);
+                    }
+                    .process-stroke{
+                        stroke-dasharray: 1100;
+                        stroke-dashoffset: 1100;
+                        transition: stroke-dashoffset 1s ease-in-out;
+                        // animation-name: stroke;
+                        // animation-duration: 2s;
+                        // animation-timing-function: ease-in-out;
+                        // animation-fill-mode: forwards;
+                        // animation-iteration-count: initial;
+                        &.extended{
+                            stroke-dashoffset: 0;
+                        }
+                    }
+                    // @keyframes stroke {
+                    //     from{
+                    //         stroke-dashoffset: 1100;
+                    //     }
+                    //     to{
+                    //         stroke-dashoffset: 0;
+                    //     }
+                    // }
+                }
+            }
+        }
         .content-section{
             padding: 8rem 2rem 16rem 2rem;
         }
@@ -401,6 +529,8 @@ body{
             justify-self: center;
         }
     }
+
+
     @media screen and (min-width: 1300px) {
         #what{
             padding: 0rem 24rem 0rem 24rem;
@@ -466,6 +596,23 @@ body{
             padding-top: 0;
             padding-right: 20rem;
         }
+
+        #process{
+            padding-top: 25rem;
+            padding-bottom: 15rem;
+            gap: 7rem;
+            .process-step{
+                grid-template-columns: 1fr 4fr;
+
+                .card{
+                    width: 250px;
+                    height: 250px;
+                }
+                .process-line{
+                    width: 65vw;
+                }
+            }
+        }
     }
     
     @at-root .graphics{
@@ -492,154 +639,7 @@ body{
     #security{
         background-color: var(--bg-color-blue-700);
     }
-    #benefits{
-        display: grid;
-        background: url(https://res.cloudinary.com/dvrziwgxp/image/upload/v1675796915/low-poly-grid-haikei_2_qxs341.svg), hsla(0, 0%, 0%, 0.35);
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-blend-mode: darken;
-        .benefits-header{
-            justify-self: center;
-            margin-bottom: 3rem;
-            text-align: center;
-        }
-        .cards{
-            display: grid;
-            .benefit{
-                background-color: var(--bg-color-blue-600);
-                transition: background-color var(--transition-speed-slow) ease;
-                opacity: 0.8;
-                border: 2px solid rgba(255, 255, 255, 0.2);
-                width: 100%;
-                aspect-ratio: 3/2;
-                border-radius: 1rem;
-                position: relative;
-                // cursor: pointer;
-                // --mouse-x: 0px;
-                // --mouse-y: 0px;
-                display: grid;
-                justify-items: center;
-                align-items: center;
-                .icon{
-                    stroke: var(--f-color-less-light);
-                    aspect-ratio: 1/1;
-                    transition: transform var(--transition-speed-fast) ease-in-out;
-                }
-                &:hover::before{
-                    opacity: 1;
-                }
-                .title{
-                    text-align: center;
-                    align-self: center;
-                }
-            }
-        }
-    }
-    @media screen and (max-width: 560px){
-        #benefits{
-            padding: 10rem 1.5rem 5rem 1.5rem;
-            .cards{
-                grid-template-columns: repeat(1, 1fr);
-                gap: 1rem;
-                .benefit{
-                    grid-template-rows: 1fr 1fr;
-                    padding: 0.5rem;
-                    aspect-ratio: 1/1;
-                    .icon{
-                        width: 3.5rem;
-                    }
-                }
-                .footnote{
-                    margin-top: 3rem;
-                    // grid-column: span 2;
-                }
-            }
-        }
-    }
-    @media screen and (min-width: 561px){
-        #benefits{
-            padding-top: 20rem;
-            padding-bottom: 7rem;
-            .cards{
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
-                .benefit{
-                    aspect-ratio: 1/1;
-                    // grid-template-rows: 2fr 3fr;
-                    padding: 1rem;
-                    .icon{
-                        width: 10vw;
-                    }
-                    &::before{
-                        content: '';
-                        width: 100%;
-                        height: 100%;
-                        position: absolute;
-                        left: 0;
-                        top: 0;
-                        background-image: radial-gradient(
-                            80vw circle at var(--mouse-x) var(--mouse-y), 
-                            hsla(172, 100%, 70%, 0.2),
-                            transparent 40%
-                        );
-                        // z-index: 1;
-                        transition: opacity var(--transition-speed-slow) ease;
-                        opacity: 0;
-                        border-radius: inherit;
-                    }
-
-                    &:hover{
-                        .icon{
-                            transform: scale(1.2);
-                        }
-                    }
-                }
-                .footnote{
-                    margin-top: 5rem;
-                    grid-column: span 2;
-                }
-            }
-        }
-    }
-    @media screen and (min-width: 1300px) {
-        #benefits{
-            padding-top: 35rem;
-            padding-bottom: 9rem;
-            .cards{
-                grid-template-columns: repeat(3, 1fr);
-                gap: 1.5rem;
-                .benefit{
-                    aspect-ratio: 4/3;
-                    grid-template-rows: 2fr 3fr;
-                    .icon{
-                        width: 4rem;
-                    }
-                    &::before{
-                        content: '';
-                        width: 100%;
-                        height: 100%;
-                        position: absolute;
-                        left: 0;
-                        top: 0;
-                        background-image: radial-gradient(
-                            40vw circle at var(--mouse-x) var(--mouse-y), 
-                            hsla(172, 100%, 70%, 0.2),
-                            transparent 40%
-                        );
-                        z-index: 2;
-                        transition: opacity var(--transition-speed-slow) ease;
-                        opacity: 0;
-                        border-radius: inherit;
-                    }
-                }
-                .footnote{
-                    margin-top: 7rem;
-                    grid-column: span 3;
-                }
-            }
-        }
-    }
+    
 
     // Separator svg styles
     .wave-intro{

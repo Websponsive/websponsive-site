@@ -230,6 +230,40 @@ body {
 #content #portofolio .work .button {
   padding: 0.75rem 3rem;
 }
+#content #process {
+  display: grid;
+  background: url(https://res.cloudinary.com/dvrziwgxp/image/upload/v1675796915/low-poly-grid-haikei_2_qxs341.svg), hsla(0, 0%, 0%, 0.35);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: darken;
+  place-content: center;
+  place-items: center;
+}
+#content #process .container {
+  display: grid;
+  justify-items: center;
+}
+#content #process .process-step {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+#content #process .process-step .card {
+  background-color: hsla(226, 61%, 25%, 0.8);
+  border-radius: 0.5rem;
+  display: grid;
+  place-content: center;
+  place-items: center;
+  border: 2px hsla(0, 0%, 50%, 0.5) solid;
+}
+#content #process .process-step .card:hover::before {
+  opacity: 1;
+}
+#content #process .process-step .text-container {
+  display: grid;
+  gap: 0.75rem;
+}
 #content .section-image {
   border-radius: 1rem;
 }
@@ -281,6 +315,24 @@ body {
   }
   #content #portofolio .work .work-img {
     width: 100%;
+  }
+  #content #process {
+    padding: 10rem 1.5rem 5rem 1.5rem;
+    gap: 3rem;
+  }
+  #content #process .process-step .card {
+    width: 100%;
+    height: 75px;
+  }
+  #content #process .process-step .card svg {
+    width: 80%;
+    height: 80%;
+  }
+  #content #process .process-step .text-container {
+    text-align: center;
+  }
+  #content #process .process-step .process-line {
+    display: none;
   }
   #content .content-section {
     padding: 8rem 1rem 13rem 1rem;
@@ -344,6 +396,60 @@ body {
   }
   #content #portofolio .work .work-img {
     width: 80%;
+  }
+  #content #process {
+    padding-top: 20rem;
+    padding-bottom: 7rem;
+    gap: 2rem;
+  }
+  #content #process .process-step {
+    grid-template-columns: 1fr 3fr;
+  }
+  #content #process .process-step:nth-child(2n) {
+    grid-template-columns: 3fr 1fr;
+  }
+  #content #process .process-step:nth-child(2n) .text-container {
+    grid-row: 1/2;
+    text-align: right;
+  }
+  #content #process .process-step .card {
+    width: 200px;
+    height: 200px;
+  }
+  #content #process .process-step .card svg {
+    width: 65%;
+    height: 65%;
+  }
+  #content #process .process-step .card::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-image: radial-gradient(50vw circle at var(--mouse-x) var(--mouse-y), hsla(172, 100%, 70%, 0.2), transparent 40%);
+    transition: opacity var(--transition-speed-slow) ease;
+    opacity: 0;
+    border-radius: inherit;
+  }
+  #content #process .process-step .text-container {
+    justify-self: left;
+  }
+  #content #process .process-step .process-line {
+    width: 70vw;
+    grid-column: span 2;
+    justify-self: center;
+  }
+  #content #process .process-step .process-line.flip {
+    transform: rotateY(180deg);
+  }
+  #content #process .process-step .process-line .process-stroke {
+    stroke-dasharray: 1100;
+    stroke-dashoffset: 1100;
+    transition: stroke-dashoffset 1s ease-in-out;
+  }
+  #content #process .process-step .process-line .process-stroke.extended {
+    stroke-dashoffset: 0;
   }
   #content .content-section {
     padding: 8rem 2rem 16rem 2rem;
@@ -417,6 +523,21 @@ body {
     padding-top: 0;
     padding-right: 20rem;
   }
+  #content #process {
+    padding-top: 25rem;
+    padding-bottom: 15rem;
+    gap: 7rem;
+  }
+  #content #process .process-step {
+    grid-template-columns: 1fr 4fr;
+  }
+  #content #process .process-step .card {
+    width: 250px;
+    height: 250px;
+  }
+  #content #process .process-step .process-line {
+    width: 65vw;
+  }
 }
 .graphics {
   display: flex;
@@ -437,137 +558,6 @@ body {
 #content #why,
 #content #security {
   background-color: var(--bg-color-blue-700);
-}
-#content #benefits {
-  display: grid;
-  background: url(https://res.cloudinary.com/dvrziwgxp/image/upload/v1675796915/low-poly-grid-haikei_2_qxs341.svg), hsla(0, 0%, 0%, 0.35);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-blend-mode: darken;
-}
-#content #benefits .benefits-header {
-  justify-self: center;
-  margin-bottom: 3rem;
-  text-align: center;
-}
-#content #benefits .cards {
-  display: grid;
-}
-#content #benefits .cards .benefit {
-  background-color: var(--bg-color-blue-600);
-  transition: background-color var(--transition-speed-slow) ease;
-  opacity: 0.8;
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  width: 100%;
-  aspect-ratio: 3/2;
-  border-radius: 1rem;
-  position: relative;
-  display: grid;
-  justify-items: center;
-  align-items: center;
-}
-#content #benefits .cards .benefit .icon {
-  stroke: var(--f-color-less-light);
-  aspect-ratio: 1/1;
-  transition: transform var(--transition-speed-fast) ease-in-out;
-}
-#content #benefits .cards .benefit:hover::before {
-  opacity: 1;
-}
-#content #benefits .cards .benefit .title {
-  text-align: center;
-  align-self: center;
-}
-@media screen and (max-width: 560px) {
-  #content #benefits {
-    padding: 10rem 1.5rem 5rem 1.5rem;
-  }
-  #content #benefits .cards {
-    grid-template-columns: repeat(1, 1fr);
-    gap: 1rem;
-  }
-  #content #benefits .cards .benefit {
-    grid-template-rows: 1fr 1fr;
-    padding: 0.5rem;
-    aspect-ratio: 1/1;
-  }
-  #content #benefits .cards .benefit .icon {
-    width: 3.5rem;
-  }
-  #content #benefits .cards .footnote {
-    margin-top: 3rem;
-  }
-}
-@media screen and (min-width: 561px) {
-  #content #benefits {
-    padding-top: 20rem;
-    padding-bottom: 7rem;
-  }
-  #content #benefits .cards {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-  }
-  #content #benefits .cards .benefit {
-    aspect-ratio: 1/1;
-    padding: 1rem;
-  }
-  #content #benefits .cards .benefit .icon {
-    width: 10vw;
-  }
-  #content #benefits .cards .benefit::before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    background-image: radial-gradient(80vw circle at var(--mouse-x) var(--mouse-y), hsla(172, 100%, 70%, 0.2), transparent 40%);
-    transition: opacity var(--transition-speed-slow) ease;
-    opacity: 0;
-    border-radius: inherit;
-  }
-  #content #benefits .cards .benefit:hover .icon {
-    transform: scale(1.2);
-  }
-  #content #benefits .cards .footnote {
-    margin-top: 5rem;
-    grid-column: span 2;
-  }
-}
-@media screen and (min-width: 1300px) {
-  #content #benefits {
-    padding-top: 35rem;
-    padding-bottom: 9rem;
-  }
-  #content #benefits .cards {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-  }
-  #content #benefits .cards .benefit {
-    aspect-ratio: 4/3;
-    grid-template-rows: 2fr 3fr;
-  }
-  #content #benefits .cards .benefit .icon {
-    width: 4rem;
-  }
-  #content #benefits .cards .benefit::before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    background-image: radial-gradient(40vw circle at var(--mouse-x) var(--mouse-y), hsla(172, 100%, 70%, 0.2), transparent 40%);
-    z-index: 2;
-    transition: opacity var(--transition-speed-slow) ease;
-    opacity: 0;
-    border-radius: inherit;
-  }
-  #content #benefits .cards .footnote {
-    margin-top: 7rem;
-    grid-column: span 3;
-  }
 }
 #content .wave-intro {
   position: absolute;
