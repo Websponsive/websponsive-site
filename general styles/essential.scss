@@ -753,3 +753,9 @@ input[type=number]::-webkit-outer-spin-button {
       -webkit-appearance: none; 
       margin: 0; 
 }
+
+@media (max-width: 1300px){
+    .hide{
+        display: none !important;
+    }
+}

@@ -4,6 +4,9 @@ const navOptions = {
 const contentOptions = {
     rootMargin: "-100px 0px -100px 0px"
 }
+const cardOptions = {
+    rootMargin: "-300px 0px -300px 0px"
+}
 const cartButton = document.querySelector('#cart-button');
 const cart = document.querySelector('.cart');
 const darkModeButton = document.querySelector('#dark-mode-button');
@@ -140,10 +143,25 @@ const lineObserver = new IntersectionObserver((elements) => {
             element.target.classList.add('extended');
         }
     });
-}, contentOptions)
+}, cardOptions)
 
 strokes.forEach((e) => {
     lineObserver.observe(e);
+})
+
+// Card fade animations
+
+const cards = document.querySelectorAll('.process-step');
+const cardObserver = new IntersectionObserver((elements) => {
+    elements.forEach((element) => {
+        if(element.isIntersecting){
+            element.target.classList.remove('faded-inwards');
+        }
+    });
+}, cardOptions)
+
+cards.forEach((card) => {
+    cardObserver.observe(card);
 })
 
 //Card background glow effect
