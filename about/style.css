@@ -325,8 +325,8 @@ body {
     height: 75px;
   }
   #content #process .process-step .card svg {
-    width: 80%;
-    height: 80%;
+    width: 2.5rem;
+    height: 2.5rem;
   }
   #content #process .process-step .text-container {
     text-align: center;
@@ -417,8 +417,8 @@ body {
     height: 200px;
   }
   #content #process .process-step .card svg {
-    width: 65%;
-    height: 65%;
+    width: 4rem;
+    height: 4rem;
   }
   #content #process .process-step .card::before {
     content: "";
@@ -448,7 +448,7 @@ body {
     stroke-dashoffset: 1100;
     transition: stroke-dashoffset 1s ease-in-out;
   }
-  #content #process .process-step .process-line .process-stroke.extended {
+  #content #process .process-step .process-line.extended .process-stroke {
     stroke-dashoffset: 0;
   }
   #content .content-section {

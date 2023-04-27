@@ -133,7 +133,7 @@ hiddenToDownElements.forEach((element) => {
 
 
 //Fade-in animations for lines
-const strokes = document.querySelectorAll('.process-stroke')
+const strokes = document.querySelectorAll('.process-line')
 const lineObserver = new IntersectionObserver((elements) => {
     elements.forEach((element) => {
         if(element.isIntersecting){
