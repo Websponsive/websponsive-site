@@ -313,14 +313,13 @@ html, body {
   transform: translateX(2rem);
 }
 .navbar .nav-button#menu-button[aria-expanded=true] .line1 {
-  transform: translate(0px, 4.5px) rotateZ(45deg);
+  transform: translate(0px, 4.5px) rotateZ(405deg);
 }
 .navbar .nav-button#menu-button[aria-expanded=true] .line2 {
-  transform: translateX(-20px);
   opacity: 0;
 }
 .navbar .nav-button#menu-button[aria-expanded=true] .line3 {
-  transform: translate(0px, -4px) rotateZ(-45deg);
+  transform: translate(0px, -4px) rotateZ(315deg);
 }
 .navbar .nav-button .nav-icon {
   width: 2rem;
@@ -328,7 +327,7 @@ html, body {
   stroke: var(--f-color-light);
 }
 .navbar .nav-button .nav-icon line {
-  transition: var(--transition-speed-slow);
+  transition: 750ms;
   transform-origin: center;
 }
 .navbar .cart {
