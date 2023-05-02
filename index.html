@@ -46,7 +46,7 @@
                 <path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" />
               </svg>
         </button>
-        <button id="cart-button" name="Cart Button" class="nav-button" aria-expanded="false">
+        <button id="cart-button" name="Cart Button" class="nav-button" aria-expanded="false" aria-label="open the shopping cart window">
             <svg xmlns="http://www.w3.org/2000/svg" class="nav-icon cart-icon-1" viewBox="0 0 24 24" stroke-width="1.25" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                 <circle cx="6" cy="19" r="2" />
@@ -62,7 +62,7 @@
                 <path d="M6 5l14 1l-1 7h-13" />
               </svg>
         </button>
-        <button id="menu-button" class="nav-button" name="Menu Button" aria-expanded="false">
+        <button id="menu-button" class="nav-button" name="Menu Button" aria-expanded="false" aria-label="expand or collapse the navbar on mobile">
             <svg xmlns="http://www.w3.org/2000/svg" class="nav-icon pressed" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                 <line x1="4" y1="6" x2="20" y2="6" class="line1"/>
@@ -112,7 +112,7 @@
 
     <main id="content">
         <section class="intro content-section">
-            <select name="language-selector" aria-label="change language" class="language-selector small-text" onchange="javascript:location.href = this.value">
+            <select name="language-selector" aria-label="change the language" class="language-selector small-text" onchange="javascript:location.href = this.value">
                 <option value="" selected>🇬🇧 English</option>
                 <option value="../RO/about.html">🇷🇴 Română</option>
             </select>
@@ -155,14 +155,14 @@
             <p class="paragraph gray">We specialize in designing and developing websites for small businesses anywhere in Moldova. Every line of code is written by hand to ensure your customers have the best browsing experience possible, which helps attract more traffic and revenue to your business.</p>
         </section>
         <section class="content-section" id="advantages">
-            <img src="https://res.cloudinary.com/dvrziwgxp/image/upload/v1678525148/blob-haikei_4_u05hr7.svg" alt="" aria-readonly="false" class="blob" draggable="false">
+            <img src="https://res.cloudinary.com/dvrziwgxp/image/upload/v1678525148/blob-haikei_4_u05hr7.svg" alt="blob graphic for enhanced visual impact" class="blob" draggable="false">
             <div class="advantage faded-in-down">
                 <div class="image-container">
-                    <img src="https://res.cloudinary.com/dvrziwgxp/image/upload/v1682607198/magnifying_glass_yffssc.webp" alt="" class="advantage-img">
+                    <img src="https://res.cloudinary.com/dvrziwgxp/image/upload/v1682607198/magnifying_glass_yffssc.webp" alt="image of a magnifying glass" class="advantage-img" aria-hidden="true">
                 </div>
                 <h3 class="advantage-title dark title">Appear <span class="blue-gradient-text">first</span> in searches</h3>
                 <p class="gray paragraph">We optimize your site's SEO to appear higher up in searches, giving you an edge over the competition</p>
-                <a href="design/design.html" class="link light-bg-link paragraph gray" aria-label="learn more about why having a responsive website is crucial">Learn more
+                <a href="design/design.html" class="link light-bg-link paragraph gray" aria-label="learn more about SEO and how we implement it">Learn more
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-loop-right" width="52" height="52" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                         <path class="stroke" d="M12 21v-13a4 4 0 1 0 -4 4h13" />
@@ -172,11 +172,11 @@
             </div>
             <div class="advantage faded-in-down second">
                 <div class="image-container">
-                    <img src="https://res.cloudinary.com/dvrziwgxp/image/upload/v1682609635/brain_znqfyq.webp" alt="" class="advantage-img">
+                    <img src="https://res.cloudinary.com/dvrziwgxp/image/upload/v1682609635/brain_znqfyq.webp" alt="image of a brain to express ease of use" class="advantage-img">
                 </div>
                 <h3 class="advantage-title dark title">User-<span class="blue-gradient-text">friendly</span></h3>
                 <p class="gray paragraph">We combine a stunning UI with an intuitive UX in order to make your customers want to stick around for longer</p>
-                <a href="design/design.html" class="link light-bg-link paragraph gray" aria-label="learn more about why having a fast site is important">Learn more
+                <a href="design/design.html" class="link light-bg-link paragraph gray" aria-label="learn more about why having a user friendly site is important">Learn more
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-loop-right" width="52" height="52" viewBox="0 0 24 24" stroke-width="1.5"  fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                         <path class="stroke" d="M12 21v-13a4 4 0 1 0 -4 4h13" />
@@ -186,11 +186,11 @@
             </div>
             <div class="advantage faded-in-down third hide">
                 <div class="image-container">
-                    <img src="https://res.cloudinary.com/dvrziwgxp/image/upload/v1682613013/html_cuzgxq.webp" style="width: 4.5rem;" alt="" class="advantage-img">
+                    <img src="https://res.cloudinary.com/dvrziwgxp/image/upload/v1682613013/html_cuzgxq.webp" style="width: 4.5rem;" alt="image of angular brackets" class="advantage-img">
                 </div>
                 <h3 class="advantage-title dark title">Hand <span class="blue-gradient-text">coded</span></h3>
                 <p class="gray paragraph">We don't use platforms for building sites (like WordPress or Wix) to ensure your site's longevity</p>
-                <a href="design/design.html" class="link light-bg-link paragraph gray" aria-label="learn more about web accessibility">Learn more
+                <a href="design/design.html" class="link light-bg-link paragraph gray" aria-label="learn more about the downfalls of platforms like Wordpress">Learn more
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-loop-right" width="52" height="52" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                         <path class="stroke" d="M12 21v-13a4 4 0 1 0 -4 4h13" />
@@ -200,7 +200,7 @@
             </div>
             <div class="advantage faded-in-down">
                 <div class="image-container">
-                    <img src="https://res.cloudinary.com/dvrziwgxp/image/upload/v1678465189/flat-devices-mockup_eltawz.webp" alt="" class="advantage-img">
+                    <img src="https://res.cloudinary.com/dvrziwgxp/image/upload/v1678465189/flat-devices-mockup_eltawz.webp" alt="image of multiple devices to show responsiveness" class="advantage-img">
                 </div>
                 <h3 class="advantage-title dark title">Fully <span class="blue-gradient-text">responsive</span></h3>
                 <p class="gray paragraph">Your website will dynamically resize itself depending on screen size, so your clients can access your site from anywhere</p>
@@ -214,7 +214,7 @@
             </div>
             <div class="advantage faded-in-down second">
                 <div class="image-container">
-                    <img src="https://res.cloudinary.com/dvrziwgxp/image/upload/v1673461046/blazing-performance_ei60a7.webp" alt="" class="advantage-img">
+                    <img src="https://res.cloudinary.com/dvrziwgxp/image/upload/v1673461046/blazing-performance_ei60a7.webp" alt="image of a rocket to express speed" class="advantage-img">
                 </div>
                 <h3 class="advantage-title dark title">Blazingly <span class="blue-gradient-text">fast</span></h3>
                 <p class="gray paragraph">Many people find it frustrating when a website loads slowly, so we ensure yours loads almost instantly</p>
@@ -228,7 +228,7 @@
             </div>
             <div class="advantage faded-in-down third hide">
                 <div class="image-container">
-                    <img src="https://res.cloudinary.com/dvrziwgxp/image/upload/v1672858860/accessibility_fcyhqs.png" alt="" class="advantage-img">
+                    <img src="https://res.cloudinary.com/dvrziwgxp/image/upload/v1672858860/accessibility_fcyhqs.png" alt="image that expresses how accessible our sites are" class="advantage-img">
                 </div>
                 <h3 class="advantage-title dark title">Entirely <span class="blue-gradient-text">accessible</span></h3>
                 <p class="gray paragraph">Having an accessible site allows people with disabilities to access and use the internet, providing them with equal opportunities to participate in the digital world.</p>
@@ -306,19 +306,19 @@
             </div>
             </div>
             <article class="work">
-                <img src="https://res.cloudinary.com/dvrziwgxp/image/upload/v1682969005/cars-mockup_r3wqdj.jpg" alt="" class="work-img">
+                <img src="https://res.cloudinary.com/dvrziwgxp/image/upload/v1683053355/cars-mockup_nqu8sj.webp" alt="" class="work-img">
                 <h3 class="dark title">Car Selling Platform</h3>
                 <p class="paragraph gray">We developed a platform for posting listings of cars where potential buyers can look at specifications for each car</p>
                 <a href="https://super-nice-cars.netlify.app" target="_blank" class="light paragraph button">Visit</a>
             </article>
             <article class="work">
-                <img src="https://res.cloudinary.com/dvrziwgxp/image/upload/v1682703940/estate-mockup_arl3db.jpg" alt="" class="work-img">
+                <img src="https://res.cloudinary.com/dvrziwgxp/image/upload/v1683053623/estate-mockup_arl3db_g7seph.webp" alt="" class="work-img">
                 <h3 class="dark title">Real Estate Company</h3>
                 <p class="paragraph gray">We created a template site for a real estate company that specializes in multiple services</p>
                 <a href="https://real-estate-lorem.netlify.app" target="_blank" class="light paragraph button">Visit</a>
             </article>
             <article class="work">
-                <img src="https://res.cloudinary.com/dvrziwgxp/image/upload/v1682701930/steam-mockup_q6mz2h.jpg" alt="" class="work-img">
+                <img src="https://res.cloudinary.com/dvrziwgxp/image/upload/v1683053521/steam-mockup_q6mz2h_vlshh9.webp" alt="" class="work-img">
                 <h3 class="dark title">STEM Project</h3>
                 <p class="paragraph gray">We participated in a research initiative involving the study of electrical means of transportation.</p>
                 <a href="https://steam-electric.netlify.app" target="_blank" class="light paragraph button">Visit</a>
@@ -385,7 +385,7 @@
                     <h3 class="small-header light">Planning</h3>
                     <p class="paragraph less-light">Our team will then carefully analyze the task at hand and come up with a structured plan to tackle your order</p>
                 </div>
-                <svg viewBox="0 0 1016 193" fill="none" xmlns="http://www.w3.org/2000/svg" class="process-line flip">
+                <svg viewBox="0 0 1016 193" fill="none" xmlns="http://www.w3.org/2000/svg" class="process-line flip" aria-hidden="true">
                     <path d="M6 6C6 99 112 99 112 99L906 107C906 107 1014 107 1014 184" stroke="#3882C7" stroke-width="5" class="process-stroke"/>
                 </svg> 
             </div>
@@ -406,7 +406,7 @@
                     <h3 class="small-header light">Implementation</h3>
                     <p class="paragraph less-light">Our team works hard to design and build you a website using the best practices in order to drive the maximum amount of growth and boost conversions</p>
                 </div>
-                <svg viewBox="0 0 1016 193" fill="none" xmlns="http://www.w3.org/2000/svg" class="process-line">
+                <svg viewBox="0 0 1016 193" fill="none" xmlns="http://www.w3.org/2000/svg" class="process-line" aria-hidden="true">
                     <path d="M6 6C6 99 112 99 112 99L906 107C906 107 1014 107 1014 184" stroke="#3882C7" stroke-width="5" class="process-stroke"/>
                 </svg> 
             </div>
@@ -428,7 +428,7 @@
             </div>
             
             <div class="curve">
-                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">
                     <path d="M0,0V7.23C0,65.52,268.63,112.77,600,112.77S1200,65.52,1200,7.23V0Z" class="shape-fill"></path>
                 </svg>
             </div>
@@ -447,7 +447,7 @@
                 </a>
             </article>
             <article class="footer-section">
-                <img class="footer-image" src="https://res.cloudinary.com/dvrziwgxp/image/upload/v1671964814/desk_wfpdpu.jpg" alt="">
+                <img class="footer-image" src="https://res.cloudinary.com/dvrziwgxp/image/upload/v1671964814/desk_wfpdpu.jpg" alt="image of a desk with a laptop">
             </article>
             <article class="footer-section contacts">
                 <img src="https://res.cloudinary.com/dvrziwgxp/image/upload/v1665761117/Logo-removebg-short_mwxc1r.png" alt="the websponsive logo" class="footer-logo" draggable="false">

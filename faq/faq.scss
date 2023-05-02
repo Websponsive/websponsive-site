@@ -64,7 +64,7 @@ body{
                 width: 100%;
                 display: grid;
                 place-items: center;
-                padding: 1.5rem;
+                padding: 2.5rem;
                 max-height: 0px;
                 transition: max-height 750ms ease-in-out;
                 overflow: hidden;
@@ -76,9 +76,7 @@ body{
                     transition: var(--transition-speed-fast) ease-in-out 50ms;
                 }
             }
-            &:hover,
-            &:focus-within,
-            &:focus{
+            &.dropped{
                 height: auto;
                 max-height: 850px;
                 .question-text{
@@ -156,7 +154,7 @@ body{
     @media screen and (min-width: 1300px) {
         .content-section,
         .question-section{
-            padding: 5rem 16rem 5rem 16rem;
+            padding: 5rem 24rem 5rem 24rem;
             gap: 2rem;
             .image-container{
                 width: 100%;

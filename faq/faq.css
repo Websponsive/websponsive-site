@@ -55,7 +55,7 @@ body {
   width: 100%;
   display: grid;
   place-items: center;
-  padding: 1.5rem;
+  padding: 2.5rem;
   max-height: 0px;
   transition: max-height 750ms ease-in-out;
   overflow: hidden;
@@ -67,17 +67,17 @@ body {
   height: 100%;
   transition: var(--transition-speed-fast) ease-in-out 50ms;
 }
-#content .question-section .question:hover, #content .question-section .question:focus-within, #content .question-section .question:focus {
+#content .question-section .question.dropped {
   height: auto;
   max-height: 850px;
 }
-#content .question-section .question:hover .question-text::before, #content .question-section .question:hover .question-text::after, #content .question-section .question:focus-within .question-text::before, #content .question-section .question:focus-within .question-text::after, #content .question-section .question:focus .question-text::before, #content .question-section .question:focus .question-text::after {
+#content .question-section .question.dropped .question-text::before, #content .question-section .question.dropped .question-text::after {
   content: "-";
 }
-#content .question-section .question:hover .dropdown, #content .question-section .question:focus-within .dropdown, #content .question-section .question:focus .dropdown {
+#content .question-section .question.dropped .dropdown {
   max-height: 1000px;
 }
-#content .question-section .question:hover .dropdown .answer-text, #content .question-section .question:focus-within .dropdown .answer-text, #content .question-section .question:focus .dropdown .answer-text {
+#content .question-section .question.dropped .dropdown .answer-text {
   visibility: visible;
   opacity: 1;
 }
@@ -140,7 +140,7 @@ body {
 @media screen and (min-width: 1300px) {
   #content .content-section,
   #content .question-section {
-    padding: 5rem 16rem 5rem 16rem;
+    padding: 5rem 24rem 5rem 24rem;
     gap: 2rem;
   }
   #content .content-section .image-container,
