@@ -445,7 +445,7 @@ html, body {
     z-index: 1000;
   }
   .navbar.nav-visible {
-    height: 380px;
+    height: 320px;
   }
   .navbar.nav-visible .navbar-list {
     visibility: visible;
