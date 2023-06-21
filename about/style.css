@@ -616,7 +616,7 @@ body {
   height: 200px;
 }
 #content .opaque-wave .shape-fill {
-  fill: var(--background-body);
+  fill: var(--bg-color-blue-700);
   transition: fill var(--transition-speed-slow) ease;
 }
 #content .curve {

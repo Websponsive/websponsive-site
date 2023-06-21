@@ -1,6 +1,7 @@
 body {
   background-color: var(--background-body);
   transition: background-color var(--transition-speed-slow) ease;
+  overflow-x: hidden;
 }
 
 #content .content-section .image-container {

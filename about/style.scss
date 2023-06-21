@@ -708,7 +708,8 @@ body{
             height: 200px;
         }
         .shape-fill{
-            fill: var(--background-body);
+            fill: var(--bg-color-blue-700);
+            // fill: var(--background-body);
             transition: fill var(--transition-speed-slow) ease;
         }
     }
