@@ -288,30 +288,6 @@ html, body {
   opacity: 0;
   transform: translateY(2rem);
 }
-.navbar .nav-button#cart-button {
-  position: relative;
-  z-index: 1;
-}
-.navbar .nav-button#cart-button .cart-icon-1 {
-  position: absolute;
-  opacity: 0;
-  transform: translateX(-2rem);
-  transition: opacity var(--transition-speed-fast) ease-in-out 100ms, transform var(--transition-speed-slow) ease-in-out;
-}
-.navbar .nav-button#cart-button .cart-icon-2 {
-  opacity: 1;
-  transform: translateX(0);
-  transition: opacity var(--transition-speed-fast) ease-in-out 100ms, transform var(--transition-speed-slow) ease-in-out;
-}
-.navbar .nav-button#cart-button[aria-expanded=true] .cart-icon-1 {
-  opacity: 1;
-  transform: translateX(0);
-  visibility: visible;
-}
-.navbar .nav-button#cart-button[aria-expanded=true] .cart-icon-2 {
-  opacity: 0;
-  transform: translateX(2rem);
-}
 .navbar .nav-button#menu-button[aria-expanded=true] .line1 {
   transform: translate(0px, 4.5px) rotateZ(405deg);
 }
@@ -330,84 +306,11 @@ html, body {
   transition: 750ms;
   transform-origin: center;
 }
-.navbar .cart {
-  position: absolute;
-  margin: 0.5rem;
-  background-color: var(--cart-bg);
-  border-radius: 1rem;
-  height: -moz-fit-content;
-  height: fit-content;
-  display: flex;
-  flex-direction: column;
-  justify-items: center;
-}
-.navbar .cart .cart-item {
-  width: 100%;
-  display: grid;
-  background-color: var(--f-color-light);
-  padding: 0.75rem;
-  margin: 0.5rem 0;
-  border-radius: 1rem;
-  box-shadow: 0 0 10px var(--f-color-gray);
-  transition: background-color var(--transition-speed-slow) ease;
-}
-.navbar .cart .cart-item .cart-plan-input,
-.navbar .cart .cart-item .cart-quantity-input {
-  text-align: center;
-  border-radius: 0.5rem;
-  border: 2px solid var(--bg-color-blue-500);
-  transition: all var(--transition-speed-fast) ease-in-out;
-}
-.navbar .cart .cart-item .cart-plan-input:hover, .navbar .cart .cart-item .cart-plan-input:focus,
-.navbar .cart .cart-item .cart-quantity-input:hover,
-.navbar .cart .cart-item .cart-quantity-input:focus {
-  border: 2px solid var(--bg-color-pine-green);
-  outline: none;
-}
-.navbar .cart .cart-item .cart-remove-button {
-  border-radius: 0.5rem;
-  background-color: red;
-  display: grid;
-  place-content: center;
-  transition: all var(--transition-speed-fast) ease-in-out;
-}
-.navbar .cart .cart-item .cart-remove-button:hover {
-  transform: translateY(-2px);
-}
-.navbar .cart .cart-end {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-}
-.navbar .cart .cart-end .cart-checkout-button {
-  background-color: var(--f-color-light);
-  text-align: center;
-  border-radius: 0.5rem;
-  border: 2px solid var(--bg-color-blue-500);
-  transition: all var(--transition-speed-fast) ease-in-out;
-}
-.navbar .cart .cart-end .cart-checkout-button:hover {
-  border: 2px solid var(--bg-color-pine-green);
-  outline: none;
-}
-.navbar .cart-hidden {
-  opacity: 0;
-  visibility: hidden;
-  transform: translateX(-100%);
-  transition: opacity var(--transition-speed-fast) ease-in-out, max-height var(--transition-speed-slow) ease-in-out, visibility var(--transition-speed-slow), transform var(--transition-speed-slow), box-shadow var(--transition-speed-slow);
-  box-shadow: 0 0 0 100vmax hsla(0, 0%, 20%, 0);
-}
-.navbar .cart-visible {
-  opacity: 1;
-  transition: opacity var(--transition-speed-slow) ease-in-out, max-height var(--transition-speed-slow) ease-in-out, transform var(--transition-speed-slow), box-shadow var(--transition-speed-slow), background-color var(--transition-speed-slow) ease;
-  transform: translateX(0);
-  box-shadow: 0 0 0 100vmax hsla(0, 0%, 20%, 0.25);
-}
 
 @media screen and (max-width: 760px) {
   .navbar {
     display: grid;
-    grid-template-columns: 5fr 1fr 1fr 1fr;
+    grid-template-columns: 5fr 1fr 1fr;
     height: 80px;
     transition: height var(--transition-speed-slow) ease-in-out, background-color var(--transition-speed-slow);
   }
@@ -434,11 +337,6 @@ html, body {
   }
   .navbar .nav-button {
     align-self: center;
-  }
-  .navbar .nav-button #cart-button {
-    grid-column: 2/3;
-    grid-row: 1/2;
-    z-index: 999;
   }
   .navbar .nav-button #menu-button {
     grid-column: 3/4;
@@ -474,35 +372,6 @@ html, body {
   .navbar.nav-visible .navbar-list .navbar-list-item:nth-child(6) {
     animation-delay: 600ms;
   }
-  .navbar .cart {
-    top: 4rem;
-    width: 95%;
-    justify-self: center;
-    padding: 0.5rem;
-  }
-  .navbar .cart .cart-item {
-    grid-template-columns: 1fr 1fr;
-    gap: 0.5rem;
-    align-items: center;
-    justify-items: left;
-  }
-  .navbar .cart .cart-item .cart-plan-input {
-    grid-column: span 2;
-    width: 100%;
-    height: 2rem;
-  }
-  .navbar .cart .cart-item .cart-quantity-input {
-    width: 4.5rem;
-    aspect-ratio: 7/3;
-  }
-  .navbar .cart .cart-item .cart-remove-button {
-    width: 4.5rem;
-    aspect-ratio: 7/3;
-  }
-  .navbar .cart .cart-checkout-button {
-    height: 2rem;
-    width: 100%;
-  }
 }
 @media screen and (min-width: 761px) {
   .navbar {
@@ -523,59 +392,22 @@ html, body {
     display: none;
   }
   .navbar #dark-mode-button {
+    margin-right: 2rem;
     order: 3;
     margin-left: auto;
-  }
-  .navbar #cart-button {
-    margin-right: 2rem;
-    order: 4;
-    margin-left: 0rem;
-  }
-  .navbar .cart {
-    top: 5rem;
-    right: 0;
-    width: 75%;
-    padding: 1rem;
-  }
-  .navbar .cart .cart-item {
-    grid-template-columns: 3fr 2fr 2fr 2fr;
-    align-items: center;
-  }
-  .navbar .cart .cart-item .cart-plan-input {
-    height: 2rem;
-    grid-column: span 2;
-    width: 70%;
-  }
-  .navbar .cart .cart-item .cart-quantity-input,
-  .navbar .cart .cart-item .cart-remove-button {
-    width: 4.5rem;
-    aspect-ratio: 7/3;
-  }
-  .navbar .cart .cart-checkout-button {
-    height: 2.5rem;
-    width: 75%;
-    justify-self: center;
   }
 }
 @media screen and (min-width: 1300px) {
   .navbar {
     height: 6rem;
   }
-  .navbar #cart-button,
   .navbar #dark-mode-button {
     width: 3rem;
     margin-right: 3rem;
   }
-  .navbar #cart-button .nav-icon,
   .navbar #dark-mode-button .nav-icon {
     width: 2.5rem;
     height: 2.5rem;
-  }
-  .navbar .cart {
-    top: 7rem;
-    right: 0;
-    width: 50%;
-    padding: 1rem;
   }
 }
 @keyframes navbar-pop {
