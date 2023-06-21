@@ -124,6 +124,7 @@
                 <p class="paragraph gray">Making decisions about your website can be tough, but you don't have to do it alone! Our experts are here to guide you every step of the way. If you're feeling unsure about what's best for your business, give us a call. Fill out the email form, or alternatively, contact us through the links below and we'll provide recommendations and answer any questions you may have.</p>
             </div>
             <form netlify method="post">
+                <input type="hidden" name="subject" value="Hey %{formName}" />
                 <div class="form-input-group">
                     <label for="form-name" class="gray paragraph">Name</label>
                     <input type="text" name="name" id="form-name" class="form-input small-text dark" placeholder="Nigel" required>
