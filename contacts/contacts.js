@@ -41,20 +41,20 @@ darkModeButton.addEventListener('click', () => {
 }) ;
 
 // Confirm sending message
-const form = document.querySelector("form");
-const popUp = document.querySelector('.pop-up')
-form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    popUp.style.visibility = 'visible';
-    popUp.style.opacity = 1;
+// const form = document.querySelector("form");
+// const popUp = document.querySelector('.pop-up')
+// form.addEventListener('submit', (event) => {
+//     event.preventDefault();
+//     popUp.style.visibility = 'visible';
+//     popUp.style.opacity = 1;
 
-    setTimeout(() => {
-        popUp.style.opacity = 0;
-    }, 2000);
-    setTimeout(() => {
-        popUp.style.visibility = 'hidden';
-    }, 2500);
-})
+//     setTimeout(() => {
+//         popUp.style.opacity = 0;
+//     }, 2000);
+//     setTimeout(() => {
+//         popUp.style.visibility = 'hidden';
+//     }, 2500);
+// })
 
 /*************** Cart functionalities *******************/
 
