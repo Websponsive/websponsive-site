@@ -65,8 +65,8 @@ body{
                 width: 100%;
                 display: grid;
                 place-items: center;
-                padding: 2.5rem;
                 max-height: 0px;
+                padding: 2.5rem;
                 transition: max-height 750ms ease-in-out;
                 overflow: hidden;
                 .answer-text{
@@ -74,7 +74,7 @@ body{
                     visibility: hidden;
                     opacity: 0;
                     height: 100%;
-                    transition: var(--transition-speed-fast) ease-in-out 50ms;
+                    transition: var(--transition-speed-fast) ease-in-out 100ms;
                 }
             }
             &.dropped{
