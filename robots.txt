@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /404.html
+Disallow: /RO/404.html
+
+Sitemap: https://websponsive.net/sitemap.xml
