@@ -7,8 +7,7 @@ const contentOptions = {
 const cardOptions = {
     rootMargin: "-300px 0px -300px 0px"
 }
-const cartButton = document.querySelector('#cart-button');
-const cart = document.querySelector('.cart');
+
 const darkModeButton = document.querySelector('#dark-mode-button');
 
 //Remember dark mode preference
