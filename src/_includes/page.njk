@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="alternate" hreflang="en" href="{{alternate1}}" />
+    <link rel="alternate" hreflang="ro" href="{{alternate2}}" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Websponsive is a web development agency that specializes in creating visually appealing, user-friendly websites that look great on any device. We use the latest technologies and design principles to create websites that are not only visually appealing, but also easy to navigate and optimized for search engines. Our team of experienced developers and designers work closely with clients to understand their specific needs and goals, and deliver custom solutions that help businesses succeed online.">
+    <meta property="og:image" content="https://res.cloudinary.com/dvrziwgxp/image/upload/v1664987255/Logo_uffngw.png" />
+    <meta property="og:title" content="{{title}}" />
+    <meta property="og:url" content="https://websponsive.net" />
+    <meta property="og:description" content="We at Websponsive specialize in crafting visually stunning and highly responsive websites. Our expert developers work closely with our clients to understand their specific needs and create the best solution that drives business success. Whether you're looking to revamp your existing website or build a new one, Websponsive has the skills and experience to deliver a website that will exceed expectations. Sign up today !" />
+    <style>
+        a, p, li, span{
+        font-family: var(--f-family-josefin), sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6, .button, button, select, input, option, label, textarea, option{
+            font-family: var(--f-family-ubuntu), sans-serif;
+        } 
+    </style>
+    <link rel="stylesheet" href="/css/essential.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/{{style}}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600&family=Ubuntu:wght@700&display=swap" rel="stylesheet"> 
+    <link rel="shortcut icon" href="https://res.cloudinary.com/dvrziwgxp/image/upload/v1664987255/Logo_uffngw.png" type="image/x-icon">
+    <title>{{Title}}</title>
+    <script defer src="/js/{{script}}"></script>
+    <script defer src="/js/nav.js"></script>
+    <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7CRW9B6DND"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7CRW9B6DND');
+</script>
+
+<body>
+    <main id="content">
+        {{ content | safe }}
+    </main>
+
+    {% include "footer.njk" %}
+    <script>
+        if (window.netlifyIdentity) {
+          window.netlifyIdentity.on("init", user => {
+            if (!user) {
+              window.netlifyIdentity.on("login", () => {
+                document.location.href = "/admin/";
+              });
+            }
+          });
+        }
+    </script>
+</body>
+</html>

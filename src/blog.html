@@ -1,0 +1,37 @@
+---
+layout: page.njk
+style: blog.css
+title: "Our Blogs"
+script: "contacts.js"
+---
+
+{% include "nav.njk"%}
+
+<section class="featured">
+    <h2 class="dark title">Featured Posts</h1>
+        {% for post in collections.featured reversed-%}
+        <a class="featured-post" href="{{post.url}}">
+            <img src="{{post.data.image}}" alt="blog image">
+            <div class="text">
+                <h3 class="small-text dark">{{post.data.title}}</h2>
+                    <p class="small-text gray">{{post.data.date | formatDate}}</p>
+                </div>
+            </a>
+            {% endfor -%} 
+        </section>
+<section class="posts">
+    <h1 class="header dark">Blog Posts</h1>
+    {% for post in collections.post reversed-%}
+        <div class="post">
+            <img src="{{post.data.image}}" alt="blog image">
+            <div class="text">
+                <h2 class="paragraph dark">{{post.data.title}}</h2>
+                <p class="gray small-text">{{post.data.desc}}</p>
+                <div>
+                    <button onclick="window.location.href = '{{post.url}}'" class="post-link light small-text">Visit</button>
+                    <span class="small-text gray">&nbsp&nbsp· &nbsp&nbspPosted on:&nbsp&nbsp{{post.data.date | formatDate}}</span>
+                </div>
+            </div>
+        </div>
+    {% endfor -%} 
+</section>

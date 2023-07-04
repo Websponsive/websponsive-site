@@ -1,0 +1,245 @@
+body {
+  background-color: var(--background-body);
+  transition: background-color var(--transition-speed-slow) ease;
+  overflow-x: hidden;
+}
+
+#content .content-section .image-container {
+  width: 100%;
+  position: relative;
+}
+#content .content-section .image-container .section-image {
+  width: 100%;
+}
+#content .content-section .image-container .blob {
+  position: absolute;
+  z-index: -1;
+}
+#content .question-section {
+  display: grid;
+  gap: 1rem;
+}
+#content .question-section .question-section-header {
+  border-bottom: 1px var(--f-color-gray) solid;
+  padding-bottom: 1rem;
+}
+#content .question-section .question {
+  max-height: 4rem;
+  cursor: pointer;
+  transition: max-height 750ms ease-in-out;
+  background-color: var(--bg-color-blue-200);
+  border-radius: 1rem;
+}
+#content .question-section .question .question-text {
+  text-align: center;
+  padding: 1.5rem 2.5rem;
+  background: linear-gradient(135deg, var(--bg-color-blue-400) 10%, var(--bg-color-blue-700) 80%, var(--bg-color-blue-800));
+  border-radius: inherit;
+}
+#content .question-section .question .question-text::before {
+  content: "+";
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: var(--f-size-small-header);
+}
+#content .question-section .question .question-text::after {
+  content: "+";
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: var(--f-size-small-header);
+}
+#content .question-section .question .dropdown {
+  width: 100%;
+  display: grid;
+  place-items: center;
+  max-height: 0px;
+  padding: 2.5rem;
+  transition: max-height 750ms ease-in-out;
+  overflow: hidden;
+}
+#content .question-section .question .dropdown .answer-text {
+  text-align: center;
+  visibility: hidden;
+  opacity: 0;
+  height: 100%;
+  transition: var(--transition-speed-fast) ease-in-out 100ms;
+}
+#content .question-section .question.dropped {
+  height: auto;
+  max-height: 850px;
+}
+#content .question-section .question.dropped .question-text::before, #content .question-section .question.dropped .question-text::after {
+  content: "-";
+}
+#content .question-section .question.dropped .dropdown {
+  max-height: 1000px;
+}
+#content .question-section .question.dropped .dropdown .answer-text {
+  visibility: visible;
+  opacity: 1;
+}
+#content .content-section {
+  position: relative;
+  display: grid;
+  gap: 1rem;
+  margin-top: 4rem;
+}
+@media screen and (max-width: 560px) {
+  #content .content-section,
+  #content .question-section {
+    padding: 4rem 1rem 4rem 1rem;
+  }
+  #content .content-section .image-container,
+  #content .question-section .image-container {
+    width: 100%;
+  }
+  #content .content-section .image-container .section-image,
+  #content .question-section .image-container .section-image {
+    width: 90%;
+  }
+  #content .content-section .image-container .blob,
+  #content .question-section .image-container .blob {
+    top: -20%;
+    left: -15%;
+    width: 130%;
+  }
+  #content .question {
+    margin-block: 1rem;
+  }
+}
+@media screen and (min-width: 561px) {
+  #content .content-section,
+  #content .question-section {
+    padding: 4rem 3rem 4rem 3rem;
+  }
+  #content .content-section .image-container,
+  #content .question-section .image-container {
+    width: 100%;
+  }
+  #content .content-section .image-container .section-image,
+  #content .question-section .image-container .section-image {
+    width: 100%;
+  }
+  #content .content-section .image-container .blob,
+  #content .question-section .image-container .blob {
+    top: -20%;
+    left: -20%;
+    z-index: -1;
+    width: 140%;
+  }
+  #content .content-section {
+    grid-template-columns: 1fr 1fr;
+  }
+  #content .question {
+    margin-block: 0.5rem;
+  }
+}
+@media screen and (min-width: 1300px) {
+  #content .content-section,
+  #content .question-section {
+    padding: 5rem 24rem 5rem 24rem;
+    gap: 2rem;
+  }
+  #content .content-section .image-container,
+  #content .question-section .image-container {
+    width: 100%;
+  }
+  #content .content-section .image-container .section-image,
+  #content .question-section .image-container .section-image {
+    width: 80%;
+  }
+  #content .content-section .image-container .blob,
+  #content .question-section .image-container .blob {
+    top: -25%;
+    left: -20%;
+    z-index: -1;
+    width: 120%;
+  }
+}
+.link {
+  text-decoration: none;
+  font-family: var(--f-family-josefin);
+  font-size: var(--f-size-paragraph);
+  transition: all var(--transition-speed-fast) ease-in-out;
+  white-space: nowrap;
+  width: -moz-max-content;
+  width: max-content;
+}
+.link::before {
+  content: "";
+  width: 100%;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  position: absolute;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform var(--transition-speed-slow) ease-in-out;
+  z-index: 1;
+}
+.link:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.light-bg-link:hover {
+  color: var(--f-color-dark);
+}
+.light-bg-link::before {
+  background-color: var(--f-color-dark);
+}
+
+.dark-bg-link:hover {
+  color: var(--f-color-light);
+}
+.dark-bg-link svg {
+  stroke: var(--f-color-light);
+}
+.dark-bg-link::before {
+  background-color: var(--f-color-light);
+}
+
+.button {
+  border-radius: 0.5rem;
+  background-image: var(--bg-gradient-button);
+  background-size: 250%;
+  background-position: 100% 100%;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-speed-slow) cubic-bezier(0.77, 0, 0.18, 1);
+  box-shadow: 0 0 20px hsla(0, 0%, 25%, 0.5);
+}
+.button:hover {
+  background-position: 0% 0%;
+  scale: 0.975;
+}
+
+.grid {
+  display: grid;
+}
+
+.half-section {
+  display: grid;
+  gap: 0.5rem;
+}
+
+@media screen and (max-width: 560px) {
+  .grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+  }
+  .grid .image-section {
+    grid-row: 2/3;
+  }
+}
+@media screen and (min-width: 561px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    align-items: center;
+  }
+}/*# sourceMappingURL=faq.css.map */

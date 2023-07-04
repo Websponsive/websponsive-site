@@ -1,0 +1,161 @@
+// Footer styles
+footer{
+    background-color: var(--bg-color-blue-900);
+    display: grid;
+
+    // min-height: 300px;
+
+    .footer-section{
+        display: grid;
+        justify-items: center;
+        // align-items: center;
+        place-content: center;
+        gap: 1rem;
+        .footer-button{
+            padding: 0.5rem;
+            height: 3rem;
+            width: 10rem;
+            // justify-self: center;
+        }
+        .footer-image{
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 0 0 1rem hsla(226, 74%, 30%, 0.5),
+            0 0 0 2rem hsla(209, 56%, 50%, 0.25);
+        }
+        
+        &.contacts{
+            .footer-social-list{
+                display: flex;
+                gap: 1rem;
+                .footer-social-link{
+                    .footer-social-icon{
+                        stroke: var(--f-color-less-light);
+                        border: 3px solid var(--f-color-gray);
+                        border-radius: 50%;
+                        padding: 0.25rem;
+                        // height: 3rem;
+                        // aspect-ratio: 1/1
+                        transition: all var(--transition-speed-fast) ease-in-out;
+                    }
+                    &:hover{
+                        .footer-social-icon{
+                            background-color: var(--f-color-less-light);
+                            stroke: var(--f-color-dark);
+                            border: 3px solid var(--f-color-less-light);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .curve {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+        transform: rotate(180deg);
+        svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 100px;
+        }
+        .shape-fill {
+            fill: var(--background-body);
+            transition: fill var(--transition-speed-slow) ease;
+        }
+    }
+    
+    
+
+    @media (max-width: 560px) {
+        .curve{
+            svg{
+                height: 70px;
+            }
+        }
+    }
+    @media screen and (min-width: 1300px){
+        .curve{
+            svg{
+                height: 130px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 560px){
+    footer{
+        padding: 6rem 1rem 1rem 1rem;
+        gap: 5rem;
+        .footer-section{
+            .footer-image{
+                width: 80%;
+            }
+            .footer-logo{
+                width: 5rem;
+            }
+
+            &.contacts{
+                grid-template-columns: 2fr 3fr;
+                .footer-logo{
+                    justify-self: center;
+                }
+                .footer-social-list{
+                    grid-column: 2/3;
+                    grid-row: 1/2;
+                    justify-self: center;
+                }
+                .small-text{
+                    grid-column: span 2;
+                    justify-self: center;
+                    align-self: end;
+                    border-top: var(--f-color-gray) 1px solid;
+                    padding-top: 1rem;
+                    width: 85%;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width: 561px){
+    footer{
+        gap: 5rem;
+        padding: 8rem 2rem 2rem 2rem;
+        .footer-section{
+            .footer-image{
+                width: 50%;
+            }
+            .footer-logo{
+                width: 8rem;
+            }
+
+            &.contacts{
+                grid-template-columns: 1fr 3fr 1fr;
+                align-items: center;
+                .small-text{
+                    justify-self: center;
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width: 1300px){
+    footer{
+        grid-template-columns: 1fr 1fr;
+        .footer-section{
+            .footer-image{
+                width: 65%;
+            }
+            &.contacts{
+                grid-column: span 2;
+            }
+        }
+    }
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="{{image}}" />
+    <meta property="og:title" content="{{title}}" />
+    <meta property="og:url" content="https://websponsive.net" />
+    <style>
+        a, p, li, span{
+        font-family: var(--f-family-josefin), sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6, .button, button, select, input, option{
+            font-family: var(--f-family-ubuntu), sans-serif;
+        } 
+    </style>
+    <link rel="stylesheet" href="/css/essential.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600&family=Ubuntu:wght@700&display=swap" rel="stylesheet"> 
+    <link rel="shortcut icon" href="https://res.cloudinary.com/dvrziwgxp/image/upload/v1664987255/Logo_uffngw.png" type="image/x-icon">
+    <meta name="description" content="{{desc}}">
+    <title>{{title}}</title>
+    <script defer src="/js/nav.js"></script>
+
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7CRW9B6DND"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7CRW9B6DND');
+</script>
+
+<body>
+    {% include "nav.njk" %}
+    <main>
+        <h1 class="dark">{{title}}</h1>
+        <a href="https://websponsive.net" class="paragraph light call-to-action">Start Building Your Site</a>
+        <hr>
+        <div class="info">
+            <img src="{{authorimg}}" alt="author's profile picture" class="author-img">
+            <p class="paragraph dark">{{author}}</p>
+            <p class="gray paragraph date">Posted on: {{date | formatDate}}</p>
+        </div>
+        <hr>
+        <img src="{{image}}" alt="cover image for the post">
+        <section class="paragraph less-dark text">
+            {{ content | safe }}
+        </section>
+        <div class="shape">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </main>
+    <section class="featured">
+        <h2 class="dark small-header">Featured Posts</h1>
+        {% for post in collections.featured -%}
+            <a class="featured-post" href="{{post.url}}">
+                <img src="{{post.data.image}}" alt="post cover image">
+                <div class="post-text">
+                    <h3 class="paragraph dark">{{post.data.title}}</h2>
+                    <p class="small-text gray">{{post.data.date | formatDate}}</p>
+                </div>
+            </a>
+        {% endfor -%} 
+    </section>
+
+    {% include "footer.njk" %}
+</body>
+</html>
