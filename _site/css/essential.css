@@ -49,6 +49,7 @@ html {
   --f-color-light: hsl(0, 0%, 95%);
   --f-color-less-light: hsl(0, 0%, 75%);
   --f-color-dark: hsl(0, 0%, 20%);
+  --f-color-less-dark: hsl(0, 0%, 35%);
   --f-color-gray: hsl(246, 9%, 54%);
   --background-body: hsl(0, 0%, 93%);
   --cart-bg: hsla(246, 9%, 85%, 0.85);
@@ -437,6 +438,10 @@ a {
 
 .less-light {
   color: var(--f-color-less-light);
+}
+
+.less-dark {
+  color: var(--f-color-less-dark);
 }
 
 button {

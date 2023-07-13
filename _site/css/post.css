@@ -62,8 +62,11 @@ main .info .date {
   margin-left: auto;
 }
 main .text {
-  line-height: 1.3;
+  line-height: 1.4;
   margin-top: 2rem;
+}
+main .text p {
+  margin-block: 1rem;
 }
 main .text h1, main .text h2, main .text h3, main .text h4, main .text h5, main .text h6 {
   color: var(--f-color-dark);
